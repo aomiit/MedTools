@@ -1,0 +1,94 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+        <view class="count_bd"> 
+            <view class="count_hd">    
+                <view class="count_bd">           
+                        <text class="Info">氯化钠(克)</text>
+                        <text class="Info">{{iNaCl}}</text>
+                </view>
+
+                <view class="count_bd">           
+                        <text class="Info">生理盐水(ml)</text>
+                        <text class="Info">{{iSLYS}}</text>
+                </view>
+            </view>
+            <view class="count_hd">    
+                <view class="count_bd">           
+                        <text class="Info">3%氯化钠(ml)</text>
+                        <text class="Info">{{i3PNaCl}}</text>
+                </view>
+
+                <view class="count_bd">           
+                        <text class="Info">5%氯化钠(ml)</text>
+                        <text class="Info">{{i5PNaCl}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">性别: </view>
+              <radio-group class="radio-group" bindchange="SexradioChange">
+                  <label style="display:flex;">
+                    <radio class="radio" key="gen1" value="Male" checked="true">   男   </radio>  
+                    <radio class="radio" key="gen2" value="Female">   女   </radio>   
+                  </label>               
+              </radio-group>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">体重(公斤)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="w" type="number" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  
+                    placeholder="请输入体重"/>
+                </view>
+            </view>
+            
+            <view class="weui-cell">
+                <view class="weui-cell__bd">目标血钠值(mmol/l)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="sc" type="number" value="{{iScNA}}" maxlength="6" bindinput="oniScNA"           
+                    placeholder="请输入目标血钠值"/>
+                </view>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">实测血钠值(mmol/l)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="a" type="number" value="{{iRlNA}}" maxlength="6" bindinput="oniRlNA"  
+                    placeholder="请输入实测血钠值"/>
+                </view>
+            </view>           
+
+        </view>
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>
+        
+    </form>
+
+    <text class="main_info">
+      血钠正常范围： 135～148mmol/L（3.15～3.4g/L）
+      钠盐摄入量：7~12g/d
+      尿钠量：正常成人70～90mmol/24h，约合氯化钠4.1～5.3g。如果尿Na+＜34.19mmol/L或缺如，示体内缺Na+
+      补钠: 一般在Na+ 低于 125mmol/L 时才需要补钠，不然则通过摄水控制以纠正 
+      血钠提升速度：24h内 8~10 mmol/L
+                
+      男性可选用下列公式
+      应补钠总量（mmol）=[目标血钠-病人血Na+(mmol/L)]×体重(kg)×0.6
+      女性可选用下列公式
+      应补钠总量(mmol) =[目标血钠-病人血Na+（mmol/L）] ×体重(kg)×0.5
+
+      注：
+      按公式求得的结果，一般可先总量的1/2～1/3，然后再根据临床情况及检验结果调整下一步治疗方案。
+      单位换算：
+      氯化钠：mmol*58.5(分子量)*0.001=g          
+    </text>
+    
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+</scroll-view>

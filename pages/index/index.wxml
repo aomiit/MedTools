@@ -1,0 +1,24 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+   
+    <official-account></official-account>
+
+    <block wx:for="{{objectArray}}" wx:key="id">    
+
+      <view class="weui-cells weui-cell_access"> 
+        <navigator url= "{{item.url}}" hover-class='navigator-hover'>
+          {{item.caption}}
+
+          <image class="collect_banner" id = "{{item.id}}"  src="{{item.collected ? '../../vendor/assets/images/do_collect.png' : '../../vendor/assets/images/collect.png'}}" catchtap="handleCollection" hover-stop-propagation='true'>
+          </image>
+
+        </navigator>     
+
+      </view>
+
+    </block>
+
+    <view class="info" style="align:center;">
+      <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    </view>
+
+</scroll-view>

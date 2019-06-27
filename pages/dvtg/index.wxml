@@ -1,0 +1,44 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}</text>
+        </view>
+        <view class="count_bd">          
+                <text class="Info">{{iContent}}</text>
+                <text class="Info">{{iContent1}}</text>
+        </view>
+      </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">            
+            <checkbox-group bindchange="checkboxChange">
+              <view class="weui-cell" wx:for="{{items}}" wx:key="name">
+                <view class="weui-cell__hd" style="width:80%">
+                  {{item.name}}
+                </view>
+                <view class="weui-cell__hd" style="position:relative;left:2%">              
+                  <checkbox  value="{{item.value}}" checked="{{item.checked}}"/> {{item.value}}             
+                </view>
+              </view>
+            </checkbox-group>
+        </view>
+        
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>       
+
+    </form>
+
+    <text class="main_info">
+    *其他病因诊断包括：肌肉损伤、慢性水肿、浅静脉炎、血栓后综合征、关节炎、慢性静脉功能不全、蜂窝组织炎、腘窝囊肿、骨盆肿瘤、术后肿胀、多种混杂因素。
+    参考文献：
+1.Evaluation of D-dimer in the diagnosis of suspected deep vein thrombosis. N Engl J Med. 2003; 349(13):1227-35.
+2.A simple clinical model for the diagnosis of deep-vein thrombosis combined with impedance plethysmography: potential for an improvement in the diagnostic process. J Intern Med. 1998; 243(5):15-23. 
+    </text>
+
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+</scroll-view>

@@ -1,0 +1,12 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../lung/index' hover-class='navigator-hover'>肺癌分期工具</navigator>     
+    </view>
+    
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../thyroid/index' hover-class='navigator-hover'>甲状腺肿瘤分期工具</navigator>     
+    </view>
+
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+</scroll-view>

@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/TNM/thyroid/index",
+    
+    "pages/index/index",
+    "pages/me/index",
+    "pages/carb/index",
+    "pages/bed/index",
+    "pages/bs/index",
+    "pages/lca/index",
+    "pages/na/index",
+    "pages/fe/index",
+    "pages/about/index",
+    "pages/bmr/index",
+    "pages/pe/index",    
+    "pages/peg/index",    
+    "pages/pesi/index",    
+    "pages/ecog/index",
+    "pages/vrs/index",
+    "pages/PADUA/index",
+    "pages/cpadua/index",
+    "pages/gcr/index",    
+    "pages/hcr/index",
+    "pages/dvtg/index",
+    "pages/gyh/index",    
+    "pages/SDS/index",
+    "pages/SAS/index",    
+    "pages/SCL90/index",
+    "pages/beck/index",    
+
+    "pages/TNM/index/index",
+    "pages/TNM/lung/index"
+
+  
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#5973e7",
+    "backgroundColor": "#F2f2f2",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#7F8389",
+    "selectedColor": "#5973e7",
+    "borderStyle": "white",
+    "backgroundColor": "#F7F7F9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "vendor/assets/images/tb_2.png",
+        "selectedIconPath": "vendor/assets/images/tb_2_f.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "iconPath": "vendor/assets/images/tb_1.png",
+        "selectedIconPath": "vendor/assets/images/tb_1_f.png",
+        "text": "收藏"
+      },           
+      {
+        "pagePath": "pages/about/index",
+        "iconPath": "vendor/assets/images/tb_4.png",
+        "selectedIconPath": "vendor/assets/images/tb_4_f.png",
+        "text": "关于我们"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

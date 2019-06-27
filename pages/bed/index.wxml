@@ -1,0 +1,40 @@
+<!--index.wxml-->
+
+<template name="resultline">  
+  <view class="itemView" style="width:90%; display:flex;">     
+    <text style="width:14%;">α/β:</text>
+    <input id = "{{Num}}" style="border: 1px solid;border-color: lightblue;width:14%;" type="digit" name="{{Num}}" value = "{{alphabetavalue}}" bindinput ="AlphaBetaInput"/>
+    <text style="width:19%;">EQD2:</text>
+    <input class = "result" style="border: 1px solid;border-color: lightblue;width:19%;" disabled = "true" type="digit" name="ResultEQD2{{Num}}" value="{{eqd2value}}"/>
+    <text style="width:15%;">BED:</text>
+	  <input class = "result" style="border: 1px solid;border-color: lightblue;width:19%;" disabled = "true" type="digit" name="ResultBED{{Num}}" value="{{bedvalue}}"/>
+  </view>
+</template>
+
+<form bindsubmit="formSubmit">
+  <view class="container">
+
+    <view class="itemView" style="width:90%; display:flex;">  
+      <text style="width:40%;">分次剂量(Gy):</text>
+      <input style="border: 1px solid;border-color: lightblue;width:60%;" type="digit" name="Dosefx" placeholder="输入分次剂量" 
+        bindinput ="DosefxInput"/>
+    </view>
+
+    <view class="itemView" style="width:90%; display:flex;">  
+      <text style="width:40%;">总剂量(Gy):</text>
+      <input style="border: 1px solid;border-color: lightblue;width:60%;" type="digit" name="Dosetotal" placeholder="输入总剂量"              bindinput ="DosetotalInput"/>
+    </view>
+
+    <block wx:for="{{objectArray}}" wx:key="id">    
+      <template is="resultline" data="{{Num:item.id,alphabetavalue:item.alphabetavalue,eqd2value:item.eqd2value,bedvalue:item.bedvalue}}"/>
+    </block>
+
+    <view class="btns">
+      <button class="compute" formType="submit"> 计算 </button>
+    </view>
+    
+  </view>
+
+</form>
+
+<button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>

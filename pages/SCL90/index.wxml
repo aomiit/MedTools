@@ -1,0 +1,54 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:70%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange">  
+                  <label wx:for-index= "cellindex" wx:for="{{items}}" wx:key="name" style="display:flex;">
+                    <radio class="radio" value="{{index}}:{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>
+        
+
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+             <text class="Info">{{iScore}}分</text>
+        </view>
+        
+        <block wx:for="{{subScores}}">
+          <view class="count_bd">          
+             <text class="Info">{{item}}</text>         
+          </view>
+        </block>
+
+        <view class="count_bd">       
+            <text class="Info">本报告书内容是依当事人的问卷回答产生的结果。</text>                
+        </view>
+      </view>
+    </view>
+
+    <text class="main_info">
+    说明：按中国常模结果，如果您的SCL90总分超过160分，单项均分超过2分就应作进一步检查，标准分为大于200分说明你有很明显的心理问题，可求助于心理咨询，大于250分则比较严重，需要作医学上的详细检查，很可能要做针对性的心理治疗或在医生的指导下服药。
+
+    症状自评量表-SCL90是世界上最著名的心理健康测试量表之一，是当前使用最为广泛的精神障碍和心理疾病门诊检查量表。SCL90协助我们从十个方面来了解自己的心理健康程度。
+症状自评量表（Self-reporting Inventory)，又名90项症状清单（SCL-90），时也叫做Hopkin's症状清单（HSCL，编制年代早于SCL-90，作者为同一人，HCSL最早版编于1954年）。于1975年编制，其作者是德若伽提斯（L.R.Derogatis)。该量表共有90个项目，包含有较广泛的精神病症状学内容，从感觉、情感、思维、意识、行为直至生活习惯、人际关系、饮食睡眠等，均有涉及，并采用10个因子分别反映10个方面的心理症状情况。 
+    </text>
+
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+</scroll-view>

@@ -1,0 +1,83 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}分</text>
+        </view>
+        <view class="count_hd">          
+                <text class="Info">{{iContent}}</text>
+        </view>
+      </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">       
+            <view class="weui-cell">
+              <view class="weui-cell__bd">纵向位置: </view>
+                <radio-group class="radio-group" bindchange="T1radioChange">  
+                  <label style="display:flex;">
+                    <radio class="radio" key="t1" value="1">上/下极</radio>
+                    <radio class="radio" key="t2" value="2">中部</radio>     
+                  </label> 
+                </radio-group>
+            </view>
+
+            <view class="weui-cell">
+              <view class="weui-cell__bd">内外侧: </view>
+                <radio-group class="radio-group" bindchange="T2radioChange">   
+                  <label style="display:flex;">
+                    <radio class="radio" key="t1" value="1">外侧</radio>
+                    <radio class="radio" key="t2" value="2">内侧</radio>  
+                  </label>    
+                </radio-group>
+            </view>
+            <view class="weui-cell">
+              <view class="weui-cell__bd">与肾窦关系: </view>
+                <radio-group class="radio-group" bindchange="T3radioChange">   
+                  <label style="display:flex;">
+                    <radio class="radio" key="t1" value="1">无关</radio>
+                    <radio class="radio" key="t2" value="2">有关</radio>   
+                  </label>   
+                </radio-group>
+            </view>
+            <view class="weui-cell">
+              <view class="weui-cell__bd">与集合系统关系: </view>
+                <radio-group class="radio-group" bindchange="T4radioChange">   
+                  <label style="display:flex;">
+                    <radio class="radio" key="t1" value="1">无关</radio>
+                    <radio class="radio" key="t2" value="2">有关</radio>   
+                  </label>   
+                </radio-group>
+            </view>
+            <view class="weui-cell">
+              <view class="weui-cell__bd">外凸率: </view>
+                <radio-group class="radio-group" bindchange="T5radioChange">   
+                    <radio class="radio" key="t1" value="1">≥50%</radio>
+                    <radio class="radio" key="t2" value="2">{{'<'}}50%</radio>     
+                    <radio class="radio" key="t3" value="3">完全内陷</radio>  
+                </radio-group>
+            </view>
+            <view class="weui-cell">
+              <view class="weui-cell__bd">肿瘤直径: </view>
+                <radio-group class="radio-group" bindchange="T6radioChange">   
+                    <radio class="radio" key="t1" value="1">≤4.0cm</radio>
+                    <radio class="radio" key="t2" value="2">4.1-7.0cm</radio>     
+                    <radio class="radio" key="t3" value="3">>7.0cm</radio>   
+                </radio-group>
+            </view>                    
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>       
+
+    </form>
+
+    <text class="main_info">
+    参考文献：
+    Ficarra V, Novara G, Secco S, et al. Preoperative aspects and dimensions used for an anatomical (PADUA) classification of renal tumours in patients who are candidates for nephron-sparing surgery. Eur Urol 2009; 56:786–793
+    </text>
+
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+</scroll-view>

@@ -1,0 +1,24 @@
+<view class="container">    
+    <view class="content">
+
+        <official-account></official-account>
+
+        <view class="info">
+        <text>医学软件公众号：Medsoftware</text>
+        <image  class="index_banner_main" src="../../vendor/assets/images/medsoftWX.jpg"></image>
+        </view>
+
+        <view class="info">
+            <text>本工具的目的只是为了减少人工计算的繁琐，提高医务人员工作效率，结果仅供参考。</text>
+        </view>
+
+        <view class="info">
+            <text>我们的官网:www.aomiit.com</text>
+        </view>
+
+        <view class="info" style="align:center;">
+          <button style = "width:300rpx;align:center;" type="primary" open-type="contact">我有开发建议</button>
+        </view>
+
+    </view>
+</view>
