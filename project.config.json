@@ -20,7 +20,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
+	"libVersion": "2.7.2",
 	"appid": "wx70ad63b14d077682",
 	"projectname": "MedTools",
 	"cloudfunctionTemplateRoot": "",

@@ -8,30 +8,10 @@
     </view>
 
     <form class="main" bindreset="formReset">
-        <view class="weui-cells">
-                     
+        <view class="weui-cells">                    
+          
             <view class="weui-cell">
-              <view class="weui-cell__bd" style="position:relative;left:10%;">类别: </view>
-              <radio-group class="radio-group" bindchange="TypeChange">
-                  <label style="display:flex;">
-                    <radio class="radio" key="type1" value="isDifferentiated" checked="true">   分化型   </radio>  
-                    <radio class="radio" key="type2" value="isAnaplastic">   未分化   </radio>   
-                  </label>               
-              </radio-group>
-            </view>
-
-            <view wx:if="{{isDifferentiated}}" class="weui-cell">
-              <view class="weui-cell__bd" style="position:relative;left:10%;">年龄(周岁):</view>
-              <radio-group class="radio-group" bindchange="AgeChange">
-                  <label style="display:flex;">
-                    <radio class="radio" key="age1" value="D55" checked="true">{{'<'}}55</radio>   
-                    <radio class="radio" key="age2" value="U55">>=55</radio>  
-                  </label>               
-              </radio-group>
-            </view>
-
-            <view class="weui-cell">
-                <view  class="weui-cell__bd"  style="position:relative;left:10%;" >T:</view>
+                <view  class="weui-cell__bd"  style="position:relative;left:20%;" >T:</view>
 
                 <view class="weui-cell__bd">
                   <view class='list-msg2' bindtap='bindShowMsgT'>
@@ -42,7 +22,7 @@
             </view>
 
             <view class="weui-cell">
-                <view  class="weui-cell__bd"  style="position:relative;left:10%;" >N:</view>
+                <view  class="weui-cell__bd"  style="position:relative;left:20%;" >N:</view>
 
                 <view class="weui-cell__bd">
                   <view class='list-msg2' bindtap='bindShowMsgN'>
@@ -53,7 +33,7 @@
             </view>
 
             <view class="weui-cell">
-                <view  class="weui-cell__bd"  style="position:relative;left:10%;" >M:</view>
+                <view  class="weui-cell__bd"  style="position:relative;left:20%;" >M:</view>
 
                 <view class="weui-cell__bd">
                   <view class='list-msg2' bindtap='bindShowMsgM'>

@@ -1,0 +1,21 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <!-- <block wx:for="{{objectArray}}" wx:key="id">    
+
+      <view class="weui-cells weui-cell_access"> 
+        
+        <navigator wx:if="{{item.collected}}" url= "{{item.url}}" hover-class='navigator-hover'>
+          {{item.caption}}
+        </navigator>     
+
+      </view>
+
+    </block> -->
+
+    <view>
+      <web-view src="{{web_src}}"></web-view>
+    </view>
+
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+</scroll-view>

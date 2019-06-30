@@ -1,16 +1,16 @@
 {
   "pages": [
-    "pages/TNM/thyroid/index",
-    
+
     "pages/index/index",
     "pages/me/index",
+    "pages/nccn/index",
+    "pages/about/index",
     "pages/carb/index",
     "pages/bed/index",
     "pages/bs/index",
     "pages/lca/index",
     "pages/na/index",
-    "pages/fe/index",
-    "pages/about/index",
+    "pages/fe/index",    
     "pages/bmr/index",
     "pages/pe/index",    
     "pages/peg/index",    
@@ -27,11 +27,12 @@
     "pages/SAS/index",    
     "pages/SCL90/index",
     "pages/beck/index",    
-
+    
+    "pages/TNM/breast/index",
+    "pages/TNM/naso/index",
     "pages/TNM/index/index",
-    "pages/TNM/lung/index"
-
-  
+    "pages/TNM/lung/index",
+    "pages/TNM/thyroid/index"  
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -58,7 +59,14 @@
         "iconPath": "vendor/assets/images/tb_1.png",
         "selectedIconPath": "vendor/assets/images/tb_1_f.png",
         "text": "收藏"
-      },           
+      },       
+      {
+        "pagePath": "pages/nccn/index",
+        "iconPath": "vendor/assets/images/tb_3.png",
+        "selectedIconPath": "vendor/assets/images/tb_3_f.png",
+        "text": "NCCN"
+      },
+      
       {
         "pagePath": "pages/about/index",
         "iconPath": "vendor/assets/images/tb_4.png",

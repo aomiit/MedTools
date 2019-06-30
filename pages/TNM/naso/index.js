@@ -1,8 +1,8 @@
 //获取应用实例
 var app = getApp();
 
-var lungtnmdata = require('lungtnm.js').lungtnm[0];
-var activetnmcontent = lungtnmdata['lung8'];
+var tnmdata = require('tnm.js').tnm[0];
+var activetnmcontent = tnmdata['th8'];
 
 const iTs = []
 
@@ -63,7 +63,33 @@ Page({
     selectN:false,
     selectM: false,
     scrollTop: 0, 
+    isDifferentiated:true,
+    isUpper55:false,
   },
+
+  TypeChange: function (e) {
+    var iType = e.detail.value;
+    var isDiff = false;
+    if (iType =="isDifferentiated")
+    {
+      isDiff = true;
+    }
+    this.setData({
+      isDifferentiated: isDiff
+    })
+  },
+
+  AgeChange: function (e) {
+    var iType = e.detail.value;
+    var iUpper55 = false;
+    if (iType == "U55") {
+      iUpper55 = true;
+    }
+    this.setData({
+      isUpper55: iUpper55
+    })
+  },  
+
   onShareAppMessage: (res) => {
     if (res.from === 'button') {
       console.log("来自转发按钮");
@@ -74,7 +100,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/TNM/lung/index',
+      path: '/pages/carb/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -170,27 +196,62 @@ Page({
     })
   },
 
-  getresult: function(tablecontent) {
+  getresult: function (tnmcontent) {
+
+    var tablecontent = null;
+
     let data = this.data;
-    if (data.iT && data.iN && data.iM) {
-      var tablekey = data.iT + '_' + data.iN + '_' + data.iM;
-      if (data.iM != "M0")
+
+    var tablekey = null;
+
+
+    if(data.isDifferentiated)
+    {
+      if(data.isUpper55)
       {
+        tablecontent = tnmcontent.TableDU55;  
+
+        tablekey = data.iT + '_' + data.iN + '_' + data.iM;
+
+        if (data.iT == "T3a" || data.iT == "T3b" || data.iT == "T4a" || data.iT == "T4b") {
+          tablekey = data.iT + '_' + data.iM;
+        }
+        if (data.iM == "M1") {
+          tablekey = data.iM;
+        }
+      }
+      else
+      {
+        tablecontent = tnmcontent.TableDD55;  
         tablekey = data.iM;
       }
+    }
+    else
+    {
+      tablecontent = tnmcontent.TableA;  
 
-      if (tablecontent.hasOwnProperty(tablekey)) {
-        return {
-          key: tablekey,
-          result: tablecontent[tablekey]
-        };
-      } 
-      else {
-        return {
-          key: tablekey,
-          result: ''
-        };
+      tablekey = data.iT + '_' + data.iN + '_' + data.iM;
+
+      if (data.iT == "T3b" || data.iT == "T4a" || data.iT == "T4b") {
+        tablekey = data.iT + '_' + data.iM;
       }
+      if (data.iM == "M1") {
+        tablekey = data.iM;
+      }
+    }  
+
+    console.log(tablekey);
+    if (tablecontent.hasOwnProperty(tablekey)) {
+      return {
+        key: tablekey,
+        result: tablecontent[tablekey]
+      };
+    } 
+    else {
+      return {
+        key: tablekey,
+        result: ''
+      };
     }
 
     return '';
@@ -208,7 +269,7 @@ Page({
       return false;
     }
 
-    var re = this.getresult(activetnmcontent.Table);
+    var re = this.getresult(activetnmcontent);
     if (re.result != '') {
       var keyshow = re.key;
       keyshow = keyshow.replace(/_/g, '');
