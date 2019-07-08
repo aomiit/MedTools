@@ -1,6 +1,5 @@
 {
-  "pages": [
-
+  "pages": [    
     "pages/index/index",
     "pages/me/index",
     "pages/nccn/index",
@@ -27,7 +26,7 @@
     "pages/SAS/index",    
     "pages/SCL90/index",
     "pages/beck/index",    
-    
+    "pages/TNM/liver/index",
     "pages/TNM/breast/index",
     "pages/TNM/naso/index",
     "pages/TNM/index/index",

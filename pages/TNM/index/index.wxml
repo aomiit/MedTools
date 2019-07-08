@@ -7,6 +7,10 @@
       <navigator url='../thyroid/index' hover-class='navigator-hover'>甲状腺肿瘤分期工具</navigator>     
     </view>
 
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../liver/index' hover-class='navigator-hover'>肝癌分期工具</navigator>     
+    </view>
+
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
 </scroll-view>
