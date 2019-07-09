@@ -1,0 +1,82 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+       <view class="count_hd">            
+        <text class="Info" style='font-size: 40rpx;'>分期结果：</text>
+        <text class="Info" style='font-size: 40rpx;'>{{iKeyshow}}</text>
+        <text class="Info" style='font-size: 40rpx;'>{{iResult}}</text>
+      </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">
+                     
+            <view class="weui-cell">
+                <view  class="weui-cell__bd"  style="position:relative;left:10%;" >T:</view>
+
+                <view class="weui-cell__bd">
+                  <view class='list-msg2' bindtap='bindShowMsgT'>
+                    <text>{{iT || '请选择T分期'}}</text>
+                    <image style='height:35rpx;width:35rpx;' src='../../../vendor/assets/images/down.png'></image>
+                  </view>
+                </view>
+            </view>
+
+            <view class="weui-cell">
+                <view  class="weui-cell__bd"  style="position:relative;left:10%;" >N:</view>
+
+                <view class="weui-cell__bd">
+                  <view class='list-msg2' bindtap='bindShowMsgN'>
+                    <text>{{iN || '请选择N分期'}}</text>
+                    <image style='height:35rpx;width:35rpx;' src='../../../vendor/assets/images/down.png'></image>
+                  </view>
+                </view>
+            </view>
+
+            <view class="weui-cell">
+                <view  class="weui-cell__bd"  style="position:relative;left:10%;" >M:</view>
+
+                <view class="weui-cell__bd">
+                  <view class='list-msg2' bindtap='bindShowMsgM'>
+                    <text>{{iM || '请选择M分期'}}</text>
+                    <image style='height:35rpx;width:35rpx;' src='../../../vendor/assets/images/down.png'></image>
+                  </view>
+                </view>
+            </view>
+
+            <view class="select_box" wx:if="{{selectT}}">
+                <view wx:for="{{iTs}}" wx:key="value">    
+                  <view class="select_one" bindtap="mySelectT" data-name="{{item.value}}" value = "{{item.name}}">{{item.name}}</view>
+                </view>
+                <button class="clear" bindtap="onCancel">取消</button>
+            </view>
+
+            <view class="select_box" wx:if="{{selectN}}">
+                <view wx:for="{{iNs}}" wx:key="value">    
+                  <view class="select_one" bindtap="mySelectN" data-name="{{item.value}}" value = "{{item.name}}">{{item.name}}</view>
+                </view>
+                <button class="clear" bindtap="onCancel">取消</button>
+            </view>
+
+            <view class="select_box" wx:if="{{selectM}}">
+                <view wx:for="{{iMs}}" wx:key="value">    
+                  <view class="select_one" bindtap="mySelectM" data-name="{{item.value}}" value = "{{item.name}}">{{item.name}}</view>
+                </view>
+                <button class="clear" bindtap="onCancel">取消</button>
+            </view>
+        </view>
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>        
+    </form>
+
+    <text class="main_info">
+    适用于:肝细胞癌,纤维板层肝细胞癌。
+
+    不适用于:肝内胆管细胞癌，混合肝细胞-肝内胆管细胞癌，肉瘤。
+    </text>
+
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+</scroll-view>
