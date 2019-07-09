@@ -32,7 +32,9 @@
     "pages/TNM/naso/index",
     "pages/TNM/index/index",
     "pages/TNM/lung/index",
-    "pages/TNM/thyroid/index"  
+    "pages/TNM/thyroid/index",  
+    "pages/TNM/colorectal/index",
+    "pages/TNM/cervical/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
