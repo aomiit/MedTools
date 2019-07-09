@@ -100,7 +100,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/carb/index',
+      path: '/pages/TNM/breast/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
