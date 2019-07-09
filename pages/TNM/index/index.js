@@ -16,7 +16,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/PADUA/index',
+      path: '/pages/TNM/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功

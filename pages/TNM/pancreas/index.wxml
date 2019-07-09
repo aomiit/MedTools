@@ -72,9 +72,7 @@
     </form>
 
     <text class="main_info">
-    适用于:肝细胞癌,纤维板层肝细胞癌。
-
-    不适用于:肝内胆管细胞癌，混合肝细胞-肝内胆管细胞癌，肉瘤。
+    适用于:胰腺导管腺癌,腺泡细胞癌,导管内乳头状黏液性肿瘤伴有浸润癌,导管内管状乳头状肿瘤伴有浸润癌,胶样癌,黏液性囊性肿瘤伴有浸润癌,神经内分泌癌,胰母细胞瘤。
     </text>
 
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>

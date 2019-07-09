@@ -75,7 +75,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/TNM/liver/index',
+      path: '/pages/TNM/pancreas/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -185,8 +185,8 @@ Page({
 
       tablekey = data.iT + '_' + data.iN + '_' + data.iM;
 
-      if (data.iN == "N1") {
-        tablekey = data.iN + '_' + data.iM;
+      if (data.iT == "T4") {
+        tablekey = data.iT + '_' + data.iM;
       }
       if (data.iM == "M1") {
         tablekey = data.iM;
