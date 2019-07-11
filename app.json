@@ -34,7 +34,8 @@
     "pages/TNM/lung/index",
     "pages/TNM/thyroid/index",  
     "pages/TNM/colorectal/index",
-    "pages/TNM/cervical/index"
+    "pages/TNM/cervical/index",
+    "pages/TNM/npc/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
