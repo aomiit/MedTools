@@ -26,7 +26,11 @@
     <view class="weui-cells weui-cell_access"> 
       <navigator url='../npc/index' hover-class='navigator-hover'>鼻咽癌分期工具</navigator>     
     </view>
-    
+
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../stomach/index' hover-class='navigator-hover'>胃癌分期工具</navigator>     
+    </view>
+        
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
 </scroll-view>
