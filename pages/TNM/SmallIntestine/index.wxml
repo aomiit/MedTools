@@ -72,10 +72,10 @@
     </form>
 
     <text class="main_info">
-    适用于:所有原发于宫颈的恶性肿瘤。
+    适用于：十二指肠、空肠、回肠的腺癌。（不包括肉瘤，胃肠道间质肿瘤,淋巴瘤,类癌）。
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>    
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

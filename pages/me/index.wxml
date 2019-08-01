@@ -12,4 +12,6 @@
 
     </block>
 
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
 </scroll-view>

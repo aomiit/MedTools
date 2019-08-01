@@ -36,7 +36,8 @@
     "pages/TNM/colorectal/index",
     "pages/TNM/cervical/index",
     "pages/TNM/npc/index",
-    "pages/TNM/stomach/index"
+    "pages/TNM/stomach/index",
+    "pages/TNM/SmallIntestine/index"
 
   ],
   "window": {

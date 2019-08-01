@@ -75,6 +75,10 @@
     适用于：胃原发的肿瘤(腺癌最常见)。（不包括肉瘤，胃肠道间质肿瘤,淋巴瘤,神经内分泌肿瘤 G1/G2 级）。
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>    
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
 
 </scroll-view>

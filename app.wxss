@@ -134,3 +134,8 @@ button[plain]  {
     border-top: 1px solid #ddd;
     padding: 5px;
 }
+
+/* 外层组件的宽度可设置成100%或具体数值 */
+.adContainer {
+  width: 100%;
+}
