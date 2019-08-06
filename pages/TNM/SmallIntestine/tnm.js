@@ -6,17 +6,17 @@ var tnmlist = [
         "T": ["TX", "T0", "Tis", "T1a", "T1b", "T2", "T3", "T4"],
         "N": ["NX", "N0", "N1", "N2"]
       },
-      
+
       "Table": {
         "Tis_N0_M0": "0",        
-        "T1a_N0_M0": "I",
-        "T1b_N0_M0": "I",
-        "T2_N0_M0": "I",
-        "T3_N0_M0": "IIA",
-        "T4_N0_M0": "IIB",
-        "AnyT_N1_M0": "IIIA",
-        "AnyT_N2_M0": "IIIB",    
-        "AnyT_AnyN_M1": "IV"
+        "T1a_N0_M0": "Ⅰ",
+        "T1b_N0_M0": "Ⅰ",
+        "T2_N0_M0": "Ⅰ",
+        "T3_N0_M0": "ⅡA",
+        "T4_N0_M0": "ⅡB",
+        "AnyT_N1_M0": "ⅢA",
+        "AnyT_N2_M0": "ⅢB",    
+        "AnyT_AnyN_M1": "Ⅳ"
       },
       "M": {
         "M0":"无远处转移",

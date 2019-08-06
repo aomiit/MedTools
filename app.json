@@ -37,8 +37,11 @@
     "pages/TNM/cervical/index",
     "pages/TNM/npc/index",
     "pages/TNM/stomach/index",
-    "pages/TNM/SmallIntestine/index"
-
+    "pages/TNM/SmallIntestine/index",    
+    "pages/TNM/vulva/index",
+    "pages/TNM/uteri/index",
+    "pages/TNM/ovary/index",
+    "pages/TNM/vaginal/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

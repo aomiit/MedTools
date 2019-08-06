@@ -34,8 +34,23 @@
     <view class="weui-cells weui-cell_access"> 
       <navigator url='../SmallIntestine/index' hover-class='navigator-hover'>小肠癌分期工具</navigator>     
     </view>
-    
+
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../vaginal/index' hover-class='navigator-hover'>阴道癌分期工具</navigator>     
+    </view> 
+
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../vulva/index' hover-class='navigator-hover'>外阴癌分期工具</navigator>     
+    </view> 
+
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../uteri/index' hover-class='navigator-hover'>子宫体肿瘤分期工具</navigator>     
+    </view> 
         
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../ovary/index' hover-class='navigator-hover'>卵巢、输卵管肿瘤和原发性腹膜癌分期工具</navigator>     
+    </view> 
+
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
