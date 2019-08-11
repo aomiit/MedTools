@@ -75,7 +75,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/TNM/vaginal/index',
+      path: '/pages/TNM/trophoblastic/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -179,17 +179,13 @@ Page({
 
     var tablekey = null;
 
-    if (data.iT && data.iN && data.iM) {
+    if (data.iT && data.iM) {
       tablecontent = tnmcontent.Table;
 
-      tablekey = data.iT + '_' + data.iN + '_' + data.iM;
+      tablekey = data.iT + '_' + data.iM;
 
-      if (data.iT == "T4") {
-        tablekey = data.iT + '_' + "AnyN" + '_' + data.iM;
-      }
-
-      if (data.iM == "M1") {
-        tablekey = "AnyT" + '_' + "AnyN" + '_' + data.iM;
+      if (data.iM != "M0") {
+        tablekey = "AnyT" + '_' + data.iM;
       }
     }  
 
@@ -213,7 +209,7 @@ Page({
   onCompute: function () {
     let data = this.data;
 
-    if (!data.iT || !data.iN || !data.iM) {
+    if (!data.iT  || !data.iM) {
       wx.showModal({
         title: '提示',
         showCancel: false,
