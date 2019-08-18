@@ -12,6 +12,10 @@
     </view>
 
     <view class="weui-cells weui-cell_access"> 
+      <navigator url='../icc/index' hover-class='navigator-hover'>肝内胆管细胞癌分期工具</navigator>     
+    </view>
+
+    <view class="weui-cells weui-cell_access"> 
       <navigator url='../pancreas/index' hover-class='navigator-hover'>胰腺癌分期工具</navigator>     
     </view>
 
@@ -53,6 +57,10 @@
 
     <view class="weui-cells weui-cell_access"> 
       <navigator url='../trophoblastic/index' hover-class='navigator-hover'>滋养叶细胞肿瘤分期工具</navigator>     
+    </view> 
+
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../penis/index' hover-class='navigator-hover'>阴茎癌分期工具</navigator>     
     </view> 
 
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
