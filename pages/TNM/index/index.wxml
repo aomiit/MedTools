@@ -32,6 +32,14 @@
     </view>
 
     <view class="weui-cells weui-cell_access"> 
+      <navigator url='../nasal/index' hover-class='navigator-hover'>鼻腔和鼻窦肿瘤分期工具</navigator>     
+    </view>
+
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../hpvp16/index' hover-class='navigator-hover'>HPV相关性(P16+)口咽癌分期工具</navigator>     
+    </view>
+
+    <view class="weui-cells weui-cell_access"> 
       <navigator url='../stomach/index' hover-class='navigator-hover'>胃癌分期工具</navigator>     
     </view>
     

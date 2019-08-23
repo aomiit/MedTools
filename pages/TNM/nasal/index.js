@@ -75,7 +75,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/TNM/penis/index',
+      path: '/pages/TNM/nasal/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -184,12 +184,12 @@ Page({
 
       tablekey = data.iT + '_' + data.iN + '_' + data.iM;
 
-      if (data.iT == "T4") {
-        tablekey = data.iT + '_' + "AnyN" + '_' + data.iM;
+      if (data.iN == "N3a" || data.iN == "N3b") {
+        tablekey = "AnyT" + '_' + data.iN + '_' + data.iM;
       }
 
-      if (data.iN == "N3") {
-        tablekey = "AnyT" + '_' + data.iN  + '_' + data.iM;
+      if (data.iT == "T4b") {
+        tablekey = data.iT + '_' + "AnyN" + '_' + data.iM;
       }
 
       if (data.iM != "M0") {

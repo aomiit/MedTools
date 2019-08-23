@@ -44,6 +44,8 @@
     "pages/TNM/trophoblastic/index",
     "pages/TNM/penis/index",
     "pages/TNM/icc/index",
+    "pages/TNM/nasal/index",
+    "pages/TNM/hpvp16/index",
     "pages/TNM/vaginal/index"
   ],
   "window": {

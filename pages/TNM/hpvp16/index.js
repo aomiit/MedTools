@@ -75,7 +75,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/TNM/penis/index',
+      path: '/pages/TNM/hpvp16/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -183,14 +183,6 @@ Page({
       tablecontent = tnmcontent.Table;
 
       tablekey = data.iT + '_' + data.iN + '_' + data.iM;
-
-      if (data.iT == "T4") {
-        tablekey = data.iT + '_' + "AnyN" + '_' + data.iM;
-      }
-
-      if (data.iN == "N3") {
-        tablekey = "AnyT" + '_' + data.iN  + '_' + data.iM;
-      }
 
       if (data.iM != "M0") {
         tablekey = "AnyT" + '_' + "AnyN" + '_' + data.iM;
