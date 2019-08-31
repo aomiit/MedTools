@@ -26,6 +26,7 @@
     "pages/SAS/index",    
     "pages/SCL90/index",
     "pages/beck/index",    
+    "pages/CARS/index",    
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",

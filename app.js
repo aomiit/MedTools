@@ -29,8 +29,9 @@ App({
       { id: 19, url: '../gyh/index', caption: '肝硬化死亡率的Child-Pugh评分', collected: false }, 
       { id: 20, url: '../SDS/index', caption: 'SDS抑郁自评量表', collected: false }, 
       { id: 21, url: '../SAS/index', caption: 'SAS焦虑自评量表', collected: false }, 
-      { id: 22, url: '../SCL90/index', caption: 'SCL90症状自评量表', collected: false },       
-      { id: 23, url: '../beck/index', caption: '贝克抑郁自评量表', collected: false },  
+      { id: 22, url: '../SCL90/index', caption: 'SCL90症状自评量表', collected: false },    
+      { id: 23, url: '../beck/index', caption: '贝克抑郁自评量表', collected: false },   
+      { id: 24, url: '../CARS/index', caption: '儿童孤独症评定量表', collected: false }, 
       
             
     ]
