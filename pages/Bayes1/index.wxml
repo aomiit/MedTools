@@ -1,0 +1,131 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">患病率(%)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="w" type="number" value="{{hbl}}" maxlength="6" bindinput="onHBL"  
+                    placeholder="请输入"/>
+                </view>
+            </view>
+            
+            <view class="weui-cell">
+                <view class="weui-cell__bd">敏感性(%)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="sc" type="number" value="{{mgx}}" maxlength="6" bindinput="onMGX"           
+                    placeholder="请输入"/>
+                </view>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">特异性(%)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="a" type="number" value="{{tyx}}" maxlength="6" bindinput="onTYX"  
+                    placeholder="请输入"/>
+                </view>
+            </view>           
+
+        </view>
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>        
+        
+    </form>
+
+    <view class="weui-cells">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">真阳性(%)</view>
+            <view class="weui-cell__bd">{{zyx}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">假阳性(%)</view>
+            <view class="weui-cell__bd">{{jyx}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">真阴性(%)</view>
+            <view class="weui-cell__bd">{{zyingx}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">假阴性(%)</view>
+            <view class="weui-cell__bd">{{jyingx}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">阳性预测值(%)</view>
+            <view class="weui-cell__bd">{{yxycz}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">阴性预测值(%)</view>
+            <view class="weui-cell__bd">{{yingxycz}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">阳性似然比(%)</view>
+            <view class="weui-cell__bd">{{yxsrb}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">阴性似然比(%)</view>
+            <view class="weui-cell__bd">{{yingxsrb}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">检验前机率比值比(%)</view>
+            <view class="weui-cell__bd">{{jyqjlbzb}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">检验后阳性率比值比(%)</view>
+            <view class="weui-cell__bd">{{jyhyxlbzb}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">检验后阳性率(%)</view>
+            <view class="weui-cell__bd">{{jyhyxl}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">检验后阴性率比值比(%)</view>
+            <view class="weui-cell__bd">{{jyhyingxlbzb}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">检验后阴性率(%)</view>
+            <view class="weui-cell__bd">{{jyhyingxl}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">假阳性率(%)</view>
+            <view class="weui-cell__bd">{{jyxl}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">假阴性率(%)</view>
+            <view class="weui-cell__bd">{{jyingxl}}</view>
+        </view> 
+        <view class="weui-cell">
+            <view class="weui-cell__bd">总体准确度(%)</view>
+            <view class="weui-cell__bd">{{ztzqd}}</view>
+        </view> 
+    </view>
+
+    <text class="main_info">
+      真阳性 = 敏感性 * 患病率
+      假阳性 = (1 - 特异性) * (1 - 患病率)
+      真阴性 = 特异性 * (1 - 患病率)
+      假阴性 = (1 - 敏感性) * 患病率
+      阳性预测值 = 100 * 真阳性 / (真阳性 + 假阳性)
+      阴性预测值 = 100 * 真阴性 / (真阴性 + 假阴性)
+      阳性似然比 = 敏感性 / (1-特异性)
+      阴性似然比 = (1-敏感性) / 特异性
+      检验前机率比值比 = 患病率 / (1 - 患病率)
+      检验后阳性率比值比 = 检验前机率比值比 * 阳性似然比
+      检验后阳性率 = 检验后阳性率比值比 / (1 + 检验后阳性率比值比)
+      检验后阴性率比值比 = 检验前机率比值比 * 阴性似然比
+      检验后阴性率 = 检验后阴性率比值比 / (1 + 检验后阴性率比值比)
+      假阳性率 = 100 * 假阳性 / (假阳性 + 真阴性)
+      假阴性率 = 100 * 假阴性 / (真阳性 + 假阴性)
+      总体准确度 = 100 * (真阳性 + 真阴性)  
+    </text>
+    
+    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+
+</scroll-view>

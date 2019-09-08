@@ -32,6 +32,8 @@ App({
       { id: 22, url: '../SCL90/index', caption: 'SCL90症状自评量表', collected: false },    
       { id: 23, url: '../beck/index', caption: '贝克抑郁自评量表', collected: false },   
       { id: 24, url: '../CARS/index', caption: '儿童孤独症评定量表', collected: false }, 
+      { id: 25, url: '../Bayes1/index', caption: '贝叶斯统计Ⅰ', collected: false }, 
+      { id: 26, url: '../Bayes2/index', caption: '贝叶斯统计Ⅱ', collected: false }, 
       
             
     ]

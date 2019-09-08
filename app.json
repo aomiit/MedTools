@@ -27,6 +27,8 @@
     "pages/SCL90/index",
     "pages/beck/index",    
     "pages/CARS/index",    
+    "pages/Bayes1/index", 
+    "pages/Bayes2/index",    
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",
