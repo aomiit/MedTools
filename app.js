@@ -82,7 +82,7 @@ App({
       method: 'POST',
       login: true,
       success(res){
-        console.log('程序配置项', res);
+        //console.log('程序配置项', res);
         let data=res.data.data;
         if (res.data.success) {
           that.globalData.bannerList=data.banner;

@@ -9,7 +9,7 @@ Page({
     onLoad: function() {
         let that=this;
         app.getAppConfig(function(config){
-            console.log('about-config',config)
+            //console.log('about-config',config)
             that.setData({
                 linkList:config.linkList
             })

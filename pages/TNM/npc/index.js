@@ -10,9 +10,9 @@ if (activetnmcontent.hasOwnProperty("orderedKeys")) {
   //展示T
   for (var x in activetnmcontent.orderedKeys['T']) {
     var value = activetnmcontent.orderedKeys['T'][x];
-    console.log(value)
+    //console.log(value)
     var showvalue = value+":"+activetnmcontent['T'][value];
-    console.log(showvalue)
+    //console.log(showvalue)
 
     let item = { name: showvalue, value: value }
     iTs.push(item)
@@ -25,9 +25,9 @@ if (activetnmcontent.hasOwnProperty("orderedKeys")) {
   //展示T
   for (var x in activetnmcontent.orderedKeys['N']) {
     var value = activetnmcontent.orderedKeys['N'][x];
-    console.log(value)
+    //console.log(value)
     var showvalue = value + ":" + activetnmcontent['N'][value];
-    console.log(showvalue)
+    //console.log(showvalue)
 
     let item = { name: showvalue, value: value }
     iNs.push(item)
@@ -40,9 +40,9 @@ if (activetnmcontent.hasOwnProperty("orderedKeys")) {
   //展示T
   for (var x in activetnmcontent.orderedKeys['M']) {
     var value = activetnmcontent.orderedKeys['M'][x];
-    console.log(value)
+    //console.log(value)
     var showvalue = value + ":" + activetnmcontent['M'][value];
-    console.log(showvalue)
+    //console.log(showvalue)
 
     let item = { name: showvalue, value: value }
     iMs.push(item)
@@ -67,11 +67,11 @@ Page({
 
   onShareAppMessage: (res) => {
     if (res.from === 'button') {
-      console.log("来自转发按钮");
-      console.log(res.target);
+      //console.log("来自转发按钮");
+      //console.log(res.target);
     }
     else {
-      console.log("来自转发菜单")
+      //console.log("来自转发菜单")
     }
     return {
       title: '好用的小程序分享给您!',
@@ -101,7 +101,7 @@ Page({
       withShareTicket: true
     })
 
-    //console.log(activetnmcontent)
+    ////console.log(activetnmcontent)
   },
   bindShowMsgT: function () {
     this.setData({
@@ -155,7 +155,7 @@ Page({
   
   //清空重置
   formReset: function () {
-    console.log('reset触发')
+    //console.log('reset触发')
     this.setData({
       iT: null,
       iN: null,
@@ -192,7 +192,7 @@ Page({
       }
     }  
 
-    console.log(tablekey);
+    //console.log(tablekey);
     if (tablecontent.hasOwnProperty(tablekey)) {
       return {
         key: tablekey,
@@ -226,9 +226,9 @@ Page({
       var keyshow = re.key;
       keyshow = keyshow.replace(/_/g, '');
 
-      // console.log(re);
+      // //console.log(re);
 
-      // console.log(keyshow);
+      // //console.log(keyshow);
 
       var result = ':    ' + re.result + '期';
             
