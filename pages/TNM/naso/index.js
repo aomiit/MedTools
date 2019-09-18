@@ -100,7 +100,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/carb/index',
+      path: '/pages/TNM/naso/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -126,7 +126,7 @@ Page({
       withShareTicket: true
     })
 
-    ////console.log(activetnmcontent)
+    //console.log(activetnmcontent)
   },
   bindShowMsgT: function () {
     this.setData({
@@ -180,7 +180,7 @@ Page({
   
   //清空重置
   formReset: function () {
-    //console.log('reset触发')
+    console.log('reset触发')
     this.setData({
       iT: null,
       iN: null,
@@ -274,9 +274,9 @@ Page({
       var keyshow = re.key;
       keyshow = keyshow.replace(/_/g, '');
 
-      // //console.log(re);
+      // console.log(re);
 
-      // //console.log(keyshow);
+      // console.log(keyshow);
 
       var result = ':    ' + re.result + '期';
             

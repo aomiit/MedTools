@@ -126,7 +126,7 @@ Page({
       withShareTicket: true
     })
 
-    ////console.log(activetnmcontent)
+    //console.log(activetnmcontent)
   },
   bindShowMsgT: function () {
     this.setData({
@@ -274,9 +274,9 @@ Page({
       var keyshow = re.key;
       keyshow = keyshow.replace(/_/g, '');
 
-      // //console.log(re);
+      // console.log(re);
 
-      // //console.log(keyshow);
+      // console.log(keyshow);
 
       var result = ':    ' + re.result + '期';
             

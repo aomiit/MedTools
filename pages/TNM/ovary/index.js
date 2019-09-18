@@ -75,7 +75,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/TNM/SmallIntestine/index',
+      path: '/pages/TNM/ovary/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -101,7 +101,7 @@ Page({
       withShareTicket: true
     })
 
-    ////console.log(activetnmcontent)
+    //console.log(activetnmcontent)
   },
   bindShowMsgT: function () {
     this.setData({

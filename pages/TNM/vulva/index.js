@@ -101,7 +101,7 @@ Page({
       withShareTicket: true
     })
 
-    ////console.log(activetnmcontent)
+    //console.log(activetnmcontent)
   },
   bindShowMsgT: function () {
     this.setData({
