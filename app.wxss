@@ -139,3 +139,14 @@ button[plain]  {
 .adContainer {
   width: 100%;
 }
+
+.codeBtn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #bbb;
+  width: 30%;
+  font-size: 26rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}

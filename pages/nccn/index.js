@@ -4,7 +4,7 @@ var app = getApp();
 Page({
   data: {
     objectArray: app.globalData.objectArray,
-    web_src: "https://nccn.f8geek.com/interface4wechat/nccn_category?auth_code=WZUQPSNS", //webview内嵌的url 
+    web_src: "http://nccn.f8geek.com:1997/wx/cate2_init?code=rx29wqklkts1rhpMPiRUsB768CqYNWb4t", //webview内嵌的url 
   },
   onShareAppMessage: (res) => {
     if (res.from === 'button') {

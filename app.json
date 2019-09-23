@@ -32,6 +32,7 @@
     "pages/PPV/index",
     "pages/APACHE2/index",
     "pages/GCS/index",
+    "pages/IQ1/index",
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",
@@ -90,13 +91,6 @@
     ]     
   },
   "debug": true,
-  "sitemapLocation": "sitemap.json",
-
-  "//": {
-        "pagePath": "pages/nccn/index",
-        "iconPath": "vendor/assets/images/tb_3.png",
-        "selectedIconPath": "vendor/assets/images/tb_3_f.png",
-        "text": "NCCN"
-      }
+  "sitemapLocation": "sitemap.json"
 }
 
