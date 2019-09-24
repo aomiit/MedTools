@@ -53,7 +53,9 @@
     "pages/TNM/icc/index",
     "pages/TNM/nasal/index",
     "pages/TNM/hpvp16/index",
-    "pages/TNM/vaginal/index"
+    "pages/TNM/vaginal/index",
+    "pages/TNM/kidney/index"       
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
