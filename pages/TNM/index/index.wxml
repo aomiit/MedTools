@@ -75,6 +75,9 @@
       <navigator url='../kidney/index' hover-class='navigator-hover'>肾肿瘤分期工具</navigator>     
     </view> 
     
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../renal/index' hover-class='navigator-hover'>肾盂和输尿管癌分期工具</navigator>     
+    </view> 
 
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
