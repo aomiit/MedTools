@@ -54,8 +54,10 @@
     "pages/TNM/nasal/index",
     "pages/TNM/hpvp16/index",
     "pages/TNM/vaginal/index",
-    "pages/TNM/kidney/index" ,
-    "pages/TNM/renal/index"
+    "pages/TNM/kidney/index",
+    "pages/TNM/bladder/index",    
+    "pages/TNM/renal/index",
+    "pages/TNM/urethra/index"
     
   ],
   "window": {
