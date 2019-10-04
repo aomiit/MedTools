@@ -86,6 +86,18 @@
     <view class="weui-cells weui-cell_access"> 
       <navigator url='../urethra/index' hover-class='navigator-hover'>尿道癌</navigator>     
     </view>
+
+    <view class="weui-cells weui-cell_access"> 
+      <navigator url='../pancreasneuro/index' hover-class='navigator-hover'>胰腺神经内分泌肿瘤</navigator>     
+    </view>
+
+    <view class="weui-cells weui-cell_access">
+      <navigator url='../gastricneuro/index' hover-class='navigator-hover'>胃神经内分泌肿瘤</navigator>     
+    </view>
+
+    <view class="weui-cells weui-cell_access">
+      <navigator url='../duodenumneuro/index' hover-class='navigator-hover'>十二指肠和Vater壶腹神经内分泌肿瘤</navigator>     
+    </view>
     
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 

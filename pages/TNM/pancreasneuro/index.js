@@ -75,7 +75,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/TNM/pancreas/index',
+      path: '/pages/TNM/pancreasneuro/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -185,11 +185,11 @@ Page({
 
       tablekey = data.iT + '_' + data.iN + '_' + data.iM;
 
-      if (data.iT == "T4") {
-        tablekey = data.iT + '_' + "AnyN" + '_' + data.iM;
+      if (data.iN == "N1" ) {
+        tablekey = "AnyT" + '_' + data.iN + '_' + data.iM;
       }
 
-      if (data.iM == "M1") {
+      if (data.iM == "M1" || data.iM == "M1a" || data.iM == "M1b" || data.iM == "M1c") {
         tablekey = "AnyT" + '_' + "AnyN" + '_' + data.iM;
       }
     }  

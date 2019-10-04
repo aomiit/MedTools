@@ -57,6 +57,9 @@
     "pages/TNM/kidney/index",
     "pages/TNM/bladder/index",    
     "pages/TNM/renal/index",
+    "pages/TNM/pancreasneuro/index",
+    "pages/TNM/gastricneuro/index",
+    "pages/TNM/duodenumneuro/index",
     "pages/TNM/urethra/index"
     
   ],
