@@ -38,6 +38,8 @@ App({
       { id: 27, url: '../PPV/index', caption: '单一检测阳性预测值', collected: false },
       { id: 28, url: '../GCS/index', caption: 'GLASGOW昏迷评分', collected: false },
       { id: 29, url: '../APACHE2/index', caption: 'APACHEⅡ评分系统和死亡率评估', collected: false }, 
+      { id: 30, url: '../Alvarado/index', caption: '2016版Alvarado评分', collected: false }, 
+      
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
     ]
