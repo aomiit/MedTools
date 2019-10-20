@@ -5,9 +5,10 @@ page {
     height: 100%;
 }
 .container {
-    min-height: 90%;
+  width: 100%;
+  min-height: 90%;
   justify-content: space-between;
-    background: #F4F4F4
+  background: #F4F4F4
 }
 .fr{float: right}
 .black{
