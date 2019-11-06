@@ -39,7 +39,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">身高(厘米)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="a" type="number" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入年龄"/>
+                    <input class="weui-input" id="a" type="number" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入身高"/>
                 </view>
             </view>
             <view class="weui-cell">

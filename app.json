@@ -34,6 +34,7 @@
     "pages/GCS/index",
     "pages/IQ1/index",
     "pages/Alvarado/index",
+    "pages/eGFR/index",
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",
