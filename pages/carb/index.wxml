@@ -2,7 +2,7 @@
     <view class="index_banner">
       <view class="count_hd">    
         <view class="count_bd">           
-                <text class="Info">GFR(毫升/分钟)</text>
+                <text class="Info">CrCl(毫升/分钟)</text>
                 <text class="Info">{{iGFR}}</text>
         </view>
 
@@ -73,9 +73,9 @@
     </form>
 
     <text class="main_info">公式:
-        GFR男性=(((140-岁）/血肌酐）*1）/（体重（公斤）/72）
-        GFR女性=(((140-岁）/血肌酐）*0.85）/（体重（公斤）/72）
-        卡铂剂量=AUC*（GFR+25）
+        CrCl男性=(((140-岁）/血肌酐）*1）/（体重（公斤）/72）
+        CrCl女性=(((140-岁）/血肌酐）*0.85）/（体重（公斤）/72）
+        卡铂剂量=AUC*（CrCl+25）
     </text>
 
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>

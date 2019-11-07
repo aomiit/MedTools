@@ -3,36 +3,35 @@ var app = getApp();
 
 const iFormulas= [];
 
-let item = { name: 'CKD-EPIcr', value: 0};
+let item = { name: 'CKD-EPI肌酐(2009)公式', value: 0};
 iFormulas.push(item);
-item = { name: 'CKD-EPIcys', value: 1 };
+item = { name: 'CKD-EPI胱抑素(2012)公式', value: 1 };
 iFormulas.push(item);
-item = { name: 'CKD-EPIcr-cys C', value: 2 };
+item = { name: 'CKD-EPI肌酐-胱抑素(2012)公式', value: 2 };
 iFormulas.push(item);
-item = { name: 'MDRD', value:3 };
+item = { name: 'MDRD公式', value:3 };
 iFormulas.push(item);
-item = { name: 'Cockcroft-Gault', value: 4 };
+item = { name: '国人改良MDRD公式', value: 4 };
 iFormulas.push(item);
-item = { name: 'Jelliffe', value: 5 };
+item = { name: 'Jelliffe公式', value: 5 };
 iFormulas.push(item); 
-item = { name: '国人简化MDRD公式', value:6 };
-iFormulas.push(item);
+
 
 Page({
   data: {
     iFormulas: iFormulas,
     biRace: true,
-    biHeight: true,
     biC: true,
+    biSC:true,
 
     iFormula: -1,
-    iRace:'NonBlack',
-    iSex:'Male',    
+    iRace:'nonblack',
+    iSex:'male',    
     iAge: null,
     iHeight: null,
     iWeight:null,
     iSC:null, 
-    iType: 'Mol',      
+    iType: 'Mg',      
     iC: null, 
 
     iGFR173:0,
@@ -97,7 +96,15 @@ Page({
         })
       }
     })
-
+    wx.getStorage({
+      key: 'iHeight',
+      success: function (res) {
+        let iHeight = res.data;
+        that.setData({
+          iHeight: iHeight,
+        })
+      }
+    })
     wx.getStorage({
       key: 'iSC',
       success: function (res) {
@@ -155,38 +162,52 @@ Page({
       case 0:
         this.setData({
           biRace: false,
-          biHeight: false,
-          biC: true
+          biC: true,
+          biSC:false
         })
         break;
       case 1:
-
+        this.setData({
+          biRace: true,
+          biC: false,
+          biSC: true
+        })
         break;
       case 2:
-
+        this.setData({
+          biRace: false,
+          biC: false,
+          biSC: false
+        })
         break;
       case 3:
-
+        this.setData({
+          biRace: false,
+          biC: true,
+          biSC: false
+        })
         break;
       case 4:
-
+        this.setData({
+          biRace: true,
+          biC: true,
+          biSC: false
+        })
         break;
 
       case 5:
-
-        break;
-
-      case 6:
-
-        break;
-      case 7: 
+        this.setData({
+          biRace: true,
+          biC: true,
+          biSC: false
+        })     
 
         break;
       default:
         this.setData({
           biRace: true,
-          biHeight: true,
-          biC: true
+          biC: true,
+          biSC: false
         })
     }
   },
@@ -232,86 +253,132 @@ Page({
     console.log('reset触发')
     this.setData({
       iFormula: -1,
-      iRace: 'NonBlack',
-      iSex: 'Male',
+      iRace: 'nonblack',
+      iSex: 'male',
       iAge: null,
       iHeight: null,
       iWeight: null,
       iSC: null,
-      iType: 'Mol',
-      iC: null
+      iType: 'Mg',
+      iC: null,
+      iGFR: null,
+      iGFR173: null
     })
   },
 
-  calCKDEPIcr: function (scrType, scr, age, gender, race, heightcm, weightcm, scys)
+  calCKDEPIcr: function (iForm,scrType, scr, age, gender, race, heightcm, weightcm, scys)
   {
-      if (scrType == "mmol")
-        scr = scr / 88.4;
+    if (scrType == "mmol"){
+      scr = scr / 88.4;
+    }
+      
+    var kappa = (gender == "female" ? 0.7 : 0.9);
 
-      var kappa = (gender == "female" ? 0.7 : 0.9);
+    var mdrd =
+      175 * Math.pow(scr, -1.154) *
+      Math.pow(age, -0.203) *
+      (gender == "female" ? 0.742 : 1) *
+      (race == "black" ? 1.212 : 1);
+    
+    var mdrdcn =
+      186 * Math.pow(scr, -1.154) *
+      Math.pow(age, -0.203) *
+      (gender == "female" ? 0.742 : 1);
 
-      var mdrd =
-        175 * Math.pow(scr, -1.154) *
-        Math.pow(age, -0.203) *
-        (gender == "female" ? 0.742 : 1) *
-        (race == "black" ? 1.212 : 1);
+    var alpha = (gender == "female" ? -0.329 : -0.411);
 
-      var alpha = (gender == "female" ? -0.329 : -0.411);
+    var creatinine =
+      141 * Math.pow(Math.min(scr / kappa, 1), alpha) *
+      Math.pow(Math.max(scr / kappa, 1), -1.209) *
+      Math.pow(0.993, age) *
+      (gender == "female" ? 1.018 : 1) *
+      (race == "black" ? 1.159 : 1);
 
-      var creatinine =
-        141 * Math.pow(Math.min(scr / kappa, 1), alpha) *
-        Math.pow(Math.max(scr / kappa, 1), -1.209) *
-        Math.pow(0.993, age) *
-        (gender == "female" ? 1.018 : 1) *
-        (race == "black" ? 1.159 : 1);
+    alpha = (gender == "female" ? -0.248 : -0.207);
 
-      alpha = (gender == "female" ? -0.248 : -0.207);
+    var crcys =
+      135 * Math.pow(Math.min(scr / kappa, 1), alpha) *
+      Math.pow(Math.max(scr / kappa, 1), -0.601) *
+      Math.pow(Math.min(scys / 0.8, 1), -0.375) *
+      Math.pow(Math.max(scys / 0.8, 1), -0.711) *
+      Math.pow(0.995, age) *
+      (gender == "female" ? 0.969 : 1) *
+      (race == "black" ? 1.08 : 1);
 
-      var crcys =
-        135 * Math.pow(Math.min(scr / kappa, 1), alpha) *
-        Math.pow(Math.max(scr / kappa, 1), -0.601) *
-        Math.pow(Math.min(scys / 0.8, 1), -0.375) *
-        Math.pow(Math.max(scys / 0.8, 1), -0.711) *
-        Math.pow(0.995, age) *
-        (gender == "female" ? 0.969 : 1) *
-        (race == "black" ? 1.08 : 1);
+    var bsa = Math.pow(weightcm, 0.425) * Math.pow(heightcm, 0.725) * 0.007184;
 
-      var cystatin =
-        133 *
-        Math.pow(Math.min(scys / 0.8, 1), -0.499) *
-        Math.pow(Math.max(scys / 0.8, 1), -1.328) *
-        Math.pow(0.996, age) *
-        (gender == "female" ? 0.932 : 1);
+    var diff = age % 10;
+    var mage = diff > 0 ?  age + 10 - diff : age;
+    var jelliffe = ((98 - 0.8 * (age - 20)) * bsa) / (scr * 1.73) * (gender == "female" ? 0.9 : 1) ;
+
+    var cystatin =
+      133 *
+      Math.pow(Math.min(scys / 0.8, 1), -0.499) *
+      Math.pow(Math.max(scys / 0.8, 1), -1.328) *
+      Math.pow(0.996, age) *
+      (gender == "female" ? 0.932 : 1);
 
 
-      var secondMultiplier =
-        (
-          Math.pow(weightcm, 0.425) *
-          Math.pow(heightcm, 0.725) *
-          0.007184
-        ) / 1.73;
+    var secondMultiplier = bsa / 1.73;
 
-      var mdrd2 = mdrd * secondMultiplier;
-      var creatinine2 = creatinine * secondMultiplier;
-      var cystatin2 = cystatin * secondMultiplier;
-      var crcys2 = crcys * secondMultiplier;
+    var mdrd2 = mdrd * secondMultiplier;
+    var mdrdcn2 = mdrdcn * secondMultiplier;
+    var creatinine2 = creatinine * secondMultiplier;
+    var cystatin2 = cystatin * secondMultiplier;
+    var crcys2 = crcys * secondMultiplier;
 
-      var digits = 1;
+    var digits = 1;
 
-      mdrd = Math.round(mdrd * digits) / digits;
-      creatinine = Math.round(creatinine * digits) / digits;
-      cystatin = Math.round(cystatin * digits) / digits;
-      crcys = Math.round(crcys * digits) / digits;
+    mdrd = Math.round(mdrd * digits) / digits;
+    mdrdcn = Math.round(mdrdcn * digits) / digits;
+    creatinine = Math.round(creatinine * digits) / digits;
+    cystatin = Math.round(cystatin * digits) / digits;
+    crcys = Math.round(crcys * digits) / digits;
 
-      mdrd2 = Math.round(mdrd2 * digits) / digits;
-      creatinine2 = Math.round(creatinine2 * digits) / digits;
-      cystatin2 = Math.round(cystatin2 * digits) / digits;
-      crcys2 = Math.round(crcys2 * digits) / digits;
+    mdrd2 = Math.round(mdrd2 * digits) / digits;
+    mdrdcn2 = Math.round(mdrdcn2 * digits) / digits;  
+    creatinine2 = Math.round(creatinine2 * digits) / digits;
+    cystatin2 = Math.round(cystatin2 * digits) / digits;
+    crcys2 = Math.round(crcys2 * digits) / digits;
 
-    this.setData({
-      iGFR173: creatinine.toFixed(0),
-      iGFR: creatinine2.toFixed(0),
-    })
+    jelliffe = Math.round(jelliffe * digits) / digits;
+
+    if (iForm==0){
+      this.setData({
+        iGFR173: creatinine.toFixed(0),
+        iGFR: creatinine2.toFixed(0),
+      })
+    }
+    else if (iForm == 1) {
+      this.setData({
+        iGFR173: cystatin.toFixed(0),
+        iGFR: cystatin2.toFixed(0),
+      })
+    }
+    else if (iForm == 2) {
+      this.setData({
+        iGFR173: crcys.toFixed(0),
+        iGFR: crcys2.toFixed(0),
+      })
+    }
+    else if (iForm == 3) {
+      this.setData({
+        iGFR173: mdrd.toFixed(0),
+        iGFR: mdrd2.toFixed(0),
+      })
+    }  
+    else if (iForm == 4) {
+      this.setData({
+        iGFR173: mdrdcn.toFixed(0),
+        iGFR: mdrdcn2.toFixed(0),
+      })
+    }       
+    else if(iForm == 5) {
+      this.setData({
+        iGFR173: null,
+        iGFR: jelliffe.toFixed(0),
+      })
+    } 
   },
 
   calGFR: function () {
@@ -342,15 +409,15 @@ Page({
         duration: 2000
       });
       return false;
-    }
-    else if (sc == '') {
+    }   
+    else if (h == '') {
       wx.showToast({
-        title: '输入血肌酐',
+        title: '选择身高',
         icon: 'failed',
         duration: 2000
       });
       return false;
-    }
+    }  
     else if (iform < 0) {
       wx.showToast({
         title: '选择公式',
@@ -360,7 +427,7 @@ Page({
       return false;
     }
     else {
-      if( (iSex != "Male") && (iSex != "Female") )
+      if( (iSex != "male") && (iSex != "female") )
       {
         wx.showToast({
           title: '输入性别',
@@ -370,11 +437,23 @@ Page({
         return false;
       }
 
-      if (iform == 0)
+      if(iform !=1)
       {
-        if (h == '') {
+        if (sc == '') {
           wx.showToast({
-            title: '选择身高',
+            title: '输入血肌酐',
+            icon: 'failed',
+            duration: 2000
+          });
+          return false;
+        }
+      }
+
+      if (iform == 1 || iform == 2 )
+      {
+        if (iC== '') {
+          wx.showToast({
+            title: '输入胱抑素',
             icon: 'failed',
             duration: 2000
           });
@@ -386,6 +465,7 @@ Page({
       w = parseFloat(w);
       h = parseFloat(h);
       sc = parseFloat(sc);  
+      iC = parseFloat(iC);
 
       if (a <= 0) {
         wx.showToast({
@@ -420,43 +500,14 @@ Page({
         return false;
       }
       
-
-      switch (iform) {
-        case 0:
-          this.calCKDEPIcr(iType, sc, a, iSex, iRace, h, w,0);
-          break;
-        case 1:
-
-          break;
-        case 2:
-
-          break;
-        case 3:
-
-          break;
-        case 4:
-
-          break;
-
-        case 5:
-
-          break;
-
-        case 6:
-
-          break;
-        case 7:
-
-          break;
-        default:        
-      }      
+      this.calCKDEPIcr(iform, iType, sc, a, iSex, iRace, h, w, iC);          
     }
   },
 
   onCompute: function () {
     let data = this.data;
 
-    if (!data.iSC || !data.iWeight || !data.iAge || !data.iSex) {
+    if (!data.iWeight || !data.iAge || !data.iSex || !data.iHeight) {
       wx.showModal({
         title: '提示',
         showCancel: false,
@@ -465,9 +516,9 @@ Page({
       return false;
     }
    
-    if (data.iFormula == 0)
+    if (data.iFormula == 0 )
     {
-      if (!data.iRace || !data.iHeight) {
+      if (!data.iSC ||!data.iRace ) {
         wx.showModal({
           title: '提示',
           showCancel: false,
@@ -477,6 +528,59 @@ Page({
       }
     }
 
+    if (data.iFormula == 1 ) {
+      if (!data.iC ) {
+        wx.showModal({
+          title: '提示',
+          showCancel: false,
+          content: '您有选项未填写',
+        })
+        return false;
+      }
+    }
+
+    if (data.iFormula == 2) {
+      if (!data.iSC ||!data.iRace || !data.iC) {
+        wx.showModal({
+          title: '提示',
+          showCancel: false,
+          content: '您有选项未填写',
+        })
+        return false;
+      }
+    }
+
+    if (data.iFormula == 3) {
+      if (!data.iSC ||!data.iRace ) {
+        wx.showModal({
+          title: '提示',
+          showCancel: false,
+          content: '您有选项未填写',
+        })
+        return false;
+      }
+    }
+
+    if (data.iFormula == 4) {
+      if (!data.iSC ) {
+        wx.showModal({
+          title: '提示',
+          showCancel: false,
+          content: '您有选项未填写',
+        })
+        return false;
+      }
+    }
+    if (data.iFormula == 5) {
+      if (!data.iSC ) {
+        wx.showModal({
+          title: '提示',
+          showCancel: false,
+          content: '您有选项未填写',
+        })
+        return false;
+      }
+    }
     wx.setStorage({
       key: "iAge",
       data: data.iAge
@@ -484,6 +588,10 @@ Page({
     wx.setStorage({
       key: "iWeight",
       data: data.iWeight
+    })
+    wx.setStorage({
+      key: "iHeight",
+      data: data.iHeight
     })
     wx.setStorage({
       key: "iSC",

@@ -55,7 +55,7 @@
                 </view>
             </view>
 
-            <view class="weui-cell" hidden="{{biHeight}}">
+            <view class="weui-cell">
                 <view class="weui-cell__bd">身高(厘米)</view>
                 <view class="weui-cell__bd">
                     <input class="weui-input" id="a" type="number" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入身高"/>
@@ -68,8 +68,8 @@
                     <input class="weui-input" id="w" type="number" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  placeholder="请输入体重"/>
                 </view>
             </view>
-            
-            <view class="weui-cell">
+ 
+            <view class="weui-cell" hidden="{{biSC}}">
                 <view class="weui-cell__bd" style="width:200rpx">血肌酐</view>
                 <view class="weui-cell__bd" style="width:350rpx">
                   <input class="weui-input" id="sc" type="digit" value="{{iSC}}" maxlength="6" bindinput="oniSC"  placeholder="输入血肌酐值"/>
@@ -89,10 +89,7 @@
                 <view class="weui-cell__bd">
                     <input class="weui-input" id="w" type="number" value="{{iC}}" maxlength="6" bindinput="oniC"  placeholder="请输入胱抑素"/>
                 </view>
-            </view>
-            
-
-
+            </view>           
 
         </view>
 
@@ -102,10 +99,9 @@
         </view>        
     </form>
 
-    <text class="main_info">公式:
-        GFR男性=(((140-岁）/血肌酐）*1）/（体重（公斤）/72）
-        GFR女性=(((140-岁）/血肌酐）*0.85）/（体重（公斤）/72）
-        卡铂剂量=AUC*（GFR+25）
+    <text class="main_info">
+    成人适用。
+    公式详见参见 医学软件 公众号文章。      
     </text>
 
     <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
