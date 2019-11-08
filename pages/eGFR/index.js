@@ -5,9 +5,9 @@ const iFormulas= [];
 
 let item = { name: 'CKD-EPI肌酐(2009)公式', value: 0};
 iFormulas.push(item);
-item = { name: 'CKD-EPI胱抑素(2012)公式', value: 1 };
+item = { name: 'CKD-EPI胱抑素C(2012)公式', value: 1 };
 iFormulas.push(item);
-item = { name: 'CKD-EPI肌酐-胱抑素(2012)公式', value: 2 };
+item = { name: 'CKD-EPI肌酐-胱抑素C(2012)公式', value: 2 };
 iFormulas.push(item);
 item = { name: 'MDRD公式', value:3 };
 iFormulas.push(item);
@@ -34,8 +34,8 @@ Page({
     iType: 'Mg',      
     iC: null, 
 
-    iGFR173:0,
-    iGFR:0,
+    iGFR173:null,
+    iGFR:null,
    
     scrollTop: 0, 
   },
@@ -152,12 +152,13 @@ Page({
   iFormulaChange: function (e) {
     var iFormula = e.detail.value
     this.setData({
-      iFormula: iFormula
+      iFormula: iFormula,
+      iGFR173: null,
+      iGFR: null
     })
 
     let iForm = iFormulas[this.data['iFormula']]['value']
 
-    console.log(iForm)
     switch (iForm) {
       case 0:
         this.setData({
@@ -266,7 +267,7 @@ Page({
     })
   },
 
-  calCKDEPIcr: function (iForm,scrType, scr, age, gender, race, heightcm, weightcm, scys)
+  calAllGFR: function (iForm,scrType, scr, age, gender, race, heightcm, weightcm, scys)
   {
     if (scrType == "mmol"){
       scr = scr / 88.4;
@@ -483,14 +484,6 @@ Page({
         });
         return false;
       }
-      else if (sc <= 0) {
-        wx.showToast({
-          title: '血肌酐值必须大于零',
-          icon: 'failed',
-          duration: 2000
-        });
-        return false;
-      }
       else if (h < 50) {
         wx.showToast({
           title: '身高不合理',
@@ -500,7 +493,7 @@ Page({
         return false;
       }
       
-      this.calCKDEPIcr(iform, iType, sc, a, iSex, iRace, h, w, iC);          
+      this.calAllGFR(iform, iType, sc, a, iSex, iRace, h, w, iC);          
     }
   },
 
