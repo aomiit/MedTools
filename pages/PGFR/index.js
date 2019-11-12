@@ -184,7 +184,7 @@ Page({
   },
 
   oniHeight: function (ev) {
-    var iHeight = parseFloat(ev.detail.value);
+    var iHeight = ev.detail.value;
     this.setData({
       iHeight: iHeight
     })

@@ -39,20 +39,20 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">身高(厘米)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="a" type="number" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入身高"/>
+                    <input class="weui-input" id="a" type="digit" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入身高"/>
                 </view>
             </view>
             <view class="weui-cell">
                 <view class="weui-cell__bd">体重(公斤)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="w" type="number" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  placeholder="请输入体重"/>
+                    <input class="weui-input" id="w" type="digit" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  placeholder="请输入体重"/>
                 </view>
             </view>
            
             <view class="weui-cell">
                 <view class="weui-cell__bd">药物用量(毫克/m<sup>2</sup>)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="Medci" type="number" value="{{iMedci}}" maxlength="6" bindinput="oniMedci"  placeholder="请输入药物用量"/>
+                    <input class="weui-input" id="Medci" type="digit" value="{{iMedci}}" maxlength="6" bindinput="oniMedci"  placeholder="请输入药物用量"/>
                 </view>
             </view>
                         

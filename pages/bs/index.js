@@ -110,7 +110,7 @@ Page({
   },
 
   oniHeight: function (ev) {
-    var iHeight = (ev.detail.value);
+    var iHeight = ev.detail.value;
     this.setData({
       iHeight: iHeight
     })
@@ -118,14 +118,14 @@ Page({
 
   //体重
   oniWeight: function (ev) {
-    var num = (ev.detail.value);
+    var num = ev.detail.value;
     this.setData({
       iWeight: num
     })
   },
 
   oniMedci: function (ev) {
-    var num = (ev.detail.value);
+    var num = ev.detail.value;
     this.setData({
       iMedci: num
     })

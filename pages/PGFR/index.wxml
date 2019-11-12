@@ -37,7 +37,7 @@
             <view class="weui-cell" hidden="{{biHeight}}">
                 <view class="weui-cell__bd">身高(厘米)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="a" type="number" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入身高"/>
+                    <input class="weui-input" id="h" type="digit" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入身高"/>
                 </view>
             </view>
 
@@ -60,14 +60,14 @@
             <view class="weui-cell" hidden = "{{biC}}">
                 <view class="weui-cell__bd" style="width:30%">胱抑素(mg/L)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="w" type="number" value="{{iC}}" maxlength="6" bindinput="oniC"  placeholder="请输入胱抑素"/>
+                    <input class="weui-input" id="ic" type="digit" value="{{iC}}" maxlength="6" bindinput="oniC"  placeholder="请输入胱抑素"/>
                 </view>
             </view>    
 
             <view class="weui-cell" hidden = "{{biBUN}}">
                 <view class="weui-cell__bd" style="width:30%">尿素氮BUN(mg/dL)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="w" type="number" value="{{iBUN}}" maxlength="6" bindinput="oniBUN"  placeholder="请输入尿素氮BUN"/>
+                    <input class="weui-input" id="bun" type="digit" value="{{iBUN}}" maxlength="6" bindinput="oniBUN"  placeholder="请输入尿素氮BUN"/>
                 </view>
             </view>           
 

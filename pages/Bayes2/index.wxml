@@ -6,7 +6,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">真阳性(%)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="w" type="number" value="{{zyx}}" maxlength="6" bindinput="onZYX"  
+                    <input class="weui-input" id="w" type="digit" value="{{zyx}}" maxlength="6" bindinput="onZYX"  
                     placeholder="请输入"/>
                 </view>
             </view>
@@ -14,7 +14,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">假阳性(%)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="sc" type="number" value="{{jyx}}" maxlength="6" bindinput="onJYX"           
+                    <input class="weui-input" id="sc" type="digit" value="{{jyx}}" maxlength="6" bindinput="onJYX"           
                     placeholder="请输入"/>
                 </view>
             </view>
@@ -22,7 +22,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">真阴性(%)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="a" type="number" value="{{zyingx}}" maxlength="6" bindinput="onZYINGX"  
+                    <input class="weui-input" id="a" type="digit" value="{{zyingx}}" maxlength="6" bindinput="onZYINGX"  
                     placeholder="请输入"/>
                 </view>
             </view>     
@@ -30,7 +30,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">假阴性(%)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="a" type="number" value="{{jyingx}}" maxlength="6" bindinput="onJYINGX"  
+                    <input class="weui-input" id="a" type="digit" value="{{jyingx}}" maxlength="6" bindinput="onJYINGX"  
                     placeholder="请输入"/>
                 </view>
             </view>         

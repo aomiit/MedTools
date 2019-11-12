@@ -11,7 +11,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">血清钙浓度(mmol/L)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="ca" type="number" value="{{iCa}}" maxlength="6" bindinput="oniCa"  
+                    <input class="weui-input" id="ca" type="digit" value="{{iCa}}" maxlength="6" bindinput="oniCa"  
                     placeholder="输入血清钙浓度"/>
                 </view>
             </view>
@@ -19,7 +19,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">正常白蛋白水平(g/L)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="alb_1" type="number" value="{{ialb_1}}" maxlength="6" bindinput="onialb_1"           
+                    <input class="weui-input" id="alb_1" type="digit" value="{{ialb_1}}" maxlength="6" bindinput="onialb_1"           
                     placeholder="输入正常白蛋白水平"/>
                 </view>
             </view>
@@ -27,7 +27,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">患者白蛋白水平(g/L)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="alb_2" type="number" value="{{ialb_2}}" maxlength="6" bindinput="onialb_2"  
+                    <input class="weui-input" id="alb_2" type="digit" value="{{ialb_2}}" maxlength="6" bindinput="onialb_2"  
                     placeholder="输入患者白蛋白水平"/>
                 </view>
             </view>           

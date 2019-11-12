@@ -6,7 +6,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">流行性(%)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="w" type="number" value="{{lxx}}" maxlength="6" bindinput="onLXX"  
+                    <input class="weui-input" id="w" type="digit" value="{{lxx}}" maxlength="6" bindinput="onLXX"  
                     placeholder="请输入"/>
                 </view>
             </view>
@@ -14,7 +14,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">敏感性(%)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="sc" type="number" value="{{mgx}}" maxlength="6" bindinput="onMGX"           
+                    <input class="weui-input" id="sc" type="digit" value="{{mgx}}" maxlength="6" bindinput="onMGX"           
                     placeholder="请输入"/>
                 </view>
             </view>
@@ -22,7 +22,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">特异性(%)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="a" type="number" value="{{tyx}}" maxlength="6" bindinput="onTYX"  
+                    <input class="weui-input" id="a" type="digit" value="{{tyx}}" maxlength="6" bindinput="onTYX"  
                     placeholder="请输入"/>
                 </view>
             </view>           

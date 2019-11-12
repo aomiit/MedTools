@@ -41,7 +41,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">体重(公斤)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="w" type="number" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  
+                    <input class="weui-input" id="w" type="digit" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  
                     placeholder="请输入体重"/>
                 </view>
             </view>
@@ -49,7 +49,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">目标血钠值(mmol/l)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="sc" type="number" value="{{iScNA}}" maxlength="6" bindinput="oniScNA"           
+                    <input class="weui-input" id="sc" type="digit" value="{{iScNA}}" maxlength="6" bindinput="oniScNA"           
                     placeholder="请输入目标血钠值"/>
                 </view>
             </view>
@@ -57,7 +57,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">实测血钠值(mmol/l)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="a" type="number" value="{{iRlNA}}" maxlength="6" bindinput="oniRlNA"  
+                    <input class="weui-input" id="a" type="digit" value="{{iRlNA}}" maxlength="6" bindinput="oniRlNA"  
                     placeholder="请输入实测血钠值"/>
                 </view>
             </view>           

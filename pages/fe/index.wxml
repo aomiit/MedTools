@@ -11,7 +11,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">体重(公斤)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="w" type="number" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  
+                    <input class="weui-input" id="w" type="digit" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  
                     placeholder="请输入体重"/>
                 </view>
             </view>
@@ -19,7 +19,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">Hb目标值(g/L)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="sc" type="number" value="{{iScHb}}" maxlength="6" bindinput="oniScHb"           
+                    <input class="weui-input" id="sc" type="digit" value="{{iScHb}}" maxlength="6" bindinput="oniScHb"           
                     placeholder="请输入Hb目标值"/>
                 </view>
             </view>
@@ -27,7 +27,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">Hb实际值(g/L)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="a" type="number" value="{{iRlHb}}" maxlength="6" bindinput="oniRlHb"  
+                    <input class="weui-input" id="a" type="digit" value="{{iRlHb}}" maxlength="6" bindinput="oniRlHb"  
                     placeholder="请输入Hb实际值"/>
                 </view>
             </view>           

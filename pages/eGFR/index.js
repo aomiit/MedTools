@@ -235,7 +235,7 @@ Page({
   },
 
   oniHeight: function (ev) {
-    var iHeight = parseFloat(ev.detail.value);
+    var iHeight = ev.detail.value;
     this.setData({
       iHeight: iHeight
     })
@@ -243,7 +243,7 @@ Page({
 
   //体重
   oniWeight: function (ev) {
-    var iWeight = parseFloat(ev.detail.value);
+    var iWeight = ev.detail.value;
     this.setData({
       iWeight: iWeight
     })

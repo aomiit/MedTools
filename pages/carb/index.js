@@ -139,7 +139,7 @@ Page({
 
   //体重
   oniWeight: function (ev) {
-    var iWeight = parseFloat(ev.detail.value);
+    var iWeight = ev.detail.value;
     this.setData({
       iWeight: iWeight
     })

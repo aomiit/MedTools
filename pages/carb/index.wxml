@@ -24,7 +24,7 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd" style="width:30%">体重(公斤)</view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" id="w" type="number" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  placeholder="请输入体重"/>
+                    <input class="weui-input" id="w" type="digit" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  placeholder="请输入体重"/>
                 </view>
             </view>
             
