@@ -228,25 +228,19 @@ Page({
             * Math.pow((heightcm / 140) ,  0.179)
             * (gender == "female" ? 1:1.076);
 
-    var digits = 1;
-
-    creatinine = Math.round(creatinine * digits) / digits;
-    cystatin = Math.round(cystatin * digits) / digits;
-    crcys = Math.round(crcys * digits) / digits;
-
     if (iForm==0){
       this.setData({
-        iGFR173: creatinine.toFixed(0),
+        iGFR173: creatinine.toFixed(1),
       })
     }
     else if (iForm == 1) {
       this.setData({
-        iGFR173: cystatin.toFixed(0),
+        iGFR173: cystatin.toFixed(1),
       })
     }
     else if (iForm == 2) {
       this.setData({
-        iGFR173: crcys.toFixed(0),
+        iGFR173: crcys.toFixed(10),
       })
     }
   },

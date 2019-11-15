@@ -15,6 +15,8 @@ item = { name: '国人改良MDRD公式', value: 4 };
 iFormulas.push(item);
 item = { name: 'Jelliffe公式', value: 5 };
 iFormulas.push(item); 
+item = { name: '梅奥二次公式', value: 6 };
+iFormulas.push(item); 
 
 
 Page({
@@ -204,6 +206,13 @@ Page({
         })     
 
         break;
+      case 6:
+        this.setData({
+          biRace: true,
+          biC: true,
+          biSC: false
+        })
+        break;
       default:
         this.setData({
           biRace: true,
@@ -275,6 +284,10 @@ Page({
       
     var kappa = (gender == "female" ? 0.7 : 0.9);
 
+    var mayoscr = (scr < 0.8 )?0.8:scr;
+
+    var mayor = Math.exp(1.911 + (5.249 / mayoscr) - (2.114 / (mayoscr * mayoscr)) - 0.00686 * age - ((gender == "female")? 0.205 : 0));
+
     var mdrd =
       175 * Math.pow(scr, -1.154) *
       Math.pow(age, -0.203) *
@@ -319,7 +332,6 @@ Page({
       Math.pow(0.996, age) *
       (gender == "female" ? 0.932 : 1);
 
-
     var secondMultiplier = bsa / 1.73;
 
     var mdrd2 = mdrd * secondMultiplier;
@@ -327,59 +339,50 @@ Page({
     var creatinine2 = creatinine * secondMultiplier;
     var cystatin2 = cystatin * secondMultiplier;
     var crcys2 = crcys * secondMultiplier;
-
-    var digits = 1;
-
-    mdrd = Math.round(mdrd * digits) / digits;
-    mdrdcn = Math.round(mdrdcn * digits) / digits;
-    creatinine = Math.round(creatinine * digits) / digits;
-    cystatin = Math.round(cystatin * digits) / digits;
-    crcys = Math.round(crcys * digits) / digits;
-
-    mdrd2 = Math.round(mdrd2 * digits) / digits;
-    mdrdcn2 = Math.round(mdrdcn2 * digits) / digits;  
-    creatinine2 = Math.round(creatinine2 * digits) / digits;
-    cystatin2 = Math.round(cystatin2 * digits) / digits;
-    crcys2 = Math.round(crcys2 * digits) / digits;
-
-    jelliffe = Math.round(jelliffe * digits) / digits;
+    var mayor2 = mayor * secondMultiplier;
 
     if (iForm==0){
       this.setData({
-        iGFR173: creatinine.toFixed(0),
-        iGFR: creatinine2.toFixed(0),
+        iGFR173: creatinine.toFixed(1),
+        iGFR: creatinine2.toFixed(1),
       })
     }
     else if (iForm == 1) {
       this.setData({
-        iGFR173: cystatin.toFixed(0),
-        iGFR: cystatin2.toFixed(0),
+        iGFR173: cystatin.toFixed(1),
+        iGFR: cystatin2.toFixed(1),
       })
     }
     else if (iForm == 2) {
       this.setData({
-        iGFR173: crcys.toFixed(0),
-        iGFR: crcys2.toFixed(0),
+        iGFR173: crcys.toFixed(1),
+        iGFR: crcys2.toFixed(1),
       })
     }
     else if (iForm == 3) {
       this.setData({
-        iGFR173: mdrd.toFixed(0),
-        iGFR: mdrd2.toFixed(0),
+        iGFR173: mdrd.toFixed(1),
+        iGFR: mdrd2.toFixed(1),
       })
     }  
     else if (iForm == 4) {
       this.setData({
-        iGFR173: mdrdcn.toFixed(0),
-        iGFR: mdrdcn2.toFixed(0),
+        iGFR173: mdrdcn.toFixed(1),
+        iGFR: mdrdcn2.toFixed(1),
       })
     }       
     else if(iForm == 5) {
       this.setData({
         iGFR173: null,
-        iGFR: jelliffe.toFixed(0),
+        iGFR: jelliffe.toFixed(1),
       })
     } 
+    else if (iForm == 6) {
+      this.setData({
+        iGFR173: mayor.toFixed(1),
+        iGFR: mayor2.toFixed(1),
+      })
+    }     
   },
 
   calGFR: function () {
@@ -566,6 +569,17 @@ Page({
     }
     if (data.iFormula == 5) {
       if (!data.iSC ) {
+        wx.showModal({
+          title: '提示',
+          showCancel: false,
+          content: '您有选项未填写',
+        })
+        return false;
+      }
+    }
+
+    if (data.iFormula == 6) {
+      if (!data.iSC) {
         wx.showModal({
           title: '提示',
           showCancel: false,
