@@ -138,6 +138,7 @@ button[plain]  {
 
 /* 外层组件的宽度可设置成100%或具体数值 */
 .adContainer {
+  margin-top: 10px;
   width: 100%;
 }
 
