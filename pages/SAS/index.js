@@ -232,7 +232,7 @@ Page({
 
   radioChange: function (e) {
 
-    console.log('发生change事件，携带value值为：', e.detail.value)
+    //console.log('发生change事件，携带value值为：', e.detail.value)
 
     var dataStrArr = e.detail.value.split(":");//分割成字符串数组
 
@@ -242,7 +242,7 @@ Page({
       return +data;
     });
 
-    console.log('为：', dataIntArr)
+    //console.log('为：', dataIntArr)
 
     var that = this
     var iScores = that.data.iScores;
@@ -252,7 +252,7 @@ Page({
       iScores: iScores
     })
 
-    console.log('为：', this.data.iScores)
+    //console.log('为：', this.data.iScores)
 
     this.sumall();
   },

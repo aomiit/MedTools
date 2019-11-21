@@ -7,7 +7,7 @@
                 <view class="weui-cell__hd" style="width:70%">{{item.name}}</view>
 
                 <radio-group class="radio-group" bindchange="radioChange">  
-                  <label wx:for-index= "cellindex" wx:for="{{items}}" wx:key="name" style="display:flex;">
+                  <label wx:for-index= "cellindex" wx:for="{{items}}" wx:key="name" style="display:flex;justify-content: flex-end;">
                     <radio class="radio" value="{{index}}:{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
                   </label> 
                 </radio-group>

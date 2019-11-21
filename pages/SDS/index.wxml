@@ -12,7 +12,7 @@
         <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
             <view class="weui-cell">
 
-                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+                <view class="weui-cell__hd" style="width:40%">{{item.name}}</view>
 
                 <radio-group class="radio-group" bindchange="radioChange">  
                   <label wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name" style="display:flex;">
