@@ -1,15 +1,4 @@
 <scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
-    <view class="index_banner">
-      <view class="count_bd">    
-        <view class="count_hd">          
-                <text class="Info">评分:</text>
-                <text class="Info">{{iScore}}分</text>
-        </view>
-        <view class="count_hd">          
-                <text class="Info">{{iContent}}</text>
-        </view>
-      </view>
-    </view>
 
     <form class="main" bindreset="formReset">
         <view class="weui-cells">       
@@ -204,6 +193,18 @@
         </view>       
 
     </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}分</text>
+        </view>
+        <view class="count_hd">          
+                <text class="Info">{{iContent}}</text>
+        </view>
+      </view>
+    </view>
 
     <text class="main_info">
     判定标准
