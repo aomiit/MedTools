@@ -1,15 +1,5 @@
 <scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
-    <view class="index_banner">
-      <view class="count_bd">    
-        <view class="count_hd">          
-            <text class="Info">评分:</text>
-            <text class="Info">{{iScore}}</text>
-        </view>
-        <view class="count_bd">       
-            <text class="Info">{{iContent}}</text>   
-        </view>
-      </view>
-    </view>
+
 
     <form class="main" bindreset="formReset">
         <view class="weui-cells">            
@@ -32,11 +22,24 @@
         
     </form>
 
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+            <text class="Info">评分:</text>
+            <text class="Info">{{iScore}}</text>
+        </view>
+        <view class="count_bd">       
+            <text class="Info">{{iContent}}</text>   
+        </view>
+      </view>
+    </view>
+
     <text class="main_info">
     In order of decreasing importance the eight best predicting factors proved to be: Localized tenderness on the right lower quadrant, leukocytosis, migration of pain, shift to the left, temperature elevation, nausea and vomiting, anorexia or acetone in the urine and direct rebound pain. I assigned a value of 2 to each of the two of the more important factors tenderness and leukocytosis), and a value of 1 to each one of the others, for a possible total score of 10. A score of 5 or 6 is compatible with the diagnosis of acute appendicitis, a score of 7 or 8 indicates a probable appendicitis, and a score of 9 or 10 indicates a very probable appendicitis. ---Alvarado 2016
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

@@ -23,7 +23,7 @@
 	"libVersion": "2.8.2",
 	"appid": "wx70ad63b14d077682",
 	"projectname": "MedTools",
-  "cloudfunctionRoot": "cloudfunction/",
+	"cloudfunctionRoot": "cloudfunction/",
 	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []

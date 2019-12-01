@@ -79,7 +79,7 @@
     该标准集合了一个全球1999年至2010年间来自16个国家，35个数据库的94708名患者数据。数据主要来自欧洲（49%）和亚洲（44%）。经过严格商讨、审查而最终确定。
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

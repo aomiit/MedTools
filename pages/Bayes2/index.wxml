@@ -125,7 +125,7 @@
       总体准确度 = 100 * (真阳性 + 真阴性)  
     </text>
     
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

@@ -79,7 +79,7 @@
     Ficarra V, Novara G, Secco S, et al. Preoperative aspects and dimensions used for an anatomical (PADUA) classification of renal tumours in patients who are candidates for nephron-sparing surgery. Eur Urol 2009; 56:786–793
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn"  type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

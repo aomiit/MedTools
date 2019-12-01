@@ -6,9 +6,11 @@
 
                 <view class="weui-cell__hd" style="width:10%">{{item.name}}</view>
 
-                <radio-group class="radio-group" bindchange="radioChange">  
-                  <label wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name" style="display:flex;">
-                    <radio class="radio" value="{{index}}:{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+                <radio-group class="radio-group" bindchange="radioChange" style="width:90%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
                   </label> 
                 </radio-group>
 
@@ -40,7 +42,7 @@
     *贝克抑郁量表只能是否有抑郁以及其严重程度，但具体患了哪种抑郁症，是原发性的还是继发性等，还应由心理医生进一步检查以后确定。
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn"  type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

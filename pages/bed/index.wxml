@@ -12,7 +12,7 @@
 </template>
 
 <form bindsubmit="formSubmit">
-  <view class="container">
+  <view class="bedcontainer">
 
     <view class="itemView" style="width:90%; display:flex;">  
       <text style="width:40%;">分次剂量(Gy):</text>
@@ -29,7 +29,7 @@
       <template is="resultline" data="{{Num:item.id,alphabetavalue:item.alphabetavalue,eqd2value:item.eqd2value,bedvalue:item.bedvalue}}"/>
     </block>
 
-    <view class="btns">
+    <view style="width:300rpx">
       <button class="compute" formType="submit"> 计算 </button>
     </view>
     
@@ -37,7 +37,7 @@
 
 </form>
 
-<button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+<button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
 <view class="adContainer">
     <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

@@ -47,7 +47,7 @@
     简要说明：按中国常模结果，抑郁自评量表（SDS)评定的分界值总粗分的正常上限为41分，标准分为53分，标准分低于53分，说明心理状况正常，超过标准分53分说明有抑郁症状，分值越高，说明抑郁症状越严重，需要接受心理咨询,甚至需要在医生指导下服药。
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

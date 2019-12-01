@@ -45,7 +45,7 @@
 本量表按中国常模结果设计，总粗分的1.25倍为标准分。总粗分的正常上限为40分，标准分为50分。若您的标准分低于50分，说明您心理状况正常，若超过50分说明有焦虑症状，分值越高，说明您的焦虑症状越严重，其中50～59分为轻度焦虑，60～69分为中度焦虑，69分以上为重度焦虑。
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
     
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

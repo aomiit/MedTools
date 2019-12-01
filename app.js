@@ -42,6 +42,7 @@ App({
       { id: 31, url: '../eGFR/index', caption: 'eGFR计算器', collected: false }, 
 	    { id: 32, url: '../PGFR/index', caption: '小儿eGFR计算器', collected: false }, 
       { id: 33, url: '../MMSE/index', caption: '简易精神状态评价量表MMSE', collected: false }, 
+	    { id: 34, url: '../cpis/index', caption: '临床肺部感染评分CPIS', collected: false }, 	  
       
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       

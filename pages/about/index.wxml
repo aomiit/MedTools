@@ -17,7 +17,7 @@
         </view>
 
         <view class="info" style="align:center;">
-          <button style = "width:300rpx;align:center;" type="primary" open-type="contact">我有开发建议</button>
+          <button class = "shareBtn"  type="primary" open-type="contact">我有开发建议</button>
         </view>
 
     </view>

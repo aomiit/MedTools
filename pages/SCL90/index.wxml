@@ -49,7 +49,7 @@
 症状自评量表（Self-reporting Inventory)，又名90项症状清单（SCL-90），时也叫做Hopkin's症状清单（HSCL，编制年代早于SCL-90，作者为同一人，HCSL最早版编于1954年）。于1975年编制，其作者是德若伽提斯（L.R.Derogatis)。该量表共有90个项目，包含有较广泛的精神病症状学内容，从感觉、情感、思维、意识、行为直至生活习惯、人际关系、饮食睡眠等，均有涉及，并采用10个因子分别反映10个方面的心理症状情况。 
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

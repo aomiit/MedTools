@@ -9,14 +9,13 @@
 
                 <view class="weui-cell__hd" style="width:20%">{{item.name}}</view>
 
-                <view class="weui-cell__hd" style="width:80%"> 
-                  <radio-group class="radio-group" bindchange="radioChange">  
-                    <label wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name" style="display:flex;">
-                      <radio class="radio" value="{{index}}:{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
-                    </label> 
-                  </radio-group>
-                </view>
-
+                <radio-group class="radio-group" bindchange="radioChange" style="width:80%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
             </view>
          
         </view>       
@@ -40,7 +39,7 @@
       </view>
     </view>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn"  type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>

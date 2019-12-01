@@ -36,7 +36,7 @@
     治疗原则:癌痛应当采用综合治疗的原则，根据患者的病情和身体状况，应用恰当的止痛治疗手段，及早、持续、有效地消除疼痛，预防和控制药物的不良反应，降低疼痛和有关         治疗带来的心理负担，提高患者生活质量。
     </text>
 
-    <button style = "width:300rpx;align:center;" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
