@@ -223,7 +223,8 @@ button[plain]  {
 }
 
 .kind-list-item {
-  margin: 20rpx 0;
+  margin: 15rpx 0;
+  font-size: 36rpx;
   background-color: #fff;
   border-radius: 4rpx;
   overflow: hidden;
@@ -244,7 +245,7 @@ button[plain]  {
 }
 
 .kind-list-item-hd {
-  padding: 30rpx;
+  padding: 20rpx;
   display: flex;
   align-items: center;
   transition: opacity 0.3s;

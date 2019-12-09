@@ -38,6 +38,30 @@ Page({
     }
   },
 
+  convertMyFavorite: function(){
+    const listGroup = this.data.listGroup
+    listGroup[0].ids.splice(0, listGroup[0].ids.length)
+
+    const objectArray = this.data.objectArray;
+    for (let i = 0, len = objectArray.length; i < len; ++i) {
+      if (objectArray[i].collected) {
+
+        listGroup[0].ids.splice(listGroup[0].ids.length, 0, i);
+      }
+    }
+
+    console.log(listGroup[0].ids)
+
+    /**
+     * key和value名称一样时，可以省略
+     * 
+     * list:list=>list
+     */
+    this.setData({
+      listGroup
+    })
+  },
+
   onLoad: function () {
     wx.showShareMenu({
       withShareTicket: true
@@ -46,6 +70,8 @@ Page({
     let that = this;
     app.getAppConfig(function (config) {     
     });
+
+    this.convertMyFavorite();
   },
 
   handleCollection: function(event) {
@@ -79,7 +105,9 @@ Page({
     wx.showToast({
       title: postCollected ? '收藏成功' : '取消收藏',
       icon: 'success'
-    })
+    });
+
+    this.convertMyFavorite();
   },
 
   /**
@@ -104,6 +132,6 @@ Page({
     this.setData({
       listGroup
     })
-  }
+  }  
 
 })

@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/me/index",
     "pages/nccn/index",
     "pages/about/index",
     "pages/carb/index",
@@ -35,7 +34,7 @@
     "pages/IQ1/index",
     "pages/Alvarado/index",
     "pages/eGFR/index",
-	  "pages/PGFR/index",
+    "pages/PGFR/index",
     "pages/MMSE/index",
     "pages/cpis/index",
     "pages/CPAR/index",
@@ -62,13 +61,12 @@
     "pages/TNM/hpvp16/index",
     "pages/TNM/vaginal/index",
     "pages/TNM/kidney/index",
-    "pages/TNM/bladder/index",    
+    "pages/TNM/bladder/index",
     "pages/TNM/renal/index",
     "pages/TNM/pancreasneuro/index",
     "pages/TNM/gastricneuro/index",
     "pages/TNM/duodenumneuro/index",
     "pages/TNM/urethra/index"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -88,13 +86,7 @@
         "pagePath": "pages/index/index",
         "iconPath": "vendor/assets/images/tb_2.png",
         "selectedIconPath": "vendor/assets/images/tb_2_f.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/me/index",
-        "iconPath": "vendor/assets/images/tb_1.png",
-        "selectedIconPath": "vendor/assets/images/tb_1_f.png",
-        "text": "收藏"
+        "text": "计算工具"
       },
 
       {
@@ -103,16 +95,14 @@
         "selectedIconPath": "vendor/assets/images/tb_3_f.png",
         "text": "NCCN"
       },
-
       {
         "pagePath": "pages/about/index",
         "iconPath": "vendor/assets/images/tb_4.png",
         "selectedIconPath": "vendor/assets/images/tb_4_f.png",
         "text": "关于我们"
       }
-    ]     
+    ]
   },
   "debug": true,
   "sitemapLocation": "sitemap.json"
 }
-

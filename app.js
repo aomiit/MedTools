@@ -50,6 +50,12 @@ App({
     ],
     listGroup: [
       {
+        id: 'MYFAVORITE',
+        name: '我的收藏',
+        open: false,
+        ids: []
+      },
+      {
         id: 'ALL',
         name: '全科',
         open: false,
