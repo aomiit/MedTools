@@ -22,11 +22,11 @@ iFormulas.push(item);
 Page({
   data: {
     iFormulas: iFormulas,
-    biRace: true,
+    biRace: false,
     biC: true,
-    biSC:true,
+    biSC:false,
 
-    iFormula: -1,
+    iFormula: 0,
     iRace:'nonblack',
     iSex:'male',    
     iAge: null,
@@ -262,7 +262,7 @@ Page({
   formReset: function () {
     console.log('reset触发')
     this.setData({
-      iFormula: -1,
+      iFormula: 0,
       iRace: 'nonblack',
       iSex: 'male',
       iAge: null,

@@ -15,11 +15,11 @@ Page({
     iFormulas: iFormulas,
     biBUN: true,
     biC: true,
-    biSC:true,
+    biSC:false,
     biSex:true,
-    biHeight:true,
+    biHeight: false,
 
-    iFormula: -1,
+    iFormula: 0,
     iBUN:null,
     iSex:'male',    
     iHeight: null,
@@ -194,7 +194,7 @@ Page({
   formReset: function () {
     console.log('reset触发')
     this.setData({
-      iFormula: -1,    
+      iFormula: 0,    
       iSex: 'male',   
       iType: 'Mg', 
       iHeight: null,

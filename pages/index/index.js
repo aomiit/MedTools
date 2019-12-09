@@ -4,6 +4,7 @@ var app = getApp();
 Page({
   data: {
     objectArray: app.globalData.objectArray,
+    listGroup: app.globalData.listGroup
   },
 
   onShareAppMessage: (res) => {
@@ -80,5 +81,29 @@ Page({
       icon: 'success'
     })
   },
+
+  /**
+   * 收缩核心代码
+   */
+  kindToggle(e) {
+    const id = e.currentTarget.id
+    const listGroup = this.data.listGroup
+    for (let i = 0, len = listGroup.length; i < len; ++i) {
+      if (listGroup[i].id === id) {
+        listGroup[i].open = !listGroup[i].open
+      } else {
+        listGroup[i].open = false
+      }
+    }
+
+    /**
+     * key和value名称一样时，可以省略
+     * 
+     * list:list=>list
+     */
+    this.setData({
+      listGroup
+    })
+  }
 
 })

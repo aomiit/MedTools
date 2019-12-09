@@ -9,6 +9,7 @@ App({
     linkList:null,
     indexArea:{hname:'',hprice:''},
     objectArray: [
+      { id: 0, url: '../NNT/index', caption: '需要治疗人数NNT计算', collected: false },
       { id: 1, url: '../bed/index', caption: 'BED计算器', collected: false },
       { id: 2, url: '../na/index', caption: '补钠计算器', collected: false },
       { id: 3, url: '../fe/index', caption: '补铁计算器', collected: false },
@@ -43,10 +44,54 @@ App({
 	    { id: 32, url: '../PGFR/index', caption: '小儿eGFR计算器', collected: false }, 
       { id: 33, url: '../MMSE/index', caption: '简易精神状态评价量表MMSE', collected: false }, 
       { id: 34, url: '../cpis/index', caption: '临床肺部感染评分CPIS', collected: false },  
-      { id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }, 
+      //{ id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }, 
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
-    ]
+    ],
+    listGroup: [
+      {
+        id: 'ALL',
+        name: '全科',
+        open: false,
+        ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+      },
+      {
+        id: 'ONCOLOGY',
+        name: '肿瘤学',
+        open: false,
+        ids: [1, 5, 8,13,14,16]
+      }, 
+      {
+        id: 'STAT',
+        name: '统计学',
+        open: false,
+        ids: [0,25, 26, 27]
+      }, 
+      {
+        id: 'PSY',
+        name: '精神心理',
+        open: false,
+        ids: [20,21,22,23,24,33]
+      }, 
+      {
+        id: 'GAST',
+        name: '呼吸',
+        open: false,
+        ids: [9, 10, 11, 12,34]
+      }, 
+      {
+        id: 'ECC',
+        name: '急重症科',
+        open: false,
+        ids: [6, 7, 15,18,28, 29, 30,31,32]
+      }, 
+      {
+        id: 'NURS',
+        name: '护理',
+        open: false,
+        ids: [2, 3, 4, 6, 7,17, 19,32]
+      },
+    ],
   },
 
   onLaunch() {

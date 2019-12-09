@@ -1,13 +1,12 @@
 <scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
    
     <official-account></official-account>
-
+<!--
     <block wx:for="{{objectArray}}" wx:key="id">    
 
       <view class="weui-cells weui-cell_access"> 
         <navigator url= "{{item.url}}" hover-class='navigator-hover'>
           {{item.caption}}
-
           <image class="collect_banner" id = "{{item.id}}"  src="{{item.collected ? '../../vendor/assets/images/do_collect.png' : '../../vendor/assets/images/collect.png'}}" catchtap="handleCollection" hover-stop-propagation='true'>
           </image>
 
@@ -15,6 +14,26 @@
 
       </view>
 
+    </block>
+    -->
+
+    <block wx:for-items="{{listGroup}}" wx:key="{{item.id}}">
+      <view class="kind-list-item">
+        <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+          <view class="kind-list-text">{{item.name}}</view>
+        </view>
+        <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+          <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+            <block wx:for-items="{{item.ids}}" wx:for-item="page" wx:key="*item">
+              <navigator url="{{objectArray[page].url}}" class="navigator">
+                <view class="navigator-text">{{objectArray[page].caption}}</view>
+                <image class="collect_banner" id = "{{objectArray[page].id}}"  src="{{objectArray[page].collected ? '../../vendor/assets/images/do_collect.png' : '../../vendor/assets/images/collect.png'}}" catchtap="handleCollection" hover-stop-propagation='true'>
+                </image>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </view>
     </block>
 
     <view class="info" style="align:center;">

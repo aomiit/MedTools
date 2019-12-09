@@ -39,6 +39,7 @@
     "pages/MMSE/index",
     "pages/cpis/index",
     "pages/CPAR/index",
+    "pages/NNT/index",
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",
