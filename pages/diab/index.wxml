@@ -1,0 +1,88 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">
+        
+            <view class="weui-cell">
+                <view class="weui-cell__bd">性别: </view>
+                <radio-group class="radio-group" bindchange="SexradioChange">
+                    <label style="display:flex;">
+                      <radio class="radio" key="gen1" value="Male" checked="true">男</radio>  
+                      <radio class="radio" key="gen2" value="Female">女</radio>   
+                    </label>               
+                </radio-group>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">年龄(周岁)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="a" type="number" value="{{iAge}}" maxlength="3" bindinput="oniAge"  placeholder="请输入年龄"/>
+                </view>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">身高(厘米)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="h" type="digit" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入身高"/>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">体重(公斤)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="w" type="digit" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  placeholder="请输入体重"/>
+                </view>
+            </view>     
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">腰围(厘米)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="wa" type="digit" value="{{iWaist}}" maxlength="6" bindinput="oniWaist"  placeholder="请输入腰围"/>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">收缩压(mmHg)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="sp" type="digit" value="{{iSP}}" maxlength="6" bindinput="oniSP"  placeholder="请输入收缩压"/>
+                </view>
+            </view>    
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">糖尿病家族史（父母、同胞、子女）: </view>
+                <radio-group class="radio-group" bindchange="iHisradioChange">
+                    <label style="display:flex;">
+                      <radio class="radio" key="iTrue" value="6">有</radio>  
+                      <radio class="radio" key="iFalse" value="0" checked="true">无</radio>   
+                    </label>               
+                </radio-group>
+            </view>         
+          
+                        
+        </view>
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>
+        
+    </form>
+
+    <view class="index_banner">
+          <view class="count_hd">           
+                  <view class="weui-label">评分：{{iscore}}</view>               
+                  <view class="weui-label">{{icontent}}</view>  
+          </view>
+    </view>
+
+    <text class="main_info">
+	  面向中国人的糖尿病风险评估模型,用于20-74岁人群。
+	  参考文献:
+		  http://guidelines.diabetes.ca/chinese
+    </text>
+
+    
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

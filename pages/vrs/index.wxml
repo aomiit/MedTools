@@ -12,15 +12,14 @@
         <view class="weui-cells">       
             <view class="weui-cell">
               <view class="weui-cell__bd">体征: </view>
-                <radio-group class="radio-group" bindchange="TLradioChange">       
-                       
-                    <radio class="radio" key="t2" value="1">无痛</radio>
-                    <radio class="radio" key="t3" value="2">轻度，有疼痛，但可忍受，生活正常，睡眠未受到干扰</radio> 
-                    <radio class="radio" key="t4" value="3">中度，疼痛明显，不能忍受，要求服用镇痛药物，睡眠受到干扰</radio> 
-                    <radio class="radio" key="t5" value="4">重度，疼痛剧烈，不能忍受，需用镇痛药物，睡眠受到严重干扰，可伴有植物神经功能紊乱或被动体位</radio> 
-                    <radio class="radio" key="t6" value="5">极度，患者所想象的最严重的疼痛</radio> 
-                             
-                </radio-group>
+              <radio-group class="radio-group" bindchange="TLradioChange">                                        
+                  <label class="radio"><radio key="t2" value="1"></radio>无痛</label>     
+                  <label class="radio"><radio key="t3" value="2"></radio> 轻度，有疼痛，但可忍受，生活正常，睡眠未受到干扰</label>   
+                  <label class="radio"><radio key="t4" value="3"></radio>中度，疼痛明显，不能忍受，要求服用镇痛药物，睡眠受到干扰</label>    
+                  <label class="radio"><radio key="t5" value="4"></radio>重度，疼痛剧烈，不能忍受，需用镇痛药物，睡眠受到严重干扰，可伴有植物神经功能紊乱或被动体位</label>     
+                  <label class="radio"><radio key="t6" value="5"></radio> 极度，患者所想象的最严重的疼痛</label>    
+                      
+              </radio-group>
             </view>
 
         </view>

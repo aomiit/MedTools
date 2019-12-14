@@ -37,8 +37,12 @@
     </view>
     
     <text class="main_info">
-
-    </text>
+	本量表用于鉴别心源性与动脉源性脑栓塞。
+	注释：
+		血管原因定义：大动脉粥样硬化（症状性颅内或颅外动脉狭窄≥50%）、小动脉粥样硬化（腔隙综合征）及症状性动脉夹层。
+    参考文献：
+		Score for the targeting of atrial fibrillation (staf): A new approach to the detection of atrial fibrillation in the secondary prevention of ischemic stroke. Stroke.2009;40:2866-68
+	</text>
 
     <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 

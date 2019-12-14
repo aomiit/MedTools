@@ -37,8 +37,10 @@
     </view>
     
     <text class="main_info">
-
-    </text>
+	参考文献:
+		Anderson JJ, et al. Retrospective validation of the REVEAL 2.0 Risk Score with the Australian and New Zealand Pulmonary Hypertension Registry Cohort.Chest. 2019 Sep 26. pii: S0012-3692(19)33934-0. 
+		Benza RL, Gomberg-Maitland M, Elliott CG, Farber HW, Foreman AJ, Frost AE, McGoon MD, Pasta DJ, Selej M, Burger CD, et al. Predicting Survival in Patients With Pulmonary Arterial Hypertension: The REVEAL Risk Score Calculator 2.0 and Comparison With ESC/ERS-Based Risk Assessment Strategies. Chest. 2019 Aug; 156(2):323-337. Epub 2019 Feb 14.
+	</text>
 
     <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 

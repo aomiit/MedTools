@@ -17,10 +17,9 @@
             <view class="weui-cell">
                 <view class="weui-cell__bd">性别: </view>
                 <radio-group class="radio-group" bindchange="SexradioChange">
-                    <label style="display:flex;">
                       <radio class="radio" key="gen1" value="Male" checked="true">男</radio>  
                       <radio class="radio" key="gen2" value="Female">女</radio>   
-                    </label>               
+          
                 </radio-group>
             </view>
 
@@ -34,30 +33,24 @@
             <view class="weui-cell">
               <view class="weui-cell__bd">腌制食品: </view>
                 <radio-group class="radio-group" bindchange="T1radioChange">   
-                  <label style="display:flex;">
                     <radio class="radio" key="t1" value="0">偶尔</radio>
                     <radio class="radio" key="t2" value="2">常规</radio>   
-                  </label>  
                 </radio-group>
             </view>
 
             <view class="weui-cell">
               <view class="weui-cell__bd">油炸食品: </view>
                 <radio-group class="radio-group" bindchange="T2radioChange">   
-                  <label style="display:flex;">
                     <radio class="radio" key="t1" value="0">偶尔</radio>
                     <radio class="radio" key="t2" value="2">常规</radio>   
-                  </label>     
                 </radio-group>
             </view>
 
             <view class="weui-cell">
               <view class="weui-cell__bd">幽门螺杆菌感染(酶联免疫单位): </view>                
                 <radio-group class="radio-group" bindchange="T3radioChange">   
-                  <label style="display:flex;">
                     <radio class="radio" key="t1" value="0">阴性({{'<'}}34)</radio>
                     <radio class="radio" key="t2" value="1">阳性(≥34)</radio>   
-                  </label> 
                 </radio-group>
                 
             </view>
@@ -65,10 +58,8 @@
             <view class="weui-cell">
               <view class="weui-cell__bd">胃蛋白酶原I/II (PG I/II)比例: </view>
                  <radio-group class="radio-group" bindchange="T4radioChange">   
-                    <label style="display:flex;">
                       <radio class="radio" key="t1" value="0">{{'<'}}3.89</radio>
                       <radio class="radio" key="t2" value="3">≥3.89</radio>    
-                    </label>  
                 </radio-group>
             </view>          
  

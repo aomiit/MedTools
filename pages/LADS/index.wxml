@@ -37,8 +37,9 @@
     </view>
     
     <text class="main_info">
-
-    </text>
+	中国专家共识推荐：
+	➤STAF≥5分的缺血性卒中（II，B）或LADS评分≥4分（III，C）的缺血性卒中/TIA患者，应根据条件选择多种心电监测手段，包括24小时Holter、延长Holter心电检测或重复多次12导联心电图检查，以发现可能存在的房颤。
+	</text>
 
     <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 

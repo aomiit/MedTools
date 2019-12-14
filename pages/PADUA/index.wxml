@@ -15,39 +15,31 @@
         <view class="weui-cells">       
             <view class="weui-cell">
               <view class="weui-cell__bd">纵向位置: </view>
-                <radio-group class="radio-group" bindchange="T1radioChange">  
-                  <label style="display:flex;">
-                    <radio class="radio" key="t1" value="1">上/下极</radio>
-                    <radio class="radio" key="t2" value="2">中部</radio>     
-                  </label> 
-                </radio-group>
+              <radio-group class="radio-group" bindchange="T1radioChange">  
+                  <radio class="radio" key="t1" value="1">上/下极</radio>
+                  <radio class="radio" key="t2" value="2">中部</radio>     
+              </radio-group>
             </view>
 
             <view class="weui-cell">
               <view class="weui-cell__bd">内外侧: </view>
                 <radio-group class="radio-group" bindchange="T2radioChange">   
-                  <label style="display:flex;">
                     <radio class="radio" key="t1" value="1">外侧</radio>
-                    <radio class="radio" key="t2" value="2">内侧</radio>  
-                  </label>    
+                    <radio class="radio" key="t2" value="2">内侧</radio>           
                 </radio-group>
             </view>
             <view class="weui-cell">
               <view class="weui-cell__bd">与肾窦关系: </view>
-                <radio-group class="radio-group" bindchange="T3radioChange">   
-                  <label style="display:flex;">
+                <radio-group class="radio-group" bindchange="T3radioChange">     
                     <radio class="radio" key="t1" value="1">无关</radio>
-                    <radio class="radio" key="t2" value="2">有关</radio>   
-                  </label>   
+                    <radio class="radio" key="t2" value="2">有关</radio>           
                 </radio-group>
             </view>
             <view class="weui-cell">
               <view class="weui-cell__bd">与集合系统关系: </view>
-                <radio-group class="radio-group" bindchange="T4radioChange">   
-                  <label style="display:flex;">
+                <radio-group class="radio-group" bindchange="T4radioChange"> 
                     <radio class="radio" key="t1" value="1">无关</radio>
                     <radio class="radio" key="t2" value="2">有关</radio>   
-                  </label>   
                 </radio-group>
             </view>
             <view class="weui-cell">

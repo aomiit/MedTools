@@ -37,8 +37,9 @@
     </view>
     
     <text class="main_info">
-
-    </text>
+	  参考文献：
+      林宏远，侯剑峰，唐汉韡，陈凯，郭少先，柳枫，王立清，孙寒松，郑哲，胡盛寿. 心力衰竭患者冠状动脉旁路移植术围术期死亡风险评分系统的 建立与对比研究. 中国循环杂志 2019 ,34(5):444
+	  </text>
 
     <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
