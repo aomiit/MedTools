@@ -50,8 +50,9 @@ App({
       { id: 38, url: '../PGLANCE/index', caption: 'PGLANCE心力衰竭患者冠状动脉旁路移植术围术期死亡风险评分系统', collected: false }, 
 	    { id: 39, url: '../REVEAL/index', caption: '肺动脉高压患者REVEAL风险评分', collected: false }, 
       { id: 40, url: '../diab/index', caption: '糖尿病风险评分', collected: false }, 
-
-
+      { id: 41, url: '../Autar/index', caption: '深静脉血栓(DVT)Autar评估表', collected: false },
+      { id: 42, url: '../Khorana/index', caption: '恶性肿瘤患者静脉血栓风险Khorana评分', collected: false },
+      
 	    //{ id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }, 
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
@@ -67,13 +68,14 @@ App({
         id: 'ALL',
         name: '全科',
         open: false,
-        ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
+        ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
+             41,42]
       },
       {
         id: 'ONCOLOGY',
         name: '肿瘤学',
         open: false,
-        ids: [1,5,8,13,14,16]
+        ids: [1, 5, 8, 13, 14, 16, 42]
       }, 
       {
         id: 'CV',
@@ -103,7 +105,7 @@ App({
         id: 'ECC',
         name: '急重症科',
         open: false,
-        ids: [6, 7, 15,18,28, 29, 30,31,32]
+        ids: [6, 7, 15, 18, 28, 29, 30, 31, 32, 41, 42]
       }, 
       {
         id: 'NURS',

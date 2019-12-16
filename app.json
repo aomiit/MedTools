@@ -45,7 +45,9 @@
 	  "pages/REVEAL/index",	
     "pages/NNT/index",
     "pages/diab/index",
-    
+    "pages/Autar/index",
+    "pages/Khorana/index",
+
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",
