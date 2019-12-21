@@ -47,6 +47,8 @@
     "pages/diab/index",
     "pages/Autar/index",
     "pages/Khorana/index",
+	  "pages/GRACE/index",
+    "pages/GRACE2/index",	
 
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
