@@ -54,9 +54,9 @@ App({
       { id: 42, url: '../Khorana/index', caption: '恶性肿瘤患者静脉血栓风险Khorana评分', collected: false },
       { id: 43, url: '../GRACE/index', caption: 'GRACE缺血风险评分-院内评分', collected: false },
       { id: 44, url: '../GRACE2/index', caption: 'GRACE缺血风险评分-出院评分', collected: false },
-	  
-
-      
+      { id: 45, url: '../CHA2DS2VA/index', caption: '房颤患者卒中预防风险CHA2DS2-VASc评分', collected: false },
+      { id: 46, url: '../CHA2DS2/index', caption: '房颤患者卒中预防风险CHA2DS2评分', collected: false },
+	        
 	    //{ id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }, 
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
@@ -73,7 +73,7 @@ App({
         name: '全科',
         open: false,
         ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-             41,42,43,44]
+             41,42,43,44,45,46]
       },
       {
         id: 'ONCOLOGY',
@@ -85,7 +85,7 @@ App({
         id: 'CV',
         name: '心血管',
         open: false,
-        ids: [35,36,37,38,39,43,44]
+        ids: [18,35,36,37,38,39,43,44,45,46]
       }, 
       {
         id: 'STAT',

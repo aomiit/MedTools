@@ -49,6 +49,8 @@
     "pages/Khorana/index",
 	  "pages/GRACE/index",
     "pages/GRACE2/index",	
+    "pages/CHA2DS2VA/index",	
+    "pages/CHA2DS2/index",
 
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
