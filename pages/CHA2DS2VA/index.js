@@ -33,7 +33,7 @@ Page({
         ]
       },
       {
-        name: '卒中/TIA/血栓栓塞史??',
+        name: '卒中/TIA/血栓栓塞史?',
         items: [
           { name: '否', value: 0.0, checked: false },
           { name: '是', value: 2.0, checked: false },

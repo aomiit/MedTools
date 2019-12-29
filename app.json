@@ -51,6 +51,7 @@
     "pages/GRACE2/index",	
     "pages/CHA2DS2VA/index",	
     "pages/CHA2DS2/index",
+    "pages/GWTG/index",
 
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
