@@ -4,9 +4,9 @@
         <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
             <view class="weui-cell">
 
-                <view class="weui-cell__hd" style="width:70%">{{item.name}}</view>
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
 
-                <radio-group class="radio-group" bindchange="radioChange" style="width:30%">  
+                <radio-group class="radio-group" bindchange="radioChange" style="width:50%">  
                   <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
                     <view>
                       <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
@@ -37,8 +37,11 @@
     </view>
     
     <text class="main_info">
-		CHADS2[为充血性心力衰竭(congestive heart failure)、高血压( hypertension)、年龄(age)、糖尿病（diabeces mellilus）、卒中或短暂性脑缺血( stroke/TIA)首字母缩写]评分
-    </text>
+	年龄校正Charlson合并症指数（Age-adjusted Charlson Comorbidity Index，ACCI）是一种应用较广泛的合并症评分体系,较CCI更佳。它基于患者所患疾病数目及严重程度，对合并症进行量化，可用于预测疾病的死亡风险。
+    参考文献：
+		Charlson M, Szatrowski TP, Peterson J, Gold J. Validation of a combined comorbidity index. J Clin Epidemiol. 1994;47(11):1245-51. 
+		Koppie TM,et al. Age-adjusted Charlson comorbidity score is associated with treatment decisions and clinical outcomes for patients undergoing radical cystectomy for bladder cancer.Cancer. 2008 Jun;112(11):2384-92.
+	</text>
     
     <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 

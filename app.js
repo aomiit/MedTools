@@ -41,14 +41,14 @@ App({
       { id: 29, url: '../APACHE2/index', caption: 'APACHEⅡ评分系统和死亡率评估', collected: false }, 
       { id: 30, url: '../Alvarado/index', caption: '2016版Alvarado评分', collected: false }, 
       { id: 31, url: '../eGFR/index', caption: 'eGFR计算器', collected: false }, 
-	    { id: 32, url: '../PGFR/index', caption: '小儿eGFR计算器', collected: false }, 
+      { id: 32, url: '../PGFR/index', caption: '小儿eGFR计算器', collected: false }, 
       { id: 33, url: '../MMSE/index', caption: '简易精神状态评价量表MMSE', collected: false }, 
       { id: 34, url: '../cpis/index', caption: '临床肺部感染评分CPIS', collected: false },  
       { id: 35, url: '../CRUSADE/index', caption: 'CRUSADE出血风险评估', collected: false },  
-	    { id: 36, url: '../STAF/index', caption: 'STAF房颤鉴别评分', collected: false }, 
-	    { id: 37, url: '../LADS/index', caption: 'LADS房颤鉴别评分', collected: false }, 
+      { id: 36, url: '../STAF/index', caption: 'STAF房颤鉴别评分', collected: false }, 
+      { id: 37, url: '../LADS/index', caption: 'LADS房颤鉴别评分', collected: false }, 
       { id: 38, url: '../PGLANCE/index', caption: 'PGLANCE心力衰竭患者冠状动脉旁路移植术围术期死亡风险评分系统', collected: false }, 
-	    { id: 39, url: '../REVEAL/index', caption: '肺动脉高压患者REVEAL风险评分', collected: false }, 
+      { id: 39, url: '../REVEAL/index', caption: '肺动脉高压患者REVEAL风险评分', collected: false }, 
       { id: 40, url: '../diab/index', caption: '糖尿病风险评分', collected: false }, 
       { id: 41, url: '../Autar/index', caption: '深静脉血栓(DVT)Autar评估表', collected: false },
       { id: 42, url: '../Khorana/index', caption: '恶性肿瘤患者静脉血栓风险Khorana评分', collected: false },
@@ -57,8 +57,10 @@ App({
       { id: 45, url: '../CHA2DS2VA/index', caption: '房颤患者卒中预防风险CHA2DS2-VASc评分', collected: false },
       { id: 46, url: '../CHA2DS2/index', caption: '房颤患者卒中预防风险CHA2DS2评分', collected: false },
       { id: 47, url: '../GWTG/index', caption: 'GWTG-HF心衰院内死亡率评分', collected: false },
-	        
-	    //{ id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }, 
+      { id: 48, url: '../ACCI/index', caption: '年龄校正Charlson合并症指数', collected: false },	
+      { id: 49, url: '../CAPRA/index', caption: 'UCSF-CAPRA前列腺癌风险评估评分', collected: false },
+	  
+       //{ id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }, 
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
     ],
@@ -74,13 +76,13 @@ App({
         name: '全科',
         open: false,
         ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-             41,42,43,44,45,46,47]
+             41,42,43,44,45,46,47,48,49]
       },
       {
         id: 'ONCOLOGY',
         name: '肿瘤学',
         open: false,
-        ids: [1, 5, 8, 13, 14, 16, 42]
+        ids: [1, 5, 8, 13, 14, 16, 42,48,49]
       }, 
       {
         id: 'CV',
