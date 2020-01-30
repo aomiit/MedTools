@@ -6,54 +6,62 @@ Page({
 
   data: {  
     iScore:0,
-    iScores: [0,0,0,0,0,0],
+    iScores: [0,0,0,0,0,0,0],
 
     gitems:[
       {
-        name: '体温(12小时平均值，℃)',
+        name: '气管分泌物',
         items: [
-          { name: '36～38', value: 0.0, checked: false },
-          { name: '38～39', value: 1.0, checked: false },
-          { name: '＞39或＜36', value: 2.0, checked: false },
+          { name: '少', value: 0.0, checked: false },
+          { name: '大量', value: 1.0, checked: false },
+          { name: '大量+脓性', value: 2.0, checked: false },
         ]
       },
       {
-        name: '白细胞计数(*10^9/l)',
-        items: [
-          { name: '4～11', value: 0.0, checked: false },
-          { name: '11～17', value: 1.0, checked: false },
-          { name: '＞17或＜4', value: 2.0, checked: false },
-        ]
-      },
-      {
-        name: '分泌物(24小时吸出物性状数量)',
-        items: [
-          { name: '无痰或少许', value: 0.0, checked: false },
-          { name: '中~大量，非脓性', value: 1.0, checked: false },
-          { name: '中~大量，脓性', value: 2.0, checked: false },
-        ]
-      },
-      {
-        name: '气体交换指数(PaO2/FiO2,kPa)或者以250(mmHg)为界',
-        items: [
-          { name: '>33', value: 0.0, checked: false },
-          { name: '<33', value: 2.0, checked: false },
-        ]
-      },
-      {
-        name: 'X胸片浸润影',
+        name: '胸片',
         items: [
           { name: '无', value: 0.0, checked: false },
-          { name: '斑片状', value: 1.0, checked: false },
-          { name: '融合片状', value: 2.0, checked: false },
+          { name: '弥漫', value: 1.0, checked: false },
+          { name: '局限', value: 2.0, checked: false },
         ]
       },
       {
-        name: '气管吸取物培养或痰培养',
+        name: '体温',
         items: [
-          { name: '无致病菌生长', value: 0.0, checked: false },
-          { name: '有致病菌生长', value: 1.0, checked: false },
-          { name: '两次培养到同一种细菌或者格兰染色与培养一致', value: 2.0, checked: false },
+          { name: '36.5-38.4℃', value: 0.0, checked: false },
+          { name: '38.5-38.9℃', value: 1.0, checked: false },
+          { name: '<36或 >39℃', value: 2.0, checked: false },
+        ]
+      },
+      {
+        name: '白细胞计数',
+        items: [
+          { name: '4-11*10^9/L', value: 0.0, checked: false },
+          { name: '<4或>11*10^9/L', value: 1.0, checked: false },
+		  { name: '<4或>11*10^9/L + 杆状核中性粒细胞 >500', value: 2.0, checked: false },
+        ]
+      },
+      {
+        name: 'PaO2/FiO2',
+        items: [
+          { name: '>240或ARDS', value: 0.0, checked: false },       
+          { name: '≤240且无ARDS', value: 2.0, checked: false },
+        ]
+      },
+	  {
+        name: '病情进展',
+        items: [
+          { name: '影像学未见进展', value: 0.0, checked: false },       
+          { name: '影像学进展（除外慢性心衰和ARDS）', value: 2.0, checked: false },
+        ]
+      },
+      {
+        name: '培养',
+        items: [
+          { name: '致细菌培养极少或轻度生长或无生长', value: 0.0, checked: false },
+          { name: '与Gram染色下所见致病菌一致（少/轻度生长）', value: 1.0, checked: false },
+          { name: '致病菌培养中或重度生长', value: 1.0, checked: false },
+		      { name: '与Gram染色下所见致病菌一致（中/重度生长）', value: 1.0, checked: false },
         ]
       },
     ],
@@ -72,7 +80,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/cpis/index',
+      path: '/pages/PULInfect/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -135,14 +143,7 @@ Page({
       }
       
       console.log(score) 
-      var msg = null;
-
-      if (score <= 6) {
-        msg = "评分降低，病情缓解"
-      }
-      if (score > 6) {
-        msg = "危险高，评分越高，病情越重"
-      }
+      var msg = '';  
            
       this.setData({
         iScore: score,

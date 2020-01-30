@@ -59,8 +59,11 @@ App({
       { id: 47, url: '../GWTG/index', caption: 'GWTG-HF心衰院内死亡率评分', collected: false },
       { id: 48, url: '../ACCI/index', caption: '年龄校正Charlson合并症指数', collected: false },	
       { id: 49, url: '../CAPRA/index', caption: 'UCSF-CAPRA前列腺癌风险评估评分', collected: false },
-	  
-       //{ id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }, 
+      { id: 50, url: '../CURB65/index', caption: '社区获得性肺炎CURB-65严重程度评分', collected: false }, 
+      { id: 51, url: '../PULInfect/index', caption: '临床肺部感染评分', collected: false }, 
+      { id: 52, url: '../mPAGE/index', caption: 'mPAGE-B乙肝患者肝癌风险预测', collected: false }, 
+
+       //{ id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
     ],
@@ -68,7 +71,7 @@ App({
       {
         id: 'MYFAVORITE',
         name: '我的收藏',
-        open: false,
+        open: true,
         ids: []
       },
       {
@@ -76,13 +79,13 @@ App({
         name: '全科',
         open: false,
         ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-             41,42,43,44,45,46,47,48,49]
+             41,42,43,44,45,46,47,48,49,50,51,52]
       },
       {
         id: 'ONCOLOGY',
         name: '肿瘤学',
         open: false,
-        ids: [1, 5, 8, 13, 14, 16, 42,48,49]
+        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52]
       }, 
       {
         id: 'CV',
@@ -106,7 +109,7 @@ App({
         id: 'GAST',
         name: '呼吸',
         open: false,
-        ids: [9, 10, 11, 12,34]
+        ids: [9, 10, 11, 12,34,50,51]
       }, 
       {
         id: 'ECC',
@@ -126,6 +129,12 @@ App({
         open: false,
         ids: [6,40]
       }, 
+      {
+        id: 'INFECT',
+        name: '感染科',
+        open: false,
+        ids: [15,34,50,51,52]
+      },
     ],
   },
 

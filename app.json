@@ -54,7 +54,10 @@
     "pages/GWTG/index",
     "pages/ACCI/index",
     "pages/CAPRA/index",
-	
+    "pages/CURB65/index",
+	  "pages/PULInfect/index",
+    "pages/mPAGE/index",
+
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",

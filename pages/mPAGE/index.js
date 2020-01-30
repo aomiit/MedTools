@@ -6,56 +6,47 @@ Page({
 
   data: {  
     iScore:0,
-    iScores: [0,0,0,0,0,0],
+    iScores: [0,0,0,0],
 
     gitems:[
       {
-        name: '体温(12小时平均值，℃)',
+        name: '年龄(周岁)',
         items: [
-          { name: '36～38', value: 0.0, checked: false },
-          { name: '38～39', value: 1.0, checked: false },
-          { name: '＞39或＜36', value: 2.0, checked: false },
+          { name: '<30', value: 0.0, checked: false },
+          { name: '30~39', value: 3.0, checked: false },
+          { name: '40~49', value: 5.0, checked: false },
+		  { name: '50~59', value: 7.0, checked: false },
+		  { name: '60~69', value: 9.0, checked: false },
+		  { name: '>=70', value: 11.0, checked: false },
         ]
       },
       {
-        name: '白细胞计数(*10^9/l)',
+        name: '性别',
         items: [
-          { name: '4～11', value: 0.0, checked: false },
-          { name: '11～17', value: 1.0, checked: false },
-          { name: '＞17或＜4', value: 2.0, checked: false },
+          { name: '女性', value: 0.0, checked: false },
+          { name: '男性', value: 2.0, checked: false },
         ]
       },
       {
-        name: '分泌物(24小时吸出物性状数量)',
+        name: '血小板(x10^9/L)',
         items: [
-          { name: '无痰或少许', value: 0.0, checked: false },
-          { name: '中~大量，非脓性', value: 1.0, checked: false },
-          { name: '中~大量，脓性', value: 2.0, checked: false },
+          { name: '>=250', value: 0.0, checked: false },
+          { name: '200~250', value: 2.0, checked: false },
+          { name: '150~200', value: 3.0, checked: false },
+		  { name: '100~150', value: 4.0, checked: false },
+		  { name: '<100', value: 5.0, checked: false },
         ]
       },
       {
-        name: '气体交换指数(PaO2/FiO2,kPa)或者以250(mmHg)为界',
+        name: '白蛋白水平(g/dL)',
         items: [
-          { name: '>33', value: 0.0, checked: false },
-          { name: '<33', value: 2.0, checked: false },
+          { name: '>=4.0', value: 0.0, checked: false },
+          { name: '3.5~4.0', value: 1.0, checked: false },
+		  { name: '3.0~3.5', value: 2.0, checked: false },
+		  { name: '<3.0', value: 3.0, checked: false },
         ]
       },
-      {
-        name: 'X胸片浸润影',
-        items: [
-          { name: '无', value: 0.0, checked: false },
-          { name: '斑片状', value: 1.0, checked: false },
-          { name: '融合片状', value: 2.0, checked: false },
-        ]
-      },
-      {
-        name: '气管吸取物培养或痰培养',
-        items: [
-          { name: '无致病菌生长', value: 0.0, checked: false },
-          { name: '有致病菌生长', value: 1.0, checked: false },
-          { name: '两次培养到同一种细菌或者格兰染色与培养一致', value: 2.0, checked: false },
-        ]
-      },
+     
     ],
 
     iContent:"",
@@ -72,7 +63,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/cpis/index',
+      path: '/pages/mPAGE/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -135,15 +126,16 @@ Page({
       }
       
       console.log(score) 
-      var msg = null;
-
-      if (score <= 6) {
-        msg = "评分降低，病情缓解"
+      var msg = '';  
+	  if (score <= 8) {
+        msg = "低风险，未来7年肝癌发生率接近0%"
+	  }
+      if (score >= 9 && score <= 12) {
+        msg = "中度风险，肝癌风险在未来3，5，7年分别为4.1%，6.1%，10.8%左右"
       }
-      if (score > 6) {
-        msg = "危险高，评分越高，病情越重"
-      }
-           
+      if (score >= 13) {
+        msg = "高度风险，肝癌风险在未来3，5，7年分别为10.8%，18.7%，26.7%左右"
+      }        
       this.setData({
         iScore: score,
         iContent: msg,
