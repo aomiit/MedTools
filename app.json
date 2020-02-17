@@ -57,7 +57,9 @@
     "pages/CURB65/index",
 	  "pages/PULInfect/index",
     "pages/mPAGE/index",
-
+    "pages/FraminghamIS/index",
+    "pages/ChinaPAR/index",
+    
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",
