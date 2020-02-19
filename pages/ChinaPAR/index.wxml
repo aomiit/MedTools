@@ -1,17 +1,5 @@
 <scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
-    <view class="index_banner">
-      <view class="count_hd">    
-        <view class="count_bd">           
-                <text class="Info">10年发病风险</text>
-                <text class="Info">{{iScore}}%</text>
-        </view>
-
-        <view class="count_bd">           
-                <text class="Info">{{iContent}}</text>
-        </view>
-      </view>
-    </view>
-
+    
     <form class="main" bindreset="formReset">
         <view class="weui-cells">
 		    <view class="weui-cell">
@@ -114,7 +102,20 @@
         <view class="btns">
             <button class="clear" form-type="reset">重置</button>
             <button class="compute" type="primary" bindtap="onCompute">计算</button>
-        </view>        
+        </view>    
+        <view class="index_banner">
+          <view class="count_hd">    
+            <view class="count_bd">           
+                    <text class="Info">10年发病风险</text>
+                    <text class="Info">{{iScore}}%</text>
+            </view>
+
+            <view class="count_bd">           
+                    <text class="Info">{{iContent}}</text>
+            </view>
+          </view>
+        </view>
+            
     </form>
 
     <text class="main_info">公式:
