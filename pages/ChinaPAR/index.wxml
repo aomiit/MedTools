@@ -129,6 +129,15 @@
 
     <button class = "shareBtn"  type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
 
+    <view class="cu-bar bg-white solid-bottom" wx:if="{{!isAccept}}">
+        <view class='action'>
+          <text class='cuIcon-check text-gray'></text>订阅小程序更新
+        </view>
+        <view class='action'>
+          <button class="cu-btn bg-green shadow" bindtap="subscriptionNotice">订阅更新</button>
+        </view>
+      </view>
+
     <view class="adContainer">
       <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
     </view>

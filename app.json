@@ -59,7 +59,12 @@
     "pages/mPAGE/index",
     "pages/FraminghamIS/index",
     "pages/ChinaPAR/index",
-    
+    "pages/GPS/index",
+    "pages/POLARS/index",
+    "pages/LARS/index",
+    "pages/PCLC/index",
+    "pages/WHOQOLBREF/index",
+	
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",

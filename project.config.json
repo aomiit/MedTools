@@ -20,11 +20,11 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.2",
+	"libVersion": "2.10.1",
 	"appid": "wx70ad63b14d077682",
 	"projectname": "MedTools",
 	"cloudfunctionRoot": "cloudfunction/",
-	"cloudfunctionTemplateRoot": "",
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

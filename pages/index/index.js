@@ -1,11 +1,15 @@
 //获取应用实例
 const app = getApp();
-const updatetemplateID = "65eacaae0aa35e38667658e4011001c8";
+const updatetemplateID = "sNRVmlcjkeQzrK90XaUQNibSnn5fL8dGHovT7yNinkM";
 
 Page({
   data: {
     objectArray: app.globalData.objectArray,
-    listGroup: app.globalData.listGroup
+    listGroup: app.globalData.listGroup,
+
+    isAccept: true,// 防止静态先显现出来，你也可以添加loading判断
+    openid: '' // 当前用户openid
+
   },
 
   onShareAppMessage: (res) => {
@@ -73,79 +77,99 @@ Page({
     });
 
     this.convertMyFavorite();
+
+    //this.getOpenid();
   },
 
-  onSubscribe:function(e){
-    // 获取课程信息
-    const item = e.currentTarget.dataset.item;
+  getOpenid: function () {
+    let that = this;
+    wx.showLoading({
+      title: '数据加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'getOpenid',
+      complete: res => {
+        console.log('云函数获取到的openid: ', res.result.OPENID)
+        var openid = res.result.OPENID;
+        that.setData({
+          openid: openid
+        }, () => {
+          // 检测用户是否已经订阅
+          this.checkIsAccept(openid)
+        })
+      }
+    })
+  },
 
-    // 调用微信 API 申请发送订阅消息
-    wx.requestSubscribeMessage({
-      // 传入订阅消息的模板 id，模板 id 可在小程序管理后台申请
-      tmplIds: [updatetemplateID],
+  checkIsAccept: function (id) {
+    let that = this;
+    db.collection('notices').where({ _openid: id }).get({
       success(res) {
-        // 申请订阅成功
-        if (res.errMsg === 'requestSubscribeMessage:ok') {
-          // 这里将订阅的课程信息调用云函数存入 db
-          wx.cloud
-            .callFunction({
-              name: 'subscribe',
-              data: {
-                ...item,
-                
-                data: {
-                  date1: { value: item.startTimeString },
-                  thing4: { value: item.description },
-                },
-                templateId: updatetemplateID,
-              },
-            })
-            .then(() => {
-              wx.showToast({
-                title: '订阅成功',
-                icon: 'success',
-                duration: 2000,
-              });
-            })
-            .catch(() => {
-              wx.showToast({
-                title: '订阅失败',
-                icon: 'success',
-                duration: 2000,
-              });
-            });
-        }  
+        if (res.data.length = 0) {
+          that.setData({
+            isAccept: true
+          })
+        }
       },
-    });
+      fail(res) {
+        console.log("请求失败", res);
+        that.fetchList();
+      }
+    })
   },
 
-  onUnsubscribe: function (e) {
-    // 获取课程信息
-    const item = e.currentTarget.dataset.item;
-
-    // 这里将订阅的课程信息调用云函数存入 db
-    wx.cloud
-      .callFunction({
-        name: 'unsubscribe',
-        data: {
-          id: item.id,
-          templateId: updatetemplateID,
+  subscriptionNotice: function () {
+    wx.vibrateShort();
+    let that = this;
+    let id = updatetemplateID; // 订阅消息模版id
+    if (wx.requestSubscribeMessage) {
+      wx.requestSubscribeMessage({
+        tmplIds: [id],
+        success(res) {
+          if (res[id] == 'accept') {
+            //用户同意了订阅，添加进数据库
+            that.addAccept(that.data.openid)
+          } else {
+            //用户拒绝了订阅或当前游戏被禁用订阅消息
+            wx.showToast({
+              title: '订阅失败'
+            })
+          }
         },
+        fail(res) {
+          console.log(res)
+        },
+        complete(res) {
+          console.log(res)
+        }
       })
-      .then(() => {
-        wx.showToast({
-          title: '取消订阅成功',
-          icon: 'success',
-          duration: 2000,
-        });
+    } else {
+      // 兼容处理
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
       })
-      .catch(() => {
-        wx.showToast({
-          title: '取消订阅失败',
-          icon: 'success',
-          duration: 2000,
-        });
-      });
+    }
+  },
+
+  // 用户点击订阅添加到数据库
+  addAccept: function (_id) {
+    db.collection('notices')
+      .add({
+        data: {
+          id: _id
+        }
+      })
+      .then((res) => {
+        console.log('入notices库成功', res);
+        this.setData({
+          isAccept: true
+        }, () => {
+          wx.showToast({
+            title: '订阅成功'
+          })
+        })
+      })
   },
 
   handleCollection: function(event) {

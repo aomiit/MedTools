@@ -64,8 +64,11 @@ App({
       { id: 52, url: '../mPAGE/index', caption: 'mPAGE-B乙肝患者肝癌风险预测', collected: false }, 
       { id: 53, url: '../FraminghamIS/index', caption: 'Framingham心脏风险评分(国际单位)', collected: false }, 
       { id: 54, url: '../ChinaPAR/index', caption: '10年内发生ASCVD危险度评估(China-PAR)', collected: false }, 
-      
-       //{ id: 35, url: '../CPAR/index', caption: '心脑血管病风险预测China-PAR', collected: false }
+      { id: 55, url: '../GPS/index', caption: 'GPS仅接受胃切除术的胃癌患者结局评分', collected: false }, 
+      { id: 56, url: '../POLARS/index', caption: '术前预测LARS评分', collected: false }, 
+      { id: 57, url: '../LARS/index', caption: '低前切除综合征(LARS)评价量表', collected: false }, 
+	    { id: 58, url: '../PCLC/index', caption: 'PCL-C创伤后应激障碍自评量表平民版', collected: false },
+      { id: 59, url: '../WHOQOLBREF/index', caption: 'WHOQOL-BREF世界卫生组织生存质量测定量表简表', collected: false },
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
     ],
@@ -81,13 +84,13 @@ App({
         name: '全科',
         open: false,
         ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-             41,42,43,44,45,46,47,48,49,50,51,52,53,54]
+             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]
       },
       {
         id: 'ONCOLOGY',
         name: '肿瘤学',
         open: false,
-        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52]
+        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52,55,56,57]
       }, 
       {
         id: 'CV',
@@ -105,7 +108,7 @@ App({
         id: 'PSY',
         name: '精神心理',
         open: false,
-        ids: [20,21,22,23,24,33]
+        ids: [20,21,22,23,24,33,58,59]
       }, 
       {
         id: 'GAST',
@@ -142,6 +145,20 @@ App({
 
   onLaunch() {
     qcloud.setLoginUrl(config.service.loginUrl);
+
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+    } else {
+      wx.cloud.init({
+        // env 参数说明：
+        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
+        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
+        //   如不填则使用默认环境（第一个创建的环境）
+        // env: 'my-env-id',
+        traceUser: true,
+      });
+    }
+
     this.getConfig();
 
     var postsCollected = wx.getStorageSync('posts_Collected')

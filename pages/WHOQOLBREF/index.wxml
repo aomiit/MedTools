@@ -1,0 +1,61 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <text class="main_info">
+    注意事项：
+    </text>
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:60%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange">  
+                  <label wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name" style="display:flex;">
+                    <radio class="radio" value="{{index}}:{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>       
+
+    </form>
+
+    <view class="index_banner">
+	 <view class="count_bd">  
+		  <view class="count_hd">    
+				<view class="count_hd">          
+						<text class="Info">生理领域评分:</text>
+						<text class="Info">{{iPhysScore}}分  </text>
+				</view>
+				<view class="count_hd">          
+						<text class="Info">心理领域评分:</text>
+						<text class="Info">{{iPsychScore}}分 </text>             
+				</view>
+		  </view>
+		  <view class="count_hd">    
+				<view class="count_hd">          
+						<text class="Info">环境领域评分:</text>
+						<text class="Info">{{iEnvirScore}}分  </text>
+				</view>
+				<view class="count_hd">          
+						<text class="Info">社会关系领域评分:</text>
+						<text class="Info">{{iSocilScore}}分 </text>             
+				</view>
+		  </view>
+	  </view>
+    </view>
+
+    <text class="main_info">
+
+	</text>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>
