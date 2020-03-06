@@ -1,0 +1,34 @@
+/**index.wxss**/
+text{
+  color: purple;
+}
+
+label{
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin: 2rpx;
+}
+
+radio .wx.radio.input{
+  border-color:blueviolet
+}
+input{
+  border: 2px solid silver;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+input:focus-within{
+  border-style: solid;
+  border-color: blueviolet;
+}
+
+textarea{
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+  background: silver;
+  text-align: center;
+  justify-content: center;
+  color: blueviolet;
+  font-size: x-large
+}

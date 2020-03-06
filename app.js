@@ -69,6 +69,8 @@ App({
       { id: 57, url: '../LARS/index', caption: '低前切除综合征(LARS)评价量表', collected: false }, 
 	    { id: 58, url: '../PCLC/index', caption: 'PCL-C创伤后应激障碍自评量表平民版', collected: false },
       { id: 59, url: '../WHOQOLBREF/index', caption: 'WHOQOL-BREF世界卫生组织生存质量测定量表简表', collected: false },
+      { id: 60, url: '../Brock/index', caption: 'CT预测肿瘤恶性概率(Brock模型)', collected: false },
+      { id: 61, url: '../Herder/index', caption: 'PET-CT后恶性肿瘤的概率(Herder模型)', collected: false },
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
     ],
@@ -81,16 +83,16 @@ App({
       },
       {
         id: 'ALL',
-        name: '全科',
+        name: '全部',
         open: false,
         ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59]
+             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61]
       },
       {
         id: 'ONCOLOGY',
-        name: '肿瘤学',
+        name: '肿瘤',
         open: false,
-        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52,55,56,57]
+        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52,55,56,57,58,60,61]
       }, 
       {
         id: 'CV',
@@ -100,7 +102,7 @@ App({
       }, 
       {
         id: 'STAT',
-        name: '统计学',
+        name: '统计',
         open: false,
         ids: [0,25,26,27]
       }, 
@@ -118,7 +120,7 @@ App({
       }, 
       {
         id: 'ECC',
-        name: '急重症科',
+        name: '急重症',
         open: false,
         ids: [6, 7, 15, 18, 28, 29, 30, 31, 32, 41, 42]
       }, 
@@ -130,16 +132,22 @@ App({
       }, 
       {
         id: 'ENDO',
-        name: '内分泌科',
+        name: '内分泌',
         open: false,
         ids: [6,40]
       }, 
       {
         id: 'INFECT',
-        name: '感染科',
+        name: '感染',
         open: false,
         ids: [15,34,50,51,52]
       },
+      {
+        id: 'IMAGING',
+        name: '影像',
+        open: false,
+        ids: [60, 61]
+      }, 
     ],
   },
 

@@ -64,7 +64,9 @@
     "pages/LARS/index",
     "pages/PCLC/index",
     "pages/WHOQOLBREF/index",
-	
+    "pages/Brock/index",
+    "pages/Herder/index",
+
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
     "pages/TNM/breast/index",

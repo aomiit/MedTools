@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText":"CT预测肿瘤恶性概率(Brock模型)",
+  "disableScroll":true,
+  "enablePullDownRefresh":false
+}
