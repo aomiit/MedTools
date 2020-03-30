@@ -101,7 +101,7 @@
 
     <text class="main_info">
     成人适用。
-    公式详见参见 医学软件 公众号文章。      
+    公式详见参见 医学软件 公众号文章。《估算肾小球滤过率eGFR计算器》
     </text>
 
     <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>

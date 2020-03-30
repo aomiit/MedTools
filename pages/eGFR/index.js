@@ -17,6 +17,8 @@ item = { name: 'Jelliffe公式', value: 5 };
 iFormulas.push(item); 
 item = { name: '梅奥二次公式', value: 6 };
 iFormulas.push(item); 
+item = { name: 'Cockcroft-Gault公式', value: 7 };
+iFormulas.push(item); 
 
 
 Page({
@@ -213,6 +215,13 @@ Page({
           biSC: false
         })
         break;
+      case 7:
+        this.setData({
+          biRace: true,
+          biC: true,
+          biSC: false
+        })
+        break;
       default:
         this.setData({
           biRace: true,
@@ -278,8 +287,9 @@ Page({
 
   calAllGFR: function (iForm,scrType, scr, age, gender, race, heightcm, weightcm, scys)
   {
+    console.log("calAllGFR");
     if (scrType == "mmol"){
-      scr = scr / 88.4;
+      scr = scr / 88.41;
     }
       
     var kappa = (gender == "female" ? 0.7 : 0.9);
@@ -319,6 +329,9 @@ Page({
       (gender == "female" ? 0.969 : 1) *
       (race == "black" ? 1.08 : 1);
 
+    var iRatio = (gender == "female" ? 0.85 : 1.0);
+    var cgCrCI2 = (((140 - age) / scr) * iRatio) *weightcm/72;
+ 
     var bsa = Math.pow(weightcm, 0.425) * Math.pow(heightcm, 0.725) * 0.007184;
 
     var diff = age % 10;
@@ -340,6 +353,7 @@ Page({
     var cystatin2 = cystatin * secondMultiplier;
     var crcys2 = crcys * secondMultiplier;
     var mayor2 = mayor * secondMultiplier;
+    var cgCrCI = cgCrCI2/secondMultiplier;
 
     if (iForm==0){
       this.setData({
@@ -382,7 +396,13 @@ Page({
         iGFR173: mayor.toFixed(1),
         iGFR: mayor2.toFixed(1),
       })
-    }     
+    }   
+    else if(iForm == 7) {
+    this.setData({
+      iGFR173: cgCrCI.toFixed(1),
+      iGFR: cgCrCI2.toFixed(1),
+  })
+} 
   },
 
   calGFR: function () {
@@ -579,6 +599,17 @@ Page({
     }
 
     if (data.iFormula == 6) {
+      if (!data.iSC) {
+        wx.showModal({
+          title: '提示',
+          showCancel: false,
+          content: '您有选项未填写',
+        })
+        return false;
+      }
+    }
+
+    if (data.iFormula == 7){
       if (!data.iSC) {
         wx.showModal({
           title: '提示',

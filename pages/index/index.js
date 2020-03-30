@@ -8,8 +8,8 @@ Page({
     listGroup: app.globalData.listGroup,
 
     isAccept: true,// 防止静态先显现出来，你也可以添加loading判断
-    openid: '' // 当前用户openid
-
+    openid: '' ,// 当前用户openid
+    scrollTop: 0, 
   },
 
   onShareAppMessage: (res) => {

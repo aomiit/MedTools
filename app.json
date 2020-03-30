@@ -66,6 +66,9 @@
     "pages/WHOQOLBREF/index",
     "pages/Brock/index",
     "pages/Herder/index",
+    "pages/ABCD2/index",
+    "pages/ABCD3-1/index",
+    "pages/SOFA/index",
 
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
@@ -102,7 +105,9 @@
     "navigationBarTitleText": "",
     "navigationBarBackgroundColor": "#5973e7",
     "backgroundColor": "#F2f2f2",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "pageOrientation": "auto",
+    "resizable": true
   },
   "tabBar": {
     "color": "#7F8389",
@@ -131,6 +136,7 @@
       }
     ]
   },
+
   "debug": true,
   "sitemapLocation": "sitemap.json"
 }

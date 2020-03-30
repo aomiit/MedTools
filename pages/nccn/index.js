@@ -2,8 +2,7 @@
 var app = getApp();
 
 Page({
-  data: {
-    objectArray: app.globalData.objectArray,
+  data: {    
     web_src: "https://nccn.qitian-med.tech/interface4wechat/nccn_category?auth_code=WZUQPSNS", //webview内嵌的url 
   },
   onShareAppMessage: (res) => {
@@ -45,11 +44,5 @@ Page({
     let that = this;
     app.getAppConfig(function (config) {     
     });
-  },
-
-  onTabItemTap(item) {
-    this.setData({
-      objectArray: app.globalData.objectArray
-    })
   },
 })
