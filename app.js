@@ -67,13 +67,16 @@ App({
       { id: 55, url: '../GPS/index', caption: 'GPS仅接受胃切除术的胃癌患者结局评分', collected: false }, 
       { id: 56, url: '../POLARS/index', caption: '术前预测LARS评分', collected: false }, 
       { id: 57, url: '../LARS/index', caption: '低前切除综合征(LARS)评价量表', collected: false }, 
-	    { id: 58, url: '../PCLC/index', caption: 'PCL-C创伤后应激障碍自评量表平民版', collected: false },
+	  { id: 58, url: '../PCLC/index', caption: 'PCL-C创伤后应激障碍自评量表平民版', collected: false },
       { id: 59, url: '../WHOQOLBREF/index', caption: 'WHOQOL-BREF世界卫生组织生存质量测定量表简表', collected: false },
       { id: 60, url: '../Brock/index', caption: 'CT预测肿瘤恶性概率(Brock模型)', collected: false },
       { id: 61, url: '../Herder/index', caption: 'PET-CT后恶性肿瘤的概率(Herder模型)', collected: false },
       { id: 62, url: '../ABCD2/index', caption: 'TIA短暂性脑缺血发作ABCD2评分', collected: false },
       { id: 63, url: '../ABCD3-1/index', caption: 'TIA短暂性脑缺血发作ABCD3-I评分', collected: false },
       { id: 64, url: '../SOFA/index', caption: '重症患者SOFA评分', collected: false },
+	  { id: 65, url: '../PASI/index', caption: 'PASI银屑病面积与严重性指数评分', collected: false },
+	  { id: 66, url: '../MayoPN/index', caption: 'CT孤立性肺结节恶性概率(Mayo模型)', collected: false },
+	  
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
       
     ],
@@ -89,13 +92,13 @@ App({
         name: '全部',
         open: false,
         ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64]
+             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66]
       },
       {
         id: 'ONCOLOGY',
         name: '肿瘤',
         open: false,
-        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52,55,56,57,58,60,61]
+        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52,55,56,57,58,60,61,66]
       }, 
       {
         id: 'NEU',
@@ -155,7 +158,7 @@ App({
         id: 'IMAGING',
         name: '影像',
         open: false,
-        ids: [60, 61]
+        ids: [60, 61, 66]
       }, 
     ],
   },
@@ -167,11 +170,6 @@ App({
       console.error('请使用 2.2.3 或以上的基础库以使用云能力');
     } else {
       wx.cloud.init({
-        // env 参数说明：
-        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
-        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        //   如不填则使用默认环境（第一个创建的环境）
-        // env: 'my-env-id',
         traceUser: true,
       });
     }
@@ -183,8 +181,6 @@ App({
       if (postsCollected.length == this.globalData.objectArray.length) {
 
         this.globalData.objectArray = postsCollected
-
-        //console.log(this.globalData.objectArray);
       }
       else {
         for (var i = 0; i < postsCollected.length; i++) {

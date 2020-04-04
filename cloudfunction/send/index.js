@@ -41,7 +41,6 @@ exports.main = async (event, context) => {
 
     return Promise.all(sendPromises);
   } catch (err) {
-    console.log(err);
     return err;
   }
 };

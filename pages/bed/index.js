@@ -88,7 +88,6 @@ Page(
     },
 
     AlphaBetaInput: function (e) {      
-      //console.log('携带数据为：', e)  
       this.data.objectArray[parseInt(e.currentTarget.id) - 1].alphabetavalue = e.detail.value
       this.setData({
         objectArray: this.data.objectArray

@@ -55,7 +55,6 @@ Page({
   },
   onShareAppMessage: (res) => {
     if (res.from === 'button') {
-      console.log("来自转发按钮");
       console.log(res.target);
     }
     else {
@@ -125,10 +124,10 @@ Page({
         score += iScores[i];
       }
 	  
-	  if(iScores[2] == 0)
-	  {
-		score -= iScores[3];
-	  }
+      if(iScores[2] == 0)
+      {
+        score -= iScores[3];
+      }
       
       console.log(score) 
       var msg = "";

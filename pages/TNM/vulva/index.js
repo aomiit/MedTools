@@ -193,7 +193,6 @@ Page({
       }
     }  
 
-    //console.log(tablekey);
     if (tablecontent.hasOwnProperty(tablekey)) {
       return {
         key: tablekey,
