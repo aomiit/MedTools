@@ -71,6 +71,7 @@
     "pages/SOFA/index",
 	"pages/PASI/index",
 	"pages/MayoPN/index",
+	"pages/CDSS/index",
 	
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
