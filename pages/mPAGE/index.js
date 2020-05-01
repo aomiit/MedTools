@@ -15,9 +15,9 @@ Page({
           { name: '<30', value: 0.0, checked: false },
           { name: '30~39', value: 3.0, checked: false },
           { name: '40~49', value: 5.0, checked: false },
-		  { name: '50~59', value: 7.0, checked: false },
-		  { name: '60~69', value: 9.0, checked: false },
-		  { name: '>=70', value: 11.0, checked: false },
+          { name: '50~59', value: 7.0, checked: false },
+          { name: '60~69', value: 9.0, checked: false },
+          { name: '≥70', value: 11.0, checked: false },
         ]
       },
       {
@@ -30,20 +30,20 @@ Page({
       {
         name: '血小板(x10^9/L)',
         items: [
-          { name: '>=250', value: 0.0, checked: false },
+          { name: '≥250', value: 0.0, checked: false },
           { name: '200~250', value: 2.0, checked: false },
           { name: '150~200', value: 3.0, checked: false },
-		  { name: '100~150', value: 4.0, checked: false },
-		  { name: '<100', value: 5.0, checked: false },
+          { name: '100~150', value: 4.0, checked: false },
+          { name: '<100', value: 5.0, checked: false },
         ]
       },
       {
         name: '白蛋白水平(g/dL)',
         items: [
-          { name: '>=4.0', value: 0.0, checked: false },
+          { name: '≥4.0', value: 0.0, checked: false },
           { name: '3.5~4.0', value: 1.0, checked: false },
-		  { name: '3.0~3.5', value: 2.0, checked: false },
-		  { name: '<3.0', value: 3.0, checked: false },
+          { name: '3.0~3.5', value: 2.0, checked: false },
+          { name: '<3.0', value: 3.0, checked: false },
         ]
       },
      

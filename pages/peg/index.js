@@ -10,7 +10,7 @@ Page({
 
     items: [
       { name: '既往DVT或PE史', value: 3.0, checked: false},
-      { name: '心率>=95次/分', value: 5.0, checked: false },
+      { name: '心率≥95次/分', value: 5.0, checked: false },
       { name: '75=<心率<95次/分', value: 3.0, checked: false },
       { name: '1月内手术史或下肢骨折', value: 2.0, checked: false },
       { name: '咯血', value: 2.0, checked: false },
@@ -86,7 +86,7 @@ Page({
       msg1 = msg1 + "得分<6的情况为“不大可能患有PE”"
     }
     if (totalscore >= 6) {
-      msg1 = msg1 + "得分>=6的情况为“可能患有PE”"
+      msg1 = msg1 + "得分≥6的情况为“可能患有PE”"
     }
     
     this.setData({

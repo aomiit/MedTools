@@ -7,132 +7,64 @@ Page({
   data: {  
     
     iScore:0,
-    iScores: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    iScores: [0,0,0,0,0,0,0,0],
 
     gitems:[
       {
-	  	name: '年龄(岁)',
+	  	name: '年龄(周岁)',
         items: [
-		  { name: '<50', value: 0.0, checked: false },
-          { name: '50~59', value: 1.0, checked: false },
-          { name: '60~69', value: 2.0, checked: false },	
-          { name: '70~79', value: 3.0, checked: false },
-          { name: '≥80', value: 4.0, checked: false },		  
+          { name: '<65', value: 0.0, checked: false },
+          { name: '65~74', value: 2.0, checked: false },	  
+		  { name: '≥75', value: 3.0, checked: false },	  
         ]
       },    
       {
-        name: '心肌梗死?',
+        name: '糖尿病 或 高血压 或 心绞痛?',
         items: [
           { name: '否', value: 0.0, checked: false },
           { name: '是', value: 1.0, checked: false },
         ]
       },
       {
-        name: '充血性心衰?',
+        name: '收缩压<100mmHg?',
+        items: [
+          { name: '否', value: 0.0, checked: false },
+          { name: '是', value: 3.0, checked: false },
+        ]
+      },
+      {
+        name: '心率>100次/分?',
         items: [
           { name: '否', value: 0.0, checked: false },
           { name: '是', value: 2.0, checked: false },
         ]
       },
       {
-        name: '周围血管疾病?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 1.0, checked: false },
-        ]
-      },
-      {
-        name: '脑血管疾病或TIA?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 1.0, checked: false },
-        ]
-      },
-      {
-        name: '偏瘫?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 2.0, checked: false },
-        ]
-      },
-	  {
-        name: '痴呆/阿尔茨海默病?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 1.0, checked: false },
-        ]
-      },
-	  {
-        name: '慢性阻塞性肺病/哮喘?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 1.0, checked: false },
-        ]
-      },
-	  {
-        name: '类风湿或结缔组织疾病?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 1.0, checked: false },
-        ]
-      },
-	  {
-        name: '消化性溃疡?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 1.0, checked: false },
-        ]
-      },
-	  {
-        name: '糖尿病?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是,但无并发症', value: 1.0, checked: false },
-		  { name: '是,伴终末器官损伤', value: 2.0, checked: false },
-        ]
-      },
-      {
-        name: '中重度慢性肾病?',
+        name: 'Killip分级II-IV?',
         items: [
           { name: '否', value: 0.0, checked: false },
           { name: '是', value: 2.0, checked: false },
         ]
       },
       {
-        name: '肝脏疾病?',
+        name: '体重<67kg(147.7磅)?',
         items: [
           { name: '否', value: 0.0, checked: false },
-          { name: '轻度', value: 2.0, checked: false },
-		  { name: '重度', value: 3.0, checked: false },
+          { name: '是', value: 1.0, checked: false },
         ]
       },
-      {
-        name: '实体瘤?',
+	  {
+        name: '前壁ST段抬高或左束支传导阻滞?',
         items: [
           { name: '否', value: 0.0, checked: false },
-          { name: '是,无转移', value: 2.0, checked: false },
-		  { name: '是,伴转移', value: 6.0, checked: false },
+          { name: '是', value: 1.0, checked: false },
         ]
-      },
-      {
-        name: '白血病?',
+      },	 
+	  {
+        name: '治疗距发病时间>4小时?',
         items: [
           { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 2.0, checked: false },
-        ]
-      },
-      {
-        name: '淋巴瘤?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 2.0, checked: false },
-        ]
-      },
-      {
-        name: 'HIV/AIDS?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 6.0, checked: false },
+          { name: '是', value: 1.0, checked: false },
         ]
       },
     ],
@@ -151,7 +83,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/ACCI/index',
+      path: '/pages/STTIMI/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -219,28 +151,34 @@ Page({
       score = score.toFixed(0);
 
 		if (score == 0) {
-			msg = "预后良好，10年生存约为98%"
+			msg = "30天总死亡率0.8%."
 		}
 		if (score == 1) {
-			msg = "预后良好，10年生存约为96%"
+			msg = "30天总死亡率1.6%."
 		}
 		if (score == 2) {
-			msg = "10年生存约为90%"
+			msg = "30天总死亡率2.2%."
 		}
 		if (score == 3) {
-			msg = "10年生存约为77%"
+			msg = "30天总死亡率4.4%."
 		}
 		if (score == 4) {
-			msg = "10年生存约为53%"
+			msg = "30天总死亡率7.3%."
 		}
 		if (score == 5) {
-			msg = "10年生存约为21%"
+			msg = "30天总死亡率12.4%."
 		}
 		if (score == 6) {
-			msg = "10年生存约为2%"
+			msg = "30天总死亡率16.1%."
 		}
-		if (score >= 7) {
-			msg = "10年生存约为0%"
+		if (score == 7) {
+			msg = "30天总死亡率23.4%."
+		}
+		if (score == 8) {
+			msg = "30天总死亡率26.8%."
+		}
+		if (score > 8) {
+			msg = "30天总死亡率35.9%."
 		}
            
       this.setData({

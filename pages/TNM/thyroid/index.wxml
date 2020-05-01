@@ -25,7 +25,7 @@
               <radio-group class="radio-group" bindchange="AgeChange">
                   <label style="display:flex;">
                     <radio class="radio" key="age1" value="D55" checked="true">{{'<'}}55</radio>   
-                    <radio class="radio" key="age2" value="U55">>=55</radio>  
+                    <radio class="radio" key="age2" value="U55">≥55</radio>  
                   </label>               
               </radio-group>
             </view>

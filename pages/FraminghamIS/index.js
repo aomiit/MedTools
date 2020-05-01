@@ -56,7 +56,7 @@ Page({
           { name: 'SBP120-129或DBP80-84', value: 'b', checked: false },
           { name: 'SBP130-139或DBP85-89', value: 'c', checked: false },
           { name: 'SBP140-149或DBP90-99', value: 'd', checked: false },
-          { name: 'SBP>=150或DBP>=100', value: 'e', checked: false },
+          { name: 'SBP≥150或DBP≥100', value: 'e', checked: false },
         ]
       },
       {

@@ -18,7 +18,7 @@ Page({
       { name: '心脏和（或）呼吸衰竭', value: 1, checked: false },
       { name: '急性心肌梗死和（或）缺血性脑卒中', value: 1, checked: false },
       { name: '急性感染和（或）风湿性疾病', value: 1, checked: false },
-      { name: '肥胖（体质指数 >= 30kg / m2）', value: 1, checked: false },
+      { name: '肥胖（体质指数≥30kg/m2）', value: 1, checked: false },
       { name: '正在接受激素治疗', value: 1, checked: false },
     ]
   },

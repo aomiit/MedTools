@@ -27,7 +27,7 @@ Page({
           { name: '正常体重 BMI 18.5-22.9', value: 1.0, checked: false },
           { name: '超重 BMI 23-24.9', value: 2.0, checked: false },
           { name: '肥胖 BMI 25-29.9', value: 3.0, checked: false },
-          { name: '过度肥胖 BMI >=30', value: 4.0, checked: false },
+          { name: '过度肥胖 BMI≥30', value: 4.0, checked: false },
 		    ]
       },
 	  {

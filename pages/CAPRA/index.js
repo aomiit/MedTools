@@ -13,8 +13,8 @@ Page({
       {
 	  	name: '确诊时的年龄(岁)',
         items: [
-		  { name: '<50', value: 0.0, checked: false },
-          { name: '>=50', value: 1.0, checked: false },		  
+		      { name: '<50', value: 0.0, checked: false },
+          { name: '≥50', value: 1.0, checked: false },		  
         ]
       },    
       {
@@ -22,9 +22,9 @@ Page({
         items: [
           { name: '<=6', value: 0.0, checked: false },
           { name: '6.1~10', value: 1.0, checked: false },
-		  { name: '10.1~20', value: 2.0, checked: false },
-		  { name: '20.1~30', value: 3.0, checked: false },
-		  { name: '>30', value: 4.0, checked: false },
+          { name: '10.1~20', value: 2.0, checked: false },
+          { name: '20.1~30', value: 3.0, checked: false },
+          { name: '>30', value: 4.0, checked: false },
         ]
       },
       {
@@ -46,7 +46,7 @@ Page({
         name: '组织切片中阳性切片比例?',
         items: [
           { name: '<34%', value: 0.0, checked: false },
-          { name: '>=34%', value: 1.0, checked: false },
+          { name: '≥34%', value: 1.0, checked: false },
         ]
       },     
     ],

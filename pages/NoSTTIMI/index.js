@@ -7,73 +7,58 @@ Page({
   data: {  
     
     iScore:0,
-    iScores: [0,0,0,0,0,0,0,0],
+    iScores: [0,0,0,0,0,0,0],
 
-    gitems:[ 
+    gitems:[
       {
-        name: '存在导致DIC的原发病?',
+	  	name: '年龄≥65岁?',
         items: [
           { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 2.0, checked: false },
+          { name: '是', value: 1.0, checked: false },	  
         ]
-      },
-	  {
-        name: '不能用原发病解释的严重或多发出血倾向?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 1.0, checked: false },
-        ]
-      },
-	        {
-        name: '不能用原发病解释的微循环障碍或休克?',
-        items: [
-          { name: '否', value: 0.0, checked: false },
-          { name: '是', value: 1.0, checked: false },
-        ]
-      },
-	  {
-        name: '广泛性皮肤、粘膜栓塞，灶性缺血性坏死、脱落及溃疡形成，不明原因的肺、肾、脑等脏器功能衰竭?',
+      },    
+      {
+        name: '≥3个冠心病的危险因素?',
         items: [
           { name: '否', value: 0.0, checked: false },
           { name: '是', value: 1.0, checked: false },
         ]
       },
       {
-        name: '血小板计数?',
+        name: '已知的冠心病(狭窄≥50%)?',
         items: [
-          { name: '≥100*10^9/L (非恶性血液病)', value: 0.0, checked: false },
-          { name: '80~<100*10^9/L(非恶性血液病)', value: 1.0, checked: false },
-          { name: '<80*10^9/L(非恶性血液病)', value: 2.0, checked: false },
-          { name: '24小时内下降≥50%(非恶性血液病)', value: 1.0, checked: false },
-          { name: '<50*10^9/L(恶性血液病)', value: 11.0, checked: false },
-          { name: '24小时内下降≥50%(恶性血液病)', value: 11.0, checked: false },	
-          { name: '非上两种情况(恶性血液病)', value: 10.0, checked: false },			  
+          { name: '否', value: 0.0, checked: false },
+          { name: '是', value: 1.0, checked: false },
+        ]
+      },
+      {
+        name: '过去7天服用阿司匹林?',
+        items: [
+          { name: '否', value: 0.0, checked: false },
+          { name: '是', value: 1.0, checked: false },
+        ]
+      },
+      {
+        name: '严重的心绞痛(24小时内发作两次以上)?',
+        items: [
+          { name: '否', value: 0.0, checked: false },
+          { name: '是', value: 1.0, checked: false },
+        ]
+      },
+      {
+        name: 'ST段改变≥0.5mm?',
+        items: [
+          { name: '否', value: 0.0, checked: false },
+          { name: '是', value: 1.0, checked: false },
         ]
       },
 	  {
-        name: 'D-二聚体?',
+        name: '心肌标记物阳性?',
         items: [
-          { name: '<5mg/L', value: 0.0, checked: false },
-          { name: '5~<9mg/L', value: 2.0, checked: false },
-		      { name: '>9mg/L', value: 3.0, checked: false },
+          { name: '否', value: 0.0, checked: false },
+          { name: '是', value: 1.0, checked: false },
         ]
-      },
-	  {
-        name: 'PT及APTT延长?',
-        items: [
-          { name: 'PT延长<3S且APTT延长<10S', value: 0.0, checked: false },
-          { name: 'PT延长≥3S或APTT延长≥10S', value: 1.0, checked: false },
-		      { name: 'PT延长≥6S', value: 2.0, checked: false },
-        ]
-      },
-	  {
-        name: '纤维蛋白原?',
-        items: [
-          { name: '≥1.0g/L', value: 0.0, checked: false },
-          { name: '<1.0g/L', value: 1.0, checked: false },
-        ]
-      },
-	  
+      },	 
     ],
 
     iContent:"",
@@ -90,7 +75,7 @@ Page({
     }
     return {
       title: '好用的小程序分享给您!',
-      path: '/pages/CDSS/index',
+      path: '/pages/NoSTTIMI/index',
       imageUrl: "",
       success: function (res) {
         // 分享成功
@@ -147,40 +132,35 @@ Page({
    
       let score =0;
       var iScores = this.data.iScores;
-	  
-	  for (var i = 0, len = iScores.length; i < len; i++) 
-	  {
-		score += iScores[i];
-	  }  
-	  
-	  var msg = "";
-	  
-	  if(iScores[4] > 9.0)
-	  {
-		score -= iScores[1];
-		score -= 10;
-		if (score >= 6) {
-			msg = "恶性血液病，可诊断为DIC。"
-		}  
-		else
-		{
-			msg = "恶性血液病，DIC风险较低。"
-		}
-	  }
-	  else
-	  {
-		score = score.toFixed(0);
-		if (score >= 7) {
-			msg = "非恶性血液病，可诊断为DIC。"
-		}  
-		else
-		{
-			msg = "非恶性血液病，DIC风险较低。"
-		}
-	  }	  
+
+      for (var i = 0, len = iScores.length; i < len; i++) {
+        score += iScores[i];
+      }
       
-      console.log(score)     
-          
+      console.log(score) 
+      var msg = null;
+
+      score = score.toFixed(0);
+
+		if (score <= 1) {
+        msg = "14天风险为5%：总病死率，新发或复发MI，或严重复发性缺血需要紧急血管再通."
+		}
+		if (score == 2) {
+			msg = "14天风险为8%：总病死率，新发或复发MI，或严重复发性缺血需要紧急血管再通."
+		}
+		if (score == 3) {
+			msg = "14天风险为13%：总病死率，新发或复发MI，或严重复发性缺血需要紧急血管再通."
+		}
+		if (score == 4) {
+			msg = "14天风险为20%：总病死率，新发或复发MI，或严重复发性缺血需要紧急血管再通."
+		}
+		if (score == 5) {
+			msg = "14天风险为26%：总病死率，新发或复发MI，或严重复发性缺血需要紧急血管再通."
+		}
+		if (score > 5) {
+			msg = "14天风险为41%：总病死率，新发或复发MI，或严重复发性缺血需要紧急血管再通."
+		}
+           
       this.setData({
         iScore: score,
         iContent: msg,

@@ -21,7 +21,7 @@ Page({
         name: '化疗前血小板水平',
         items: [
 			  { name: '<350x10^9', value: 0.0, checked: false },
-			  { name: '>=350x10^9', value: 1.0, checked: false },
+			  { name: '≥50x10^9', value: 1.0, checked: false },
 		    ]
       },
       {
@@ -35,14 +35,14 @@ Page({
         name: '化疗前白细胞水平',
         items: [
           { name: '<11x10^9', value: 0.0, checked: false },
-          { name: '>=11x10^9', value: 1.0, checked: false },
+          { name: '≥11x10^9', value: 1.0, checked: false },
         ]
       },
 	  {
         name: 'BMI水平',
         items: [
           { name: '<35 kg/m^2', value: 0.0, checked: false },
-          { name: '>=35 kg/m^2', value: 1.0, checked: false },
+          { name: '≥35 kg/m^2', value: 1.0, checked: false },
         ]
       },  
 	  
