@@ -82,6 +82,7 @@ App({
       { id: 70, url: '../STTIMI/index', caption: 'ST段抬高心肌梗塞的TIMI危险评分', collected: false },
       { id: 71, url: '../NoSTTIMI/index', caption: '非ST段抬高心肌梗塞的TIMI危险评分', collected: false },
       { id: 72, url: '../CIN/index', caption: 'CIN对比剂肾病危险评分', collected: false },
+      { id: 73, url: '../FuglMeyer/index', caption: 'FuglMeyer运动功能评定量表', collected: false },
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
 
       
@@ -98,7 +99,7 @@ App({
         name: '全部',
         open: false,
         ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72]
+             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73]
       },
       {
         id: 'ONCOLOGY',
@@ -165,6 +166,12 @@ App({
         name: '影像',
         open: false,
         ids: [60, 61, 66,72]
+      }, 
+      {
+        id: 'REHAB',
+        name: '康复',
+        open: false,
+        ids: [73]
       }, 
     ],
   },

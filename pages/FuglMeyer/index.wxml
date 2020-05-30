@@ -1,0 +1,75 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cell">{{upper.title}}</view>
+		<view class="weui-cells" wx:for="{{upper.gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange" style="width:50%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+		
+		<view class="weui-cell">{{lower.title}}</view>
+		<view class="weui-cells" wx:for="{{lower.gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange2" style="width:50%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>   
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>
+        
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">上肢评分:</text>
+                <text class="Info">{{iScoreUpper}}分</text>
+        </view>
+		<view class="count_hd">          
+                <text class="Info">下肢评分:</text>
+                <text class="Info">{{iScoreLower}}分</text>
+        </view>
+		<view class="count_hd">          
+                <text class="Info">总评分:</text>
+                <text class="Info">{{iTotalScore}}分</text>
+        </view>				
+        <view class="count_hd">          
+                <text class="Info">{{iContent}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <text class="main_info">
+	Fugl-Meyer Assessment(FMA) 是一种评估中风病人感觉运动障碍的方法，现在被广泛用于运动功能的临床评估。经过多次测试，Fugl-Meyer评估分数有很好的一致性，响应性和准确性。最大可能Fugl-Meyer量表评分为226，相当于需要完全感觉运动恢复。Fugl-Meyer评估的最小临床重要差异(minimal clinically important difference,MICD)，在慢性中风时下肢最小为6，在亚急性中风上肢最小为9-10。
+	</text>
+    
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>
