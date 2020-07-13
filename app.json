@@ -80,8 +80,10 @@
     "pages/FuglMeyer/index",
     "pages/FuglMeyerB/index",
     "pages/BergBalance/index",  
-	"pages/ABC/index",  
-	"pages/Barthel/index",  	
+    "pages/ABC/index",  
+    "pages/Morse/index", 
+    "pages/Barthel/index",  
+    "pages/Tinetti/index", 	
 	
     "pages/TNM/pancreas/index",
     "pages/TNM/liver/index",
