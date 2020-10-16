@@ -1,0 +1,63 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}</text>
+        </view>
+        <view class="count_hd">          
+                <text class="Info">{{iContent}}</text>
+        </view>
+      </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">       
+            <view class="weui-cell">
+                <view class="weui-cell__bd">年龄(周岁)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="a" type="number" value="{{iAge}}" maxlength="3" bindinput="oniAge"  placeholder="请输入年龄"/>
+                </view>
+            </view>
+
+            <view class="weui-cell">
+              <view class="weui-cell__bd">性别: </view>
+              <radio-group class="radio-group" bindchange="SexradioChange">
+                  <label style="display:flex;">
+                    <radio class="radio" key="gen1" value="Male" checked="true">   男   </radio>  
+                    <radio class="radio" key="gen2" value="Female">   女   </radio>   
+                  </label>               
+              </radio-group>
+            </view>
+
+            <checkbox-group bindchange="checkboxChange">
+              <view class="weui-cell" wx:for="{{items}}" wx:key="name">
+                 <view class="weui-cell__hd" style="width:80%">
+                  {{item.name}}
+                </view>
+                <view class="weui-cell__hd" style="position:relative;left:2%">            
+                  <checkbox  value="{{item.value}}" checked="{{item.checked}}"/> {{item.value}}             
+                </view>
+              </view>
+            </checkbox-group>
+        </view>
+        
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>
+        
+    </form>
+
+    <text class="main_info">
+      Wells PS, Anderson DR, Rodger M, et. al. Derivation of a simple clinical model to categorize patients probability of pulmonary embolism: increasing the models utility with the SimpliRED D-dimer. Thromb Haemost. 2000 Mar;83(3):416-20.
+      https://academic.oup.com/eurheartj/article/35/43/3033/503581
+      2014ESC肺栓塞指南推荐的临床预测评分-wells规则和修正的日内瓦评分
+    </text>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

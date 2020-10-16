@@ -1,0 +1,51 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange" style="width:50%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>
+        
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}分</text>
+        </view>
+        <view class="count_hd">          
+                <text class="Info">{{iContent}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <text class="main_info">
+	年龄校正Charlson合并症指数（Age-adjusted Charlson Comorbidity Index，ACCI）是一种应用较广泛的合并症评分体系,较CCI更佳。它基于患者所患疾病数目及严重程度，对合并症进行量化，可用于预测疾病的死亡风险。
+    参考文献：
+		Charlson M, Szatrowski TP, Peterson J, Gold J. Validation of a combined comorbidity index. J Clin Epidemiol. 1994;47(11):1245-51. 
+		Koppie TM,et al. Age-adjusted Charlson comorbidity score is associated with treatment decisions and clinical outcomes for patients undergoing radical cystectomy for bladder cancer.Cancer. 2008 Jun;112(11):2384-92.
+	</text>
+    
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

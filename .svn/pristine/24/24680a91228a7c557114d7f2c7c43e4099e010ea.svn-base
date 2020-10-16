@@ -1,0 +1,50 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange" style="width:50%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+			<button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>
+        
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">10年冠心病危险:</text>
+                <text class="Info">{{iScore}}%</text>
+        </view>
+        <view class="count_hd">    
+				<text class="Info">相同年龄/性别的危险:</text>
+                <text class="Info">{{iContent}}%</text>
+        </view>
+      </view>
+    </view>
+    
+    <text class="main_info">
+		 Framingham危险评分来自于弗明汉心脏病研究（Framingham Heart Study），是根据胆固醇水平和非胆固醇因素计算个体未来10年冠心病发作几率。
+    </text>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

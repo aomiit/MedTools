@@ -1,0 +1,49 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <text class="main_info">
+    注意事项：下表中的问题和症状是人们通常对一些紧张生活经历的反应。请仔细阅，根据月内打扰您的程度，在右侧选择。
+    </text>
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:60%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange">  
+                  <label wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name" style="display:flex;">
+                    <radio class="radio" value="{{index}}:{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>       
+
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}分</text>
+        </view>
+        <view class="count_bd">          
+                <text class="Info">{{iContent}}</text>
+                <text class="Info">本报告书内容是依当事人的问卷回答产生的结果。</text>                
+        </view>
+      </view>
+    </view>
+
+    <text class="main_info">
+	PTSD检查表平民版（The PTSD Cheeklist-CivilianVersion，PCL-C）是美国创伤后应激障碍研究中心行为科学分部于1994年11月根据DSM一W制定的，由17项条目组成的PTSD症状调查表。中文译文是由姜潮教授、美国纽约州立大学布法罗学院张杰教授和美国PTSD研究中心经过多次中英文双译于2003年7月完成。PCL一C量表是专为评价普通人在平时生活(与战争相对而言)中遭遇创伤后的体验而设计的。它要求被试根据自己在过去的一个月被问题和抱怨打扰程度打分，分5个等级，1“一点也不”、2“有一点”、3“中度的”、4“相当程度的”、5“极度的”。可分为4个因素，分别为：警觉增高反应；回避反应；创伤经历反复重现反应；社会功能缺失反应。累计各项的总分（17一85），分数越高，代表PTSD发生的可能性越大。此表基于症状的数量和严重程度而提供一个连续的评分，是一个多纬度观察PTSD的工具，可以对临床治疗护理提供对PTSD主要症状更详尽的描述，还可在临床研究中作为评价心理干预效果的工具。在美国，PCL-C量表常作为PTSD症状诊断和干预或治疗PTSD的效果评价量表。 经研究PCL-C中文版具有较良好的信度和效度，并具有较好的区分度。 
+    </text>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

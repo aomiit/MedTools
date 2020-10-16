@@ -1,0 +1,53 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <text class="main_info">
+    填表注意事项：请仔细阅读每一条，每一条文字后有四个格，分别表示：
+    A：没有或很少时间（过去一周内，出现这类情况的日子不超过一天）
+    B：小部分时间（过去一周内，有1-2天有过这类情况）
+    C：相当多时间（过去一周内，3-4天有过这类情况）
+    D：绝大部分或全部时间（过去一周内，有5-7天有过这类情况）
+    </text>
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange">  
+                  <label wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name" style="display:flex;">
+                    <radio class="radio" value="{{index}}:{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>       
+
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}分</text>
+        </view>
+        <view class="count_bd">          
+                <text class="Info">{{iContent}}</text>
+                <text class="Info">本报告书内容是依当事人的问卷回答产生的结果。</text>                
+        </view>
+      </view>
+    </view>
+
+    <text class="main_info">
+本量表按中国常模结果设计，总粗分的1.25倍为标准分。总粗分的正常上限为40分，标准分为50分。若您的标准分低于50分，说明您心理状况正常，若超过50分说明有焦虑症状，分值越高，说明您的焦虑症状越严重，其中50～59分为轻度焦虑，60～69分为中度焦虑，69分以上为重度焦虑。
+    </text>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+    
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

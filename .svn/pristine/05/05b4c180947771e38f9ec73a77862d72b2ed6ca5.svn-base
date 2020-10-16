@@ -1,0 +1,110 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">		
+		     <view class="weui-cell">
+                <view class="weui-cell__bd" style="width:50%">手术时年龄(周岁)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="a" type="number" value="{{iAge}}" maxlength="3" bindinput="oniAge"  placeholder="请输入20-85"/>
+                </view>
+            </view>
+			
+		    <view class="weui-cell">
+              <view class="weui-cell__bd">性别: </view>
+              <radio-group class="radio-group" bindchange="SexradioChange">                
+                    <radio class="radio" key="gen1" value="1">   男   </radio>  
+                    <radio class="radio" key="gen2" value="0">   女   </radio>               
+              </radio-group>
+            </view>
+			
+				
+			<view class="weui-cell">
+              <view class="weui-cell__bd">术式: </view>
+              <radio-group class="radio-group" bindchange="TypeChange">
+                    <radio class="radio" key="s1" value="0">全直肠系膜切除术</radio>  
+                    <radio class="radio" key="s2" value="1">部分直肠系膜切除术</radio>               
+              </radio-group>
+            </view>  
+			
+			<view class="weui-cell">
+              <view class="weui-cell__bd">肿瘤大小(cm): </view>
+              <radio-group class="radio-group" bindchange="TumorsizeChange">
+					<radio class="radio" key="s0" value="0">   0   </radio>  
+                    <radio class="radio" key="s1" value="1">   1   </radio>  
+                    <radio class="radio" key="s2" value="2">   2   </radio>   
+					<radio class="radio" key="s3" value="3">   3   </radio> 
+					<radio class="radio" key="s4" value="4">   4   </radio> 
+					<radio class="radio" key="s5" value="5">   5   </radio> 
+					<radio class="radio" key="s6" value="6">   6   </radio> 
+					<radio class="radio" key="s7" value="7">   7   </radio> 
+					<radio class="radio" key="s8" value="8">   8   </radio> 
+					<radio class="radio" key="s9" value="9">   9   </radio> 
+					<radio class="radio" key="s10" value="10">   10  </radio> 
+					<radio class="radio" key="s11" value="11">   11  </radio> 
+					<radio class="radio" key="s12" value="12">   12  </radio> 
+					<radio class="radio" key="s13" value="13">   13  </radio> 
+					<radio class="radio" key="s14" value="14">   14  </radio> 
+					<radio class="radio" key="s15" value="15">   15  </radio> 					              
+              </radio-group>
+            </view>   			
+            
+     		<view class="weui-cell">
+              <view class="weui-cell__bd">气孔: </view>
+              <radio-group class="radio-group" bindchange="StomaChange">
+                    <radio class="radio" key="s1" value="1">   有   </radio>  
+                    <radio class="radio" key="s2" value="0">   无   </radio>               
+              </radio-group>
+            </view>   
+
+     		<view class="weui-cell">
+              <view class="weui-cell__bd">术前放疗: </view>
+              <radio-group class="radio-group" bindchange="PRTChange">
+                    <radio class="radio" key="d1" value="1">   是   </radio>  
+                    <radio class="radio" key="d2" value="0">   否   </radio>                
+              </radio-group>
+            </view> 	
+	
+        </view>
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>    
+        <view class="index_banner">
+          <view class="cell__bd">    
+            <view class="count_hd">           
+                    <text class="Info">评分:</text>
+                    <text class="Info">{{iScore}}</text>
+            </view>
+
+            <view class="count_hd">           
+                    <text class="Info">{{iContent}}</text>
+            </view>
+          </view>
+        </view>
+            
+    </form>
+
+    <text class="main_info">公式:
+		参考文献：Development and external validation of a nomogram and online tool to predict bowel dysfunction following restorative rectal cancer resection: the POLARS score
+Nick J Battersby1,2, George Bouliotis3, Katrine J Emmertsen4, Therese Juul4, Rob Glynne-Jones5, Graham Branagan6, Peter Christensen4, Søren Laurberg4, Brendan J Moran1,2 on behalf of the UK and Danish LARS Study Groups
+		说明：
+		
+    </text>
+
+    <button class = "shareBtn"  type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="cu-bar bg-white solid-bottom" wx:if="{{!isAccept}}">
+        <view class='action'>
+          <text class='cuIcon-check text-gray'></text>订阅小程序更新
+        </view>
+        <view class='action'>
+          <button class="cu-btn bg-green shadow" bindtap="subscriptionNotice">订阅更新</button>
+        </view>
+      </view>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+
+</scroll-view>

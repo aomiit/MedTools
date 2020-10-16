@@ -1,0 +1,50 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange" style="width:50%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>
+        
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}分</text>
+        </view>
+        <view class="count_hd">          
+                <text class="Info">{{iContent}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <text class="main_info">
+		1.中国缺血性脑卒中风险评估量表使用专家共识；
+		2.主要用于院内神经专科医生对TIA患者进行卒中风险评估；
+    3.Addition of brain and carotid imaging to the ABCD² score to identify patients at early risk of stroke after transient ischaemic attack: a multicentre observational study. Lancet Neurol. 2010 Nov;9(11):1060-9. 
+    </text>
+    
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

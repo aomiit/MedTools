@@ -1,0 +1,21 @@
+{
+  "name": "wxapp-model",
+  "authors": [
+    "gardenliu@qq.com"
+  ],
+  "description": "wxapp common model",
+  "main": "",
+  "keywords": [
+    "wxapp",
+    "model"
+  ],
+  "license": "MIT",
+  "homepage": "www.gardenliu.cc",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

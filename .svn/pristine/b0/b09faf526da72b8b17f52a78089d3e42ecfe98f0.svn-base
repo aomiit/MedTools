@@ -1,0 +1,48 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <text class="main_info">
+    使用格拉斯哥昏迷量表(GLASGOW昏迷评分)评估头部外伤患者。对于头部外伤，使用量表评分有评判预后的价值。为昏迷或任何原因引起的意识障碍，使用该评分因为它可以相对可靠的，客观度量患者无反应的严重程度。并且可以用于连续监测。该评分根据病人对刺激的不同反应进行评分所得。
+    </text>
+    
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:20%">{{item.name}}</view>
+
+                <view class="weui-cell__hd" style="width:80%"> 
+                  <radio-group class="radio-group" bindchange="radioChange">  
+                    <label wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name" style="display:flex;">
+                      <radio class="radio" value="{{index}}:{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+                    </label> 
+                  </radio-group>
+                </view>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>        
+
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">标准分数总和:</text>
+                <text class="Info">{{iScore}}</text>
+        </view>
+        <view class="count_bd">          
+                <text class="Info">{{iContent}}</text>
+                <text class="Info">特此提醒用户，此处所含信息可能无法满足用户需求。用户应知悉，虽然这些信息源自于医学研究和文献，但我们无法保证其正确性、完整性或通用性。本软件的用户应对基于系统的信息而采取的任何决定或行动承担全部责任。 </text>                
+        </view>
+      </view>
+    </view>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

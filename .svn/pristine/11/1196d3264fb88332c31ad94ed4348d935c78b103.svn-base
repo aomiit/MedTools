@@ -1,0 +1,80 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+      <view class="count_hd">          
+                <text class="Info">需要治疗人数NNT:</text>
+                <text class="Info">{{iNNT}}</text>
+      </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">公式选择:</view>
+                <view class="weui-cell__bd">
+                    <view class="weui-cell__ft_in-access">
+                        <picker bindchange="iFormulaChange" value="{{iFormula}}" range="{{iFormulas}}" range-key="name">                       
+                            {{iFormulas[iFormula]['name']|| '请选择公式'}}                         
+                        </picker>
+                    </view>
+                </view>
+            </view>
+
+
+            <view class="weui-cell" hidden="{{biFre}}">
+                <view class="weui-cell__bd">第一组(对照组)发生率(%)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="if1" type="digit" value="{{iFirstFre1}}" maxlength="6" bindinput="oniFirstFre1"  placeholder="0-100"/>
+                </view>
+            </view>
+
+            <view class="weui-cell" hidden="{{biFre}}">
+                <view class="weui-cell__bd">第一组(对照组)发生率(%)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="if2" type="digit" value="{{iFirstFre2}}" maxlength="6" bindinput="oniFirstFre2"  placeholder="0-100"/>
+                </view>
+            </view>
+
+            <view class="weui-cell" hidden="{{biN}}">
+              <view class="weui-cell__bd">每事件数: </view>
+              <radio-group class="radio-group" bindchange="iNNChange">
+                  <label style="display:flex;">
+                    <radio class="radio" key="N1" value='100' checked="true">100</radio>  
+                    <radio class="radio" key="N2" value='1000'>1000</radio>   
+                  </label>               
+              </radio-group>
+            </view>
+
+            <view class="weui-cell" hidden="{{biN}}">
+                <view class="weui-cell__bd">第一组(对照组)发生事件数</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="in1" type="digit" value="{{iN1}}" maxlength="6" bindinput="oniN1"  placeholder=""/>
+                </view>
+            </view>
+
+            <view class="weui-cell" hidden="{{biN}}">
+                <view class="weui-cell__bd">第二组(对照组)发生事件数</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="in2" type="digit" value="{{iN2}}" maxlength="6" bindinput="oniN2"  placeholder=""/>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>        
+    </form>
+
+    <text class="main_info">
+    需要治疗人数（Number Needed to Treat，NNT）又称需处理数，可把抽象的率转变为1个具体的频数，使临床试验结果转化为临床实践应用的指标，具有表达统计学意义及临床意义的双重作用，是一个衡量临床治疗效果、指导临床决策的有用工具。      
+    </text>
+
+    <button class = "shareBtn"  type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+
+</scroll-view>

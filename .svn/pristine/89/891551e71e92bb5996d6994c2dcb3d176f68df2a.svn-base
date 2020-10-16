@@ -1,0 +1,46 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}</text>
+        </view>
+      </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">       
+            <view class="weui-cell">
+              <view class="weui-cell__bd">体力状态评分: </view>
+              <radio-group class="radio-group" bindchange="TLradioChange">
+                  <label class="radio">
+                    <view> <radio key="t1" value="0"/>活动能力完全正常，与起病前无明显差别</view>  
+                    <view> <radio key="t2" value="1"/>能行走和从事轻度体力活动，但不能从事较重的体力活动</view>   
+                    <view> <radio key="t3" value="2"/>能行走，生活自理，但不能工作，日间超过一半时间下床活动</view> 
+                    <view> <radio key="t4" value="3"/>生活仅能部分自理，日间超过一半时间卧床或轮椅</view> 
+                    <view> <radio key="t5" value="4"/>卧床不起，生活不能自理</view> 
+                    <view> <radio key="t6" value="5"/>死亡</view> 
+                  </label>          
+              </radio-group>
+            </view>
+
+        </view>
+        
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>
+
+    </form>
+
+            
+    <text class="main_info">
+    将患者的活动状态分为0~5共6级。一般认为活动状况3、4级的病人不适宜进行化疗。
+    </text>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

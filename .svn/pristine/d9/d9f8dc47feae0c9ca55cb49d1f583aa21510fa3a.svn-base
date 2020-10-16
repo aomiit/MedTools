@@ -1,0 +1,47 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <text class="main_info">
+    说明：该量表编制于20世纪80年代初，从15个主要方面对孤独症儿童进行评估，是主要适用于医师或儿童心理测验专职人员的他评量表。应用时最好能结合儿童孤独症家长评定量表共同使用。
+    </text>
+    
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:20%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange" style="width:80%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>        
+
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">评分:</text>
+                <text class="Info">{{iScore}}</text>
+        </view>
+        <view class="count_bd">          
+                <text class="Info">{{iContent}}</text>
+                <text class="Info">本报告书内容是依当事人的问卷回答产生的结果。</text>                
+        </view>
+      </view>
+    </view>
+
+    <button class = "shareBtn"  type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

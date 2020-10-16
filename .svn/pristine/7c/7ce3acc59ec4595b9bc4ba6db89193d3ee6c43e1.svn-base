@@ -1,0 +1,79 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+      <view class="count_hd">    
+        <view class="count_bd">           
+                <view class="weui-label">体表面积(m<sup>2</sup>)</view>               
+                <view class="weui-label">{{iBS}}</view>  
+        </view>
+
+        <view class="count_bd">           
+                <view class="weui-label">药物总量(毫克)</view>
+                <view class="weui-label">{{iDOSE}}</view>
+        </view>
+      </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">
+        
+            <view class="weui-cell">
+                <view class="weui-cell__bd">性别: </view>
+                <radio-group class="radio-group" bindchange="SexradioChange">
+                    <label style="display:flex;">
+                      <radio class="radio" key="gen1" value="Male" checked="true">男</radio>  
+                      <radio class="radio" key="gen2" value="Female">女</radio>   
+                    </label>               
+                </radio-group>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">人群: </view>
+                <radio-group class="radio-group" bindchange="AdultradioChange">
+                    <label style="display:flex;">
+                      <radio class="radio" key="adult" value="Adult" checked="true">   成年人   </radio>  
+                      <radio class="radio" key="noadult" value="NoAdult">   儿童   </radio>   
+                    </label>               
+                </radio-group>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">身高(厘米)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="a" type="digit" value="{{iHeight}}" maxlength="6" bindinput="oniHeight"  placeholder="请输入身高"/>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">体重(公斤)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="w" type="digit" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  placeholder="请输入体重"/>
+                </view>
+            </view>
+           
+            <view class="weui-cell">
+                <view class="weui-cell__bd">药物用量(毫克/m<sup>2</sup>)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="Medci" type="digit" value="{{iMedci}}" maxlength="6" bindinput="oniMedci"  placeholder="请输入药物用量"/>
+                </view>
+            </view>
+                        
+        </view>
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>        
+
+    </form>
+
+    <text class="main_info">
+    1．中国成年男性 BSA＝0.00607×身高（cm）＋0.0127×体重（kg）－0.0698（赵松山，刘友梅，姚家邦等. 中国成年男子体表表面积的测量. 营养学报, 1984, 6: 87）   
+    2．中国成年女性 BSA＝0.00586×身高（cm）＋0.0126×体重（kg）－0.0461（赵松山，刘友梅，姚家邦等. 中国成年女子体表表面积的测量. 营养学报, 1987, 9(3): 200）   
+    3．儿童体表面积 BSA＝0.0061×身高（cm）＋0.0128×体重（kg）－0.1529（新编药物学第十三版，陈新谦，金有豫，人民卫生出版社）
+    </text>
+    
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

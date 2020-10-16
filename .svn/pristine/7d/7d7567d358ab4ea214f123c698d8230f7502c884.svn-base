@@ -1,0 +1,55 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <text class="main_info">
+    说明：评分系统已用于评估危重病人的疾病严重程度。评分系统在预测病人生存率上价值有限，但对诊疗质控和开展科研很有价值。因为评分系统可以将危重病人按疾病严重程度归类，并比较预后。
+目前最常用的是1985年引入的第二版急性生理和慢性健康状况评估系统（Acute Physiologic Assessment and Chronic Health Evaluation II，APACHE II）。APACHE II依据12项生理指标、年龄和健康状况得出0-71分的评分（见 APACHE II评分系统*）。1991年引入的APACHE III 有17项生理指标，有17项生理指标，较APACHE II复杂，较少应用。其他评分系统有：第二版简化急性生理评分（simplified acute physiology score，SAPS Ⅱ）、死亡概率模型（MPM）和序贯器官功能衰竭评分（SOFA）。
+
+*APACHE II评分=急性生理学评分+年龄分值+慢性健康分值。最低分=0分，最高分=71分，院内死亡危险性随分值增加而增加。
+†选取最近24小时内最差值。
+‡慢性健康状态：器官功能不全（如：肝脏、心血管、肾脏、肺）或入院前已存在的免疫低下状态。
+§选择性参数，仅限在无动脉血气分析时使用。
+A-aDO2= 肺泡动脉氧含量梯度; Fio2= 吸入氧浓度 O2
+    </text>
+    
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange" style="width:50%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>        
+
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">标准分数总和:</text>
+                <text class="Info">{{iScore}}</text>
+        </view>
+        <view class="count_bd">          
+                <text class="Info">{{iContent}}</text>
+                <text class="Info">特此提醒用户，此处所含信息可能无法满足用户需求。用户应知悉，虽然这些信息源自于医学研究和文献，但我们无法保证其正确性、完整性或通用性。本软件的用户应对基于系统的信息而采取的任何决定或行动承担全部责任。 </text>                
+        </view>
+      </view>
+    </view>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

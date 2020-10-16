@@ -1,0 +1,91 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+    <view class="index_banner">
+        <view class="count_bd"> 
+            <view class="count_hd">           
+              <text class="Info">液体比率0.5mmol/L/hr : </text>
+              <text class="Info"> {{iFluidd5}}ml/hr</text>
+            </view>
+
+            <view class="count_hd">           
+              <text class="Info">液体比率1 mmol/L/hr* : </text>
+              <text class="Info"> {{iFluid1}}ml/hr</text>
+            </view>
+
+            <view class="count_hd">            
+              <text class="Info">液体比率2 mmol/L/hr* : </text>
+              <text class="Info"> {{iFluid2}}ml/hr</text>
+            </view>
+        </view>
+    </view>
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells">
+            <view class="weui-cell">
+              <view class="weui-cell__bd">性别: </view>
+              <radio-group class="radio-group" bindchange="SexradioChange">
+                  <label style="display:flex;">
+                    <radio class="radio" key="gender" value="Male" checked="true">   男   </radio>  
+                    <radio class="radio" key="gender" value="Female">   女   </radio>   
+                  </label>               
+              </radio-group>
+            </view>
+
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">人群: </view>
+                <radio-group class="radio-group" bindchange="AdultradioChange">
+                    <label style="display:flex;">
+                      <radio class="radio" key="age" value="NoAdult">   儿童   </radio>   
+                      <radio class="radio" key="age" value="Adult" checked="true">   成年人   </radio>  
+                      <radio class="radio" key="age" value="Older">   老年人   </radio>  
+                    </label>               
+                </radio-group>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">体重(公斤)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="w" type="digit" value="{{iWeight}}" maxlength="6" bindinput="oniWeight"  
+                    placeholder="请输入体重"/>
+                </view>
+            </view>
+            
+            <view class="weui-cell">
+                <view class="weui-cell__bd">血清钠(mmol/l)</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" id="a" type="digit" value="{{iRlNA}}" maxlength="6" bindinput="oniRlNA"  
+                    placeholder="请输入实测血钠值"/>
+                </view>
+            </view>      
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">流体介质类型: </view>
+                <radio-group class="radio-group" bindchange="FluidTyperadioChange">
+                   <view class="weui-cell__bd">
+                      <radio class="radio" key="ftype" value="p3">3%盐水(513 Na mmol/L)</radio>   
+                      <radio class="radio" key="ftype" value="p0d9" checked="true">生理盐水(154 Na mmol/L)</radio>  
+                      <radio class="radio" key="ftype" value="lg">林格乳酸盐(130 Na mmol/L)</radio>  
+                      <radio class="radio" key="ftype" value="d5lg">1/2生理盐水 (77 Na mmol/L)</radio>                        
+                    </view>                  
+                </radio-group>
+            </view>     
+
+        </view>
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+            <button class="compute" type="primary" bindtap="onCompute">计算</button>
+        </view>
+        
+
+    </form>
+    <text class="main_info">
+    
+    </text>
+
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>

@@ -1,0 +1,52 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+    <form class="main" bindreset="formReset">
+        <view class="weui-cells" wx:for="{{gitems}}" wx:key="name">             
+            <view class="weui-cell">
+
+                <view class="weui-cell__hd" style="width:50%">{{item.name}}</view>
+
+                <radio-group class="radio-group" bindchange="radioChange" style="width:50%">  
+                  <label class="radio" wx:for-index= "cellindex" wx:for="{{item.items}}" wx:key="name">
+                    <view>
+                      <radio  value="{{index}}:{{item.value}}" checked="{{item.checked}}"/>{{item.name}}                      
+                    </view>
+                  </label> 
+                </radio-group>
+
+            </view>
+         
+        </view>       
+
+        <view class="btns">
+            <button class="clear" form-type="reset">重置</button>
+        </view>
+        
+    </form>
+
+    <view class="index_banner">
+      <view class="count_bd">    
+        <view class="count_hd">          
+                <text class="Info">PASI评分:</text>
+                <text class="Info">{{iScore}}分</text>
+        </view>        
+      </view>
+    </view>
+    
+    <text class="main_info">
+	公式 ：PASI评分＝（E头+I头+D头）×A头×0.1+（E上肢+I上肢+D上肢）×A上肢×0.2+（E躯干+I躯干+D躯干）×A躯干×0.3＋（E下肢+I下肢+D下肢）×A下肢×0.4
+
+	疗效判定标准:按照银屑病皮损面积及严重程度指数(psoriasis area and severity index，PASI)评分标准，记录治疗前后的PASI评分，根据PASI评分下降率进行疗效判定。PASI评分下降率二(治疗前PASI评分一治疗后PASI评分)/治疗前PASI评分x 100%。
+	痊愈，PASI评分下降率>90%;
+	显效，PASI评分下降率为60%一89%;
+	有效，PASI评分下降率为20%一59%;
+	无效，PASI评分下降率低于20%。
+	总有效率(痊愈例数+显效例数+有效例数)/总例数*100%。
+    </text>
+    
+    <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+
+    <view class="adContainer">
+      <ad unit-id="adunit-7fc8b8ea9982b9dc"></ad>
+    </view>
+</scroll-view>
