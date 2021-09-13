@@ -1,5 +1,9 @@
 {
   "navigationBarTitleText":"医学计算工具集",
   "disableScroll":true,
-  "enablePullDownRefresh":false
+  "enablePullDownRefresh":false,
+  "usingComponents": {
+    "cell0": "plugin://chatGroupPlugin/cell",
+    "cell1": "plugin://contactPlugin/cell"
+   }
 }

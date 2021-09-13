@@ -16,8 +16,9 @@
             <text>我们的官网:www.aomiit.com</text>
         </view>
 
-        <view class="info" style="align:center;">
-          <button class = "shareBtn"  type="primary" open-type="contact">我有开发建议</button>
+        <view class="weui-cell">
+          <view class="weui-cell__hd" style="width:50%"><cell1 plugid='6d4cf58ba2124785b5e1686897b32845'/></view>
+          <view class="weui-cell__hd" style="width:50%"><cell0 plugid='05a840d78df5d1136823c21e4f5677a4'/></view>           
         </view>
 
     </view>

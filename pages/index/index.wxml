@@ -21,8 +21,14 @@
       </view>
     </block>
 
+    <view class="weui-cell">
+          <view class="weui-cell__hd" style="width:50%"><cell1 plugid='6d4cf58ba2124785b5e1686897b32845'/></view>
+          <view class="weui-cell__hd" style="width:50%"><cell0 plugid='05a840d78df5d1136823c21e4f5677a4'/></view>           
+    </view>
+
+
     <view class="info" style="align:center;">
-      <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>
+      <button class = "shareBtn" type="primary" open-type="share" data-name="pageShare" id="share">我要分享</button>    
     </view>
 
     <view class="adContainer">

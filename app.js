@@ -84,14 +84,16 @@ App({
       { id: 72, url: '../CIN/index', caption: 'CIN对比剂肾病危险评分', collected: false },
       { id: 73, url: '../FuglMeyer/index', caption: 'FuglMeyer运动功能评定量表', collected: false },
       { id: 74, url: '../FuglMeyerB/index', caption: 'FuglMeyer平衡能力评定量表', collected: false },
-	  { id: 75, url: '../BergBalance/index', caption: 'Berg平衡量表', collected: false },
-	  { id: 76, url: '../ABC/index', caption: 'ABC平衡信心量表', collected: false },	  
-	  { id: 77, url: '../Morse/index', caption: 'Morse跌倒风险评估量表', collected: false },
+	    { id: 75, url: '../BergBalance/index', caption: 'Berg平衡量表', collected: false },
+	    { id: 76, url: '../ABC/index', caption: 'ABC平衡信心量表', collected: false },	  
+	    { id: 77, url: '../Morse/index', caption: 'Morse跌倒风险评估量表', collected: false },
       { id: 78, url: '../Barthel/index', caption: 'Barthel指数评定量表', collected: false },
       { id: 79, url: '../Tinetti/index', caption: 'Tinetti平衡与步态分析量表', collected: false },
       { id: 80, url: '../FSS/index', caption: 'FSS疲劳严重程度量表', collected: false },	  
-	  { id: 81, url: '../NRI/index', caption: 'NRI营养危险指数', collected: false },	
-	  { id: 82, url: '../GWB/index', caption: 'GWB总体幸福感量表(中国版)', collected: false },
+	    { id: 81, url: '../NRI/index', caption: 'NRI营养危险指数', collected: false },	
+      { id: 82, url: '../GWB/index', caption: 'GWB总体幸福感量表(中国版)', collected: false },
+      { id: 83, url: '../HPT/index', caption: '精神压力测试', collected: false },
+      { id: 84, url: '../IMDC/index', caption: '国际转移性肾细胞癌联合数据库评分', collected: false },
       //{ id: 30, url: '../IQ1/index', caption: '智商测试一', collected: false }, 
 
       
@@ -108,13 +110,14 @@ App({
         name: '全部',
         open: false,
         ids: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,77,78,79,80,81,82]
+             41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,77,78,79,80,81,82,
+            83,84]
       },
       {
         id: 'ONCOLOGY',
         name: '肿瘤',
         open: false,
-        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52,55,56,57,58,60,61,66]
+        ids: [1, 5, 8, 13, 14, 16, 42,48,49,52,55,56,57,58,60,61,66,84]
       }, 
       {
         id: 'NEU',
@@ -138,7 +141,7 @@ App({
         id: 'PSY',
         name: '精神心理',
         open: false,
-        ids: [20,21,22,23,24,33,58,59]
+        ids: [20,21,22,23,24,33,58,59,83]
       }, 
       {
         id: 'GAST',
@@ -150,7 +153,7 @@ App({
         id: 'ECC',
         name: '急重症',
         open: false,
-        ids: [6, 7, 15, 18, 28, 29, 30, 31, 32, 41, 42,64,67,68,69,70,71]
+        ids: [6, 7, 15, 18, 28, 29, 30, 31, 32, 41, 42,64,67,68,69,70,71,84]
       }, 
       {
         id: 'NURS',

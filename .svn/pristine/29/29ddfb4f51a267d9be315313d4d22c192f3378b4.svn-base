@@ -1,5 +1,0 @@
-<template name="header">
-    <view class="page-header">
-        头部
-    </view>
-</template>
